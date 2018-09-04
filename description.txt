@@ -1,0 +1,11 @@
+Aotearoa
+
+by Dokimi
+
+Replaces the default map biomes with Aotearoa, land of the long white cloud, New Zealand.
+
+Contains a large number of realistic native flora, biomes, and more.
+
+A world of dark towering forests, windswept mountains and more.
+
+Designed for use with mg_valleys
