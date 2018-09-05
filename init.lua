@@ -14,6 +14,10 @@ dofile(aotearoa.path .. "/mapgen.lua")
 dofile(aotearoa.path .. "/trees.lua")
 dofile(aotearoa.path .. "/crafting.lua")
 
+--use sounds if possible
+if minetest.get_modpath("ambience") then
+  dofile(aotearoa.path .. "/ambience.lua")
+end
 
 
 
