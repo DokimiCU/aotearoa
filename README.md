@@ -21,6 +21,14 @@ Code is licensed under GNU LGPLv2+.
 
 Textures are licensed under CC BY-SA 3.0 Unported.
 
+# Credit:
+NZ birdsongs adapted from New Zealand Department of Conservation. CC BY 4.0
+https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/
+(bellbirds, tuis, kokako, parakeet, si_kaka, tuis2, tuis3, tuis4, silvereye, fantail1, grey_warbler, ni_robin, si_robin, cicada_kereru, whitehead, kea, takahe, morepork, male_kiwi, female_kiwi, kakapo, shearwater, yellow_eyed_penguin)
+
+boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbible.com/51-Bubbling-Cauldron.html
+
+
 
 # Changelog:
 
