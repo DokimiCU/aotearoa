@@ -40,7 +40,6 @@ for i in ipairs(aotearoa.treelist) do
 	local selbox = aotearoa.treelist[i][7]
 	local vscale = aotearoa.treelist[i][8]
 	local foodvalue = aotearoa.treelist[i][9]
-	local type = aotearoa.treelist[i][10]
 
 	-- player will get a sapling with 1/100 chance
 	local droprarity = 100
