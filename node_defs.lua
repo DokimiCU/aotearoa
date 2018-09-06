@@ -14,7 +14,7 @@ aotearoa.treelist = {
 	{"mangrove", "Mangrove (Avicennia marina)", 2,},
 	{"pohutukawa", "Pohutukawa (Metrosideros excelsa)", 3, "flower"},
 	{"kauri", "Kauri (Agathis australis)", 2},
-	{"karaka", "Karaka (Corynocarpus laevigatus)", 2, nil,"karaka_fruit", "Karaka Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, -5},
+	{"karaka", "Karaka (Corynocarpus laevigatus)", 3, nil,"karaka_fruit", "Karaka Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, -5},
 	{"rimu", "Rimu (Dacrydium cupressinum)", 3},
 	{"totara", "Totara (Podocarpus totara)", 2},
 	{"miro", "Miro (Prumnopitys ferruginea)", 2,nil, "miro_fruit", "Miro Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, 1},
@@ -40,7 +40,6 @@ for i in ipairs(aotearoa.treelist) do
 	local selbox = aotearoa.treelist[i][7]
 	local vscale = aotearoa.treelist[i][8]
 	local foodvalue = aotearoa.treelist[i][9]
-	local type = aotearoa.treelist[i][10]
 
 	-- player will get a sapling with 1/100 chance
 	local droprarity = 100
