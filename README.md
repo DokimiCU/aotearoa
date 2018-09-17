@@ -1,7 +1,7 @@
 # Aotearoa
 by Dokimi
 
-Current version: 0.1
+Current version: 0.2 DEVELOPMENT
 
 
 A Minetest mod that replaces the default map biomes with Aotearoa, land of the long white cloud, New Zealand.
