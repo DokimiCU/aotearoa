@@ -528,6 +528,7 @@ minetest.register_decoration({
 	place_on = {
 							"default:dirt_with_dry_grass",
 							"aotearoa:volcanic_sand",
+							"aotearoa:schist",
 							"default:stone",
 							"default:gravel",
 						},
