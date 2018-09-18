@@ -325,6 +325,7 @@ for i in ipairs(aotearoa.shrublist) do
 			tiles ={"aotearoa_"..treename.."_leaves.png" },
 			paramtype = "light",
 			is_ground_content = false,
+			walkable = false,
 			groups = g,
 			sounds = default.node_sound_leaves_defaults(),
 			drop = {
