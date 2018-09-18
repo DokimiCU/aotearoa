@@ -828,6 +828,9 @@ minetest.register_biome({
 	humidity_point = peat_hum,
 })
 
+
+--[[
+--disabled until a more suitable location can be found
 --raupo_swamp
 --border on peat lower edge
 --(restrict alt so no slopes..ideally this should be at zero..but it isnt marine)
@@ -854,13 +857,18 @@ minetest.register_biome({
 	humidity_point = raupo_swamp_hum,
 })
 
+]]
+
+
 --Silver beech
 --fiordland, very cold and wet
 
+--Southern Rata Forest (subantarctic)
+--very very cold and wet
 
 ------------------------------------
 --SHRUBLANDS
---lowland (and highland?)
+--lowland
 
 --gumland
 -- hot and dry
