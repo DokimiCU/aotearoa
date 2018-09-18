@@ -41,8 +41,8 @@ for i in ipairs(aotearoa.treelist) do
 	local vscale = aotearoa.treelist[i][8]
 	local foodvalue = aotearoa.treelist[i][9]
 
-	-- player will get a sapling with 1/100 chance
-	local droprarity = 100
+	-- player will get a sapling with 1/50 chance
+	local droprarity = 50
 
 
 		minetest.register_node("aotearoa:"..treename.."_tree", {
@@ -243,11 +243,11 @@ for i in ipairs(aotearoa.shrublist) do
 	local vscale = aotearoa.shrublist[i][8]
 	local foodvalue = aotearoa.shrublist[i][9]
 
-	-- player will get a sapling with 1/100 chance
+	-- player will get a sapling with 1/40 chance
 	-- player will get leaves only if he/she gets no saplings,
 	-- this is because max_items is 1
 
-	local droprarity = 100
+	local droprarity = 40
 
 	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
 	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
@@ -520,8 +520,8 @@ for i in ipairs(aotearoa.tfernlist) do
 	local skirt = aotearoa.tfernlist[i][6]
 
 
-	-- player will get a sapling with 1/100 chance
-	local droprarity = 100
+	-- player will get a sapling with 1/10 chance
+	local droprarity = 10
 
 	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
 	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
