@@ -149,7 +149,8 @@ minetest.register_decoration({
 		--spawn_by = "default:water_source",
 		--num_spawn_by = 1,
 	})
-
+--[[
+--disabled until a better location for spawing found
 --Raupo
 minetest.register_decoration({
 		deco_type = "simple",
@@ -175,6 +176,7 @@ minetest.register_decoration({
 		--spawn_by = "default:water_source",
 		--num_spawn_by = 1,
 	})
+]]
 
 --Wiwi
 --sand and swamp
