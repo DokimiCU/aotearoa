@@ -295,6 +295,7 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:quartz_with_gold",
 	wherein         = {
+		"aotearoa:andesite",
 		"default:sandstone",
 		"default:silver_sandstone",
 		"default:desert_sandstone",
