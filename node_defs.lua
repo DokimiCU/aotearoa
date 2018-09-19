@@ -247,7 +247,7 @@ for i in ipairs(aotearoa.shrublist) do
 	-- player will get leaves only if he/she gets no saplings,
 	-- this is because max_items is 1
 
-	local droprarity = 40
+	local droprarity = 30
 
 	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
 	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
@@ -521,7 +521,7 @@ for i in ipairs(aotearoa.tfernlist) do
 
 
 	-- player will get a sapling with 1/10 chance
-	local droprarity = 10
+	local droprarity = 3
 
 	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
 	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
