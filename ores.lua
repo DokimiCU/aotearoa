@@ -170,11 +170,12 @@ minetest.register_ore({
 })
 
 
--- conglomerate into sandstone
+-- conglomerate into sandstone and andesite
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:conglomerate",
 	wherein         = {
+		"aotearoa:andesite",
 		"default:desert_sandstone",
 		"default:sandstone",
 		"default:silver_sandstone",
