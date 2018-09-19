@@ -12,10 +12,7 @@ minetest.register_ore({
 	ore             = "default:obsidian",
 	wherein         = {
 		"default:stone",
-	 	"default:desert_stone",
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+	 	"aotearoa:andesite",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 10,
