@@ -274,7 +274,7 @@ minetest.register_biome({
 	node_river_water = "default:river_water_source",
   node_riverbed = "default:sand",
 	depth_riverbed = 1,
-	y_min = -5,
+	y_min = beach_min/5,
 	y_max = beach_max,
 	heat_point = shelly_temp,
 	humidity_point = shelly_hum,
