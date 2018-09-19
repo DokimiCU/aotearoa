@@ -823,7 +823,7 @@ minetest.register_biome({
   node_riverbed = "aotearoa:peat",
   depth_riverbed = 4,
 	y_min = lowf_min,
-	y_max = 40,
+	y_max = lowf_max/2,
 	heat_point = peat_temp,
 	humidity_point = peat_hum,
 })
