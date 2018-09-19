@@ -200,6 +200,7 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:volcanic_sand",
 	wherein         = {
+		"aotearoa:andesite",	
 		"default:desert_sandstone",
 		"default:sandstone",
 		"default:silver_sandstone",
