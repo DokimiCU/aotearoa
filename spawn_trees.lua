@@ -8,6 +8,8 @@ local podo_persist = 0.35
 local kauri_fill = 0.001
 --braodleaves
 local broadl_fill = 0.0038
+--pohutukawa
+local pohutu_fill = 0.002
 --kahikatea swamp
 local kahi_swamp_fill = 0.01
 
@@ -669,13 +671,52 @@ minetest.register_decoration({
 minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
-				"default:sand",
 				"default:dirt_with_rainforest_litter",
 				},
 		sidelen = 8,
-		fill_ratio = 0.003,
+		fill_ratio = pohutu_fill,
 		biomes = {
 			"pohutukawa_forest",
+		},
+		y_min = 4,
+		y_max = 20,
+		schematic = aotearoa.path .. "/schematics/pohutukawa1.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+	})
+
+--Pohutukawa2
+minetest.register_decoration({
+	deco_type = "schematic",
+	place_on = {
+			"default:dirt_with_rainforest_litter",
+			},
+	sidelen = 8,
+	fill_ratio = pohutu_fill,
+	biomes = {
+		"pohutukawa_forest",
+	},
+	y_min = 4,
+	y_max = 20,
+	schematic = aotearoa.path .. "/schematics/pohutukawa2.mts",
+	force_placement = false,
+	flags = "place_center_x, place_center_z",
+	rotation = "random",
+})
+
+
+----------------
+-- Sparse pohutukawa on dunes
+--Pohutukawa1
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+				"default:sand",
+				},
+		sidelen = 8,
+		fill_ratio = pohutu_fill/3,
+		biomes = {
 			"pohutukawa_dunes",
 		},
 		y_min = 4,
@@ -691,12 +732,10 @@ minetest.register_decoration({
 	deco_type = "schematic",
 	place_on = {
 			"default:sand",
-			"default:dirt_with_rainforest_litter",
 			},
 	sidelen = 8,
-	fill_ratio = 0.003,
+	fill_ratio = pohutu_fill/3,
 	biomes = {
-		"pohutukawa_forest",
 		"pohutukawa_dunes",
 	},
 	y_min = 4,
@@ -706,6 +745,8 @@ minetest.register_decoration({
 	flags = "place_center_x, place_center_z",
 	rotation = "random",
 })
+
+
 
 
 --------------------------------------------------
