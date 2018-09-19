@@ -31,6 +31,7 @@ minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
 					"default:dirt_with_rainforest_litter",
+					"aotearoa:volcanic_sand",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -43,8 +44,9 @@ minetest.register_decoration({
 		},
 		biomes = {
 			"fernland",
+			"white_island",
 		},
-		y_min = 10,
+		y_min = 5,
 		y_max = 30,
 		schematic = aotearoa.path .. "/schematics/mud_pool1.mts",
 		force_placement = false,
@@ -57,6 +59,7 @@ minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
 					"default:dirt_with_rainforest_litter",
+					"aotearoa:volcanic_sand",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -69,14 +72,16 @@ minetest.register_decoration({
 		},
 		biomes = {
 			"fernland",
+			"white_island",
 		},
-		y_min = 10,
+		y_min = 5,
 		y_max = 35,
 		schematic = aotearoa.path .. "/schematics/mud_pool2.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
 		rotation = "random",
 })
+
 
 -------------------------------------
 --PODOCARPS & Big Trees
