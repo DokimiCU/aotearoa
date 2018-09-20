@@ -13,6 +13,7 @@ minetest.register_ore({
 	wherein         = {
 		"default:stone",
 	 	"aotearoa:andesite",
+		"aotearoa:granite",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 10,
@@ -73,6 +74,27 @@ minetest.register_ore({
 	},
 })
 
+-- granite into deep stone
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:granite",
+	wherein         = {
+		"default:stone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 15,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0,
+		scale = 1,
+		spread = {x = 15, y = 15, z = 15},
+		seed = -30027,
+		octaves = 1,
+		persist = 0.0
+	},
+})
 
 -- andesite into deep stone
 minetest.register_ore({
