@@ -35,6 +35,9 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 # 0.1
 - Initial release
 
+# 0.2
+- Adjust Subantarctic and Coastal volcanic biomes.
+- New rocks: Andesite, Granite
 
 
 
