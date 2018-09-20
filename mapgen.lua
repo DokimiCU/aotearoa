@@ -515,14 +515,15 @@ minetest.register_biome({
 --subantarctic_coast
 -- extreme cold and wet,
 -- herb field
+--extend altitude in coastal forest
 minetest.register_biome({
 	name = "subantarctic_coast",
 	--node_dust = "",
 	node_top = "aotearoa:dirt_with_moss",
 	depth_top = 1,
-	node_filler = "default:stone",
-	depth_filler = 2,
-	node_stone = "default:obsidian",
+	node_filler = "aotearoa:andesite",
+	depth_filler = 4,
+	node_stone = "aotearoa:granite",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
@@ -530,7 +531,7 @@ minetest.register_biome({
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
   y_min = dune_min,
-	y_max = dune_max + 1,
+	y_max = coastf_max,
   heat_point = subantartic_temp,
 	humidity_point = subantartic_hum,
 })
