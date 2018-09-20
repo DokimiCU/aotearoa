@@ -9,38 +9,13 @@ local gfern_fill = 0.01
 --------------------------
 --NON-LIVING... because they had to go somewhere.
 
---Boulders for rocky volcanic_isle_shore
+
+
+--Boulders for  fellfield
 minetest.register_decoration({
 	deco_type = "simple",
 	place_on = {
-							"default:obsidian",
-							},
-	sidelen = 16,
-	noise_params = {
-		offset = 0,
-		scale = 0.1,
-		spread = {x = 32, y = 32, z = 32},
-		seed = 3129,
-		octaves = 3,
-		persist = 0.8
-	},
-	biomes = {
-						"subantarctic_shore",
-						"volcanic_isle_shore",
-						},
-	y_min = -10,
-	y_max = 31000,
-	decoration = "default:obsidian",
-})
-
-
-
---Boulders for  fellfield and sub coast
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:stone",
-							"default:dirt_with_grass",
+							"aotearoa:schist",
 							},
 	sidelen = 16,
 	noise_params = {
@@ -53,28 +28,57 @@ minetest.register_decoration({
 	},
 	biomes = {
 						"fellfield",
+						},
+	y_min = -10,
+	y_max = 31000,
+	decoration = "aotearoa:schist",
+})
+
+
+--Boulders for  subantarctic_shore
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {
+							"aotearoa:andesite",
+							},
+	sidelen = 16,
+	noise_params = {
+		offset = 0,
+		scale = 0.1,
+		spread = {x = 32, y = 32, z = 32},
+		seed = 1109,
+		octaves = 2,
+		persist = 0.9
+	},
+	biomes = {
 						"subantarctic_shore",
 						},
 	y_min = -10,
 	y_max = 31000,
-	decoration = "default:stone",
+	decoration = "aotearoa:andesite",
 })
 
 
---Loose rock for rocky coast and fellfield
+
+--Gravel piles for rocky coasts and fellfield
 minetest.register_decoration({
 	deco_type = "simple",
 	place_on = {
-							"default:stone",
+							"aotearoa:schist",
+							"aotearoa:andesite",
 							"default:gravel",
-							"default:obsidian",
-							"aotearoa:dirt_with_moss",
 							},
 	sidelen = 16,
-	fill_ratio = 0.005,
+	noise_params = {
+		offset = 0,
+		scale = 0.1,
+		spread = {x = 32, y = 32, z = 32},
+		seed = 1100,
+		octaves = 2,
+		persist = 0.7
+	},
 	biomes = {
 						"subantarctic_shore",
-						"subantarctic_coast",
 						"volcanic_isle_shore",
 						"fellfield",
 						},
