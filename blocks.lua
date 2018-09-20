@@ -336,6 +336,7 @@ aotearoa.stonelist = {
 	{"limestone", "Limestone", 2, 2, "cooked", "", "aotearoa:coquina_limestone","default:coral"},
 	{"concrete","Concrete",3,2,},
 	{"andesite", "Andesite", 3, 2,},
+	{"granite", "Granite", 2, 2,},
 }
 
 
