@@ -311,6 +311,7 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:pounamu",
 	wherein         = {
+		"aotearoa:schist",
 		"default:stone",
 		"default:desert_stone",
 	 },
