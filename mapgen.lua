@@ -1041,7 +1041,7 @@ minetest.register_biome({
 	depth_top = 1,
 	--node_filler = "default:clay",
 	--depth_filler = 1,
-	node_stone = "default:desert_stone",
+	node_stone = "aotearoa:schist",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
