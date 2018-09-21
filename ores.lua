@@ -75,12 +75,14 @@ minetest.register_ore({
 	},
 })
 
--- granite into deep stone
+-- granite into deep stone, and metamorphic rocks
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:granite",
 	wherein         = {
 		"default:stone",
+		"aotearoa:schist",
+		"aotearoa:greywacke",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 15,
