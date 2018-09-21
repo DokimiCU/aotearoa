@@ -331,12 +331,13 @@ aotearoa.stonelist = {
 	{"siltstone", "Siltstone", 3, 2, "sediment", "aotearoa:silt",},
 	{"claystone", "Claystone", 3, 2, "sediment", "default:clay",},
 	{"conglomerate", "Conglomerate", 3, 2, "sediment", "default:gravel",},
-	{"schist", "Schist", 2, 2, "cooked", "", "aotearoa:siltstone","aotearoa:claystone"},
+	{"schist", "Schist", 2, 2, "cooked", "", {"aotearoa:siltstone","aotearoa:claystone", "aotearoa:greywacke"}},
 	{"coquina_limestone", "Coquina Limestone", 3, 2, "sediment", "aotearoa:seashells",},
-	{"limestone", "Limestone", 2, 2, "cooked", "", "aotearoa:coquina_limestone","default:coral"},
+	{"limestone", "Limestone", 2, 2, "cooked", "", {"aotearoa:coquina_limestone","default:coral"}},
 	{"concrete","Concrete",3,2,},
 	{"andesite", "Andesite", 3, 2,},
 	{"granite", "Granite", 2, 2,},
+	{"greywacke", "Greywacke", 3, 2,},
 }
 
 
@@ -350,8 +351,7 @@ for i in ipairs(aotearoa.stonelist) do
 	local hardness2 = aotearoa.stonelist[i][4]
 	local type = aotearoa.stonelist[i][5]
 	local sediment = aotearoa.stonelist[i][6]
-	local precursor1 = aotearoa.stonelist[i][7]
-	local precursor2 = aotearoa.stonelist[i][8]
+	local precursor = aotearoa.stonelist[i][7]
 
 	--make soft sedimentary rocks from/into sediment
 	--and allow them to be dug
@@ -379,17 +379,14 @@ for i in ipairs(aotearoa.stonelist) do
 
 	--can get raw stone by cooking something else
 	if type == "cooked" then
-		minetest.register_craft({
-			type = "cooking",
-			output = "aotearoa:"..stonename,
-			recipe = precursor1,
-		})
-
-		minetest.register_craft({
-			type = "cooking",
-			output = "aotearoa:"..stonename,
-			recipe = precursor2,
-		})
+		--go through list of precusors
+		for p, v in pairs(precursor) do
+			minetest.register_craft({
+				type = "cooking",
+				output = "aotearoa:"..stonename,
+				recipe = v,
+			})
+		end
 	end
 
 	--register raw
