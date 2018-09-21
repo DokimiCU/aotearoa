@@ -52,12 +52,13 @@ minetest.register_ore({
 	},
 })
 
--- schist into deep stone
+-- schist into deep stone, greywacke
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:schist",
 	wherein         = {
 		"default:stone",
+		"aotearoa:greywacke",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 15,
