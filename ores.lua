@@ -364,16 +364,14 @@ minetest.register_ore({
 
 
 --------------------------
---Coromandel Gold
+--Coromandel/Otago Gold
 
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:quartz_with_gold",
 	wherein         = {
 		"aotearoa:andesite",
-		"default:sandstone",
-		"default:silver_sandstone",
-		"default:desert_sandstone",
+		"aotearoa:schist",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 3,
@@ -390,6 +388,7 @@ minetest.register_ore({
 	},
 	biomes = {
 		"kauri_forest",
-		"pohutukawa_forest"
+		"pohutukawa_forest",
+		"matagouri_scrub",
 	},
 })
