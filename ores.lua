@@ -324,7 +324,108 @@ minetest.register_ore({
 
 
 -----------------------------------------
---SPECIAL FEATURES
+--SPECIAL FEATURES & MINERALS
+local mineral_scale = 0.03
+local mineral_spread = {x = 40, y = 40, z = 40}
+local mineral_oct = 3
+local mineral_persist = 0.8
+
+------------------------
+--Iron Ore ...Limonite
+-- NZ has very little apart from Iron sands. A bit of limonite in NW Nelson (Southern podo)
+--not sure where it really ought to go... shall put it in sedimentary rocks..
+--sandstone, conglomerate, clay/siltstone...
+-- has to be spread around otherwise too rare
+
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:limonite",
+	wherein         = {
+		"default:sandstone",
+		"default:silver_sandstone",
+		"default:desert_sandstone",
+		"aotearoa:conglomerate",
+		"aotearoa:siltstone",
+		"aotearoa:claystone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = mineral_scale,
+		spread = mineral_spread,
+		seed = 1184053,
+		octaves = mineral_oct,
+		persist = mineral_persist
+	},
+	--biomes = {},
+})
+
+
+----------------------
+--Copper
+
+--comes in many forms:
+--chalcopyrite: most important. ..
+--In andesite, granite(?),..various intusions into schist, greywacke,
+--(other ores..  Malachite and a whole bunch of others...)
+
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:chalcopyrite",
+	wherein         = {
+		  "aotearoa:gneiss",
+			"aotearoa:schist",
+			"aotearoa:greywacke",
+			"aotearoa:andesite",
+			"aotearoa:granite",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = mineral_scale,
+		spread = mineral_spread,
+		seed = 1222243,
+		octaves = mineral_oct,
+		persist = mineral_persist
+	},
+	--biomes = {},
+})
+
+
+-------------------------
+--Tin
+
+--Cassiterite
+-- with granite
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:cassiterite",
+	wherein         = {
+			"aotearoa:granite",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = mineral_scale,
+		spread = mineral_spread,
+		seed = 120013,
+		octaves = mineral_oct,
+		persist = mineral_persist
+	},
+	--biomes = {},
+})
 
 -------------------
 -- West Coast Coal
@@ -343,18 +444,13 @@ minetest.register_ore({
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0.5,
-		scale = 0.02,
-		spread = {x = 5, y = 5, z = 5},
+		scale = mineral_scale,
+		spread = mineral_spread,
 		seed = 7886,
-		octaves = 1,
-		persist = 0.0
+		octaves = mineral_oct,
+		persist = mineral_persist
 	},
-	biomes = {
-		"southern_podocarp_forest",
-		"muttonbird_scrub",
-		"iron_sand_dunes",
-		"iron_sand_beach",
-	},
+	--biomes = {},
 })
 
 
@@ -377,16 +473,13 @@ minetest.register_ore({
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0.5,
-		scale = 0.02,
-		spread = {x = 5, y = 5, z = 5},
+		scale = mineral_scale,
+		spread = mineral_spread,
 		seed = -7181,
-		octaves = 1,
-		persist = 0.0
+		octaves = mineral_oct,
+		persist = mineral_persist
 	},
-	biomes = {
-		"southern_podocarp_forest",
-		"mountain_beech_forest",
-	},
+	--biomes = {},
 })
 
 
@@ -408,15 +501,11 @@ minetest.register_ore({
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0.5,
-		scale = 0.02,
-		spread = {x = 5, y = 5, z = 5},
+		scale = mineral_scale,
+		spread = mineral_spread,
 		seed = -7444,
-		octaves = 1,
-		persist = 0.0
+		octaves = mineral_oct,
+		persist = mineral_persist
 	},
-	biomes = {
-		"kauri_forest",
-		"pohutukawa_forest",
-		"matagouri_scrub",
-	},
+	--biomes = {},
 })
