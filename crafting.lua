@@ -441,15 +441,14 @@ minetest.register_craft({
 
 ----------------------------------------
 --IRON SAND
-minetest.register_craft({
-	output = 'default:iron_lump',
-	recipe = {
-		{'aotearoa:iron_sand', 'aotearoa:iron_sand', 'aotearoa:iron_sand'},
-		{'aotearoa:iron_sand', 'aotearoa:iron_sand', 'aotearoa:iron_sand'},
-		{'aotearoa:iron_sand', 'aotearoa:iron_sand', 'aotearoa:iron_sand'},
-	}
-})
 
+--iron sand is famously difficult to smelt.
+minetest.register_craft({
+	type = 'cooking',
+	output = 'default:iron_lump',
+	recipe = 'aotearoa:iron_sand',
+	cooktime = 30,
+})
 
 
 -----------------------------------
