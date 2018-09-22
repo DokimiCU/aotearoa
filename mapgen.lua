@@ -80,7 +80,7 @@ local gravel_temp = 30
 local gravel_hum = 10
 --subantarctic_shore (bare rock)
 local subantartic_temp = 0
-local subantartic_hum = 130
+local subantartic_hum = 100
 --volcanic_isle_shore (bare rock and volcanic)
 local volcanic_isle_temp = 120
 local volcanic_isle_hum = 0
