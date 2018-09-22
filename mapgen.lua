@@ -21,12 +21,8 @@ dofile(aotearoa.path .. "/ores.lua")
 --altitude splits
 
 --ocean
-local ocean_min = -150
+local ocean_min = -15000
 local ocean_max = -21
-
---rocks
---local basement_min = -10000
---local basement_max = ocean_min - 1
 
 
 ------------
@@ -56,6 +52,21 @@ local high_alp_min = alp_max -2
 ------------
 --temp and humidity
 -- many here for re-use and access!
+
+--oceans/basement rock
+--greywacke
+local gw_heat = 50
+local gw_hum = 40
+--schist
+local sch_heat = 40
+local sch_hum = 50
+--gneiss
+local gn_heat = 10
+local gn_hum = 70
+--granite
+local gr_heat = 10
+local gr_hum = 90
+
 
 --Shorelines...(from beach to dunes)
 --Normal sandy
@@ -148,89 +159,103 @@ local alpine_peat_hum = 100
 
 
 ------------------------------------------------------------
---BASEMENT ROCK
-
--- Underground
-	minetest.register_biome({
-		name = "underground",
-		--node_dust = "",
-		--node_top = "",
-		--depth_top = ,
-		--node_filler = "",
-		--depth_filler = ,
-		--node_stone = "",
-		--node_water_top = "",
-		--depth_water_top = ,
-		--node_water = "",
-		--node_river_water = "",
-		y_min = -31000,
-		y_max = -113,
-		heat_point = 50,
-		humidity_point = 50,
-	})
-
-
-
---[[
---greywacke basement
---East Coast...so "warm dry"!, but middling
-minetest.register_biome({
-	name = "greywacke_basement",
-	--node_dust = "",
-	--node_top = "",
-	--depth_top = ,
-	--node_filler = "",
-	--depth_filler = ,
-	node_stone = "default:stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-	--node_river_water = "",
-	y_min = basement_min,
-	y_max = basement_max,
-	heat_point = 60,
-	humidity_point = 40,
-})
-
-
---schist basement
---East Coast...so "warm dry"!, but colder
-
---Sandstone basement
---? rarer, middle of country?
-
---gneiss basement
---West Coast...so "cold and wet"!
-
---granite basement
---West Coast...so "cold and wet"!
-]]
-
-------------------------------------------------------------
 --MARINE
+--this also controls the basement rocks, hence the names
 
---ocean
---What: generic seabed.
---Where: middle of the range
+--greywacke_ocean
+--What: East Coast...seabed and rocks
 --flora: none
 minetest.register_biome({
-	name = "ocean",
+	name = "greywacke_ocean",
 	--node_dust = "",
 	node_top = "aotearoa:mud_sinking",
 	depth_top = 1,
 	node_filler = "aotearoa:mud",
 	depth_filler = 10,
-	--node_stone = "",
+	node_stone = "aotearoa:greywacke",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
 	--node_river_water = "default:river_water_source",
 	y_min = ocean_min,
 	y_max = ocean_max,
-	heat_point = 50,
-	humidity_point = 50,
+	heat_point = gw_heat,
+	humidity_point = gw_hum,
 })
 
+
+--schist_ocean
+--What: East Coast, colder...seabed and rocks
+--flora: none
+minetest.register_biome({
+	name = "schist_ocean",
+	--node_dust = "",
+	node_top = "aotearoa:mud_sinking",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 10,
+	node_stone = "aotearoa:schist",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = sch_heat,
+	humidity_point = sch_hum,
+})
+
+
+--gneiss_ocean
+--What: West Coast...seabed and rocks
+--flora: none
+minetest.register_biome({
+	name = "gneiss_ocean",
+	--node_dust = "",
+	node_top = "aotearoa:mud_sinking",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 10,
+	node_stone = "aotearoa:gneiss",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = gn_heat,
+	humidity_point = gn_hum,
+})
+
+
+
+--granite_ocean
+--What: Stewart Island...seabed and rocks
+--flora: none
+minetest.register_biome({
+	name = "granite_ocean",
+	--node_dust = "",
+	node_top = "aotearoa:mud_sinking",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 10,
+	node_stone = "aotearoa:granite",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = gr_heat,
+	humidity_point = gr_hum,
+})
+
+
+
+
+
+----------------------------------------------------
+--SEASHORE
 
 --Sandy Beach.
 --What: generic sandy Beach
