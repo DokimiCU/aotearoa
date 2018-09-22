@@ -471,9 +471,9 @@ for i in ipairs(aotearoa.stonelist) do
 end
 
 ------------------------------------------
+--MINERALS
 
-
--------------------------------------------
+---------------------
 --Quartz with gold
 
 minetest.register_node("aotearoa:quartz_with_gold", {
@@ -484,6 +484,38 @@ minetest.register_node("aotearoa:quartz_with_gold", {
 	sounds = default.node_sound_stone_defaults(),
 	})
 
+-------------------
+--Limonite (iron ore)
+
+minetest.register_node("aotearoa:limonite", {
+	description = "Limonite",
+	tiles = {"aotearoa_limonite.png"},
+	groups = {cracky = 3},
+	drop = "default:iron_lump 6",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+-------------------
+--chalcopyrite (copper ore)
+
+minetest.register_node("aotearoa:chalcopyrite", {
+	description = "Chalcopyrite",
+	tiles = {"aotearoa_chalcopyrite.png"},
+	groups = {cracky = 3},
+	drop = "default:copper_lump",
+	sounds = default.node_sound_stone_defaults(),
+})
+
+-------------------
+--cassiterite (tin ore)
+
+minetest.register_node("aotearoa:cassiterite", {
+	description = "Cassiterite",
+	tiles = {"aotearoa_cassiterite.png"},
+	groups = {cracky = 3},
+	drop = "default:tin_lump 6",
+	sounds = default.node_sound_stone_defaults(),
+})
 
 
 ---------------------------------------------
