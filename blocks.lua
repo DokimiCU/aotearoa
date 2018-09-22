@@ -387,6 +387,7 @@ for i in ipairs(aotearoa.stonelist) do
 				type = "cooking",
 				output = "aotearoa:"..stonename,
 				recipe = v,
+				cooktime = 120,
 			})
 		end
 	end
