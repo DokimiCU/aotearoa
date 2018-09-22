@@ -157,6 +157,69 @@ local alpine_peat_temp = 50
 local alpine_peat_hum = 100
 
 
+------------------------------------------------------
+--MANTLE
+-- these occassionally turn up in caves below basement rock level
+
+--cold mantle
+minetest.register_biome({
+	name = "cold_mantle",
+	--node_dust = "",
+	node_top = "aotearoa:volcanic_sand",
+	depth_top = 10,
+	node_filler = "default:gravel",
+	depth_filler = 3,
+	--node_stone = "default:lava_source",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = -31000,
+	y_max = ocean_min + 100,
+	heat_point = 50,
+	humidity_point = 50,
+})
+
+
+--wet mantle
+--  life should start to get tough...
+minetest.register_biome({
+	name = "wet_mantle",
+	--node_dust = "",
+	node_top = "aotearoa:boiling_mud_source",
+	depth_top = 10,
+	node_filler = "aotearoa:boiling_mud_source",
+	depth_filler = 3,
+	--node_stone = "default:lava_source",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = -31000,
+	y_max = ocean_min + 100,
+	heat_point = 60,
+	humidity_point = 60,
+})
+
+--mantle
+-- life should start to get tough...
+minetest.register_biome({
+	name = "mantle",
+	--node_dust = "default:lava_source",
+	node_top = "default:lava_source",
+	depth_top = 10,
+	node_filler = "default:lava_source",
+	depth_filler = 3,
+	--node_stone = "default:lava_source",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = -31000,
+	y_max = ocean_min + 100,
+	heat_point = 70,
+	humidity_point = 30,
+})
 
 ------------------------------------------------------------
 --MARINE
