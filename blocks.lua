@@ -107,7 +107,7 @@ minetest.register_node("aotearoa:peat", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {"default:iron_lump"}, rarity = 1000 },
+			{items = {"default:iron_lump"}, rarity = 200 },
 			{items = {"aotearoa:peat"} }
 		}
 	},
