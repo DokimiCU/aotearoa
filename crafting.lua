@@ -522,3 +522,31 @@ minetest.register_craft({
 		{"aotearoa:quicklime", "group:sand", "default:gravel"},
 	}
 })
+
+------------------------------------------------
+--ARTIFIICAL DIAMONDS...
+-- because NZ has no diamonds
+--slow.
+
+minetest.register_craft({
+	type = 'cooking',
+	output = 'default:diamond',
+	recipe = 'default:coalblock',
+	cooktime = 360,
+})
+
+
+----------------------------------------------
+--ARTIFICIAL MESE...
+-- because... its ...mese
+-- something hocus pocus!?
+-- pounamu is the most mystical rock... so it can be transformed.
+
+minetest.register_craft({
+	output = 'default:mese',
+	recipe = {
+		{'aotearoa:granite', 'default:gold_ingot', 'aotearoa:gneiss'},
+		{'default:copper_ingot', 'aotearoa:pounamu', 'default:steel_ingot'},
+		{'aotearoa:andesite', 'default:tin_ingot', 'aotearoa:limestone'},
+	}
+})
