@@ -491,6 +491,46 @@ minetest.register_decoration({
 
 
 --------------------------
+--silver_beech1
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+					"aotearoa:dirt_with_beech_litter",
+				},
+		sidelen = 8,
+		fill_ratio = mt_forest_fill,
+		biomes = {
+			"fiordland_forest",
+		},
+		y_min = 12,
+		y_max = 700,
+		schematic = aotearoa.path .. "/schematics/silver_beech1.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+})
+
+--silver_beech2
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+					"aotearoa:dirt_with_beech_litter",
+				},
+		sidelen = 8,
+		fill_ratio = broadl_fill,
+		biomes = {
+			"fiordland_forest",
+		},
+		y_min = 12,
+		y_max = 700,
+		schematic = aotearoa.path .. "/schematics/silver_beech2.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+})
+
+
+--------------------------
 --mountain_beech1
 minetest.register_decoration({
 		deco_type = "schematic",
