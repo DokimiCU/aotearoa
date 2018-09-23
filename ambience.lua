@@ -117,6 +117,7 @@ ambience.add_set("aotearoa_forest_night", {
     "aotearoa:restiad_peat",
     "aotearoa:dirt_with_dark_litter",
     "aotearoa:dirt_with_moss",
+    "aotearoa:dirt_with_beech_litter",
   },
 	sounds = {
 		{name = "morepork", length = 14},
@@ -215,6 +216,7 @@ ambience.add_set("aotearoa_insect_birds_day", {
     "aotearoa:restiad_peat",
     "aotearoa:dirt_with_dark_litter",
     "aotearoa:dirt_with_moss",
+    "aotearoa:dirt_with_beech_litter",
   },
 	sounds = {
     {name = "silvereye", length = 165},
