@@ -22,6 +22,9 @@ local shrub_fill = 0.0042
 --montane forest.
 local mt_forest_fill = 0.014
 
+--fiordland
+local fiord_forest_fill = 0.007
+
 --stumps
 local stump_fill = 0.003
 
@@ -498,7 +501,7 @@ minetest.register_decoration({
 					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
-		fill_ratio = mt_forest_fill,
+		fill_ratio = fiord_forest_fill,
 		biomes = {
 			"fiordland_forest",
 		},
@@ -517,7 +520,7 @@ minetest.register_decoration({
 					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
-		fill_ratio = broadl_fill,
+		fill_ratio = fiord_forest_fill,
 		biomes = {
 			"fiordland_forest",
 		},
