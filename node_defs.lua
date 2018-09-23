@@ -54,7 +54,7 @@ for i in ipairs(aotearoa.treelist) do
 			},
 			paramtype2 = "facedir",
 			is_ground_content = false,
-			groups = {tree = 1, choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+			groups = {tree = 1, choppy = 2, flammable = 2},
 			sounds = default.node_sound_wood_defaults(),
 			on_place = minetest.rotate_node,
 		})
@@ -62,6 +62,7 @@ for i in ipairs(aotearoa.treelist) do
 		minetest.register_node("aotearoa:"..treename.."_wood", {
 			description = treedesc.." Wood",
 			tiles = {"aotearoa_"..treename.."_wood.png"},
+			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
 			sounds = default.node_sound_wood_defaults(),
