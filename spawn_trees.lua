@@ -96,6 +96,7 @@ minetest.register_decoration({
 		place_on = {
 					"aotearoa:dirt_with_dark_litter",
 					"aotearoa:dirt_with_moss",
+					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -111,6 +112,7 @@ minetest.register_decoration({
 			"northern_podocarp_forest",
 			"southern_podocarp_forest",
 			"kamahi_forest",
+			"fiordland_forest",
 		},
 		y_min = 3,
 		y_max = 150,
@@ -125,6 +127,7 @@ minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
 					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -139,6 +142,7 @@ minetest.register_decoration({
 			"kauri_forest",
 			"northern_podocarp_forest",
 			"southern_podocarp_forest",
+			"fiordland_forest",
 		},
 		y_min = 3,
 		y_max = 150,
@@ -235,6 +239,7 @@ minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
 					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -249,6 +254,7 @@ minetest.register_decoration({
 			"kauri_forest",
 			"northern_podocarp_forest",
 			"southern_podocarp_forest",
+			"fiordland_forest",
 		},
 		y_min = 12,
 		y_max = 150,
@@ -264,6 +270,7 @@ minetest.register_decoration({
 		place_on = {
 					"aotearoa:dirt_with_dark_litter",
 					"aotearoa:dirt_with_moss",
+					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -279,6 +286,7 @@ minetest.register_decoration({
 			"northern_podocarp_forest",
 			"southern_podocarp_forest",
 			"kamahi_forest",
+			"fiordland_forest",
 		},
 		y_min = 12,
 		y_max = 150,
@@ -296,6 +304,7 @@ minetest.register_decoration({
 		place_on = {
 					"aotearoa:dirt_with_dark_litter",
 					"aotearoa:dirt_with_moss",
+					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -311,6 +320,7 @@ minetest.register_decoration({
 			"northern_podocarp_forest",
 			"southern_podocarp_forest",
 			"kamahi_forest",
+			"fiordland_forest",
 		},
 		y_min = 12,
 		y_max = 150,
@@ -325,6 +335,7 @@ minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
 					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_beech_litter",
 				},
 		sidelen = 8,
 		noise_params = {
@@ -339,6 +350,7 @@ minetest.register_decoration({
 			"kauri_forest",
 			"northern_podocarp_forest",
 			"southern_podocarp_forest",
+			"fiordland_forest",
 		},
 		y_min = 12,
 		y_max = 150,
@@ -347,7 +359,6 @@ minetest.register_decoration({
 		flags = "place_center_x, place_center_z",
 		rotation = "random",
 	})
-
 -----------
 --miro1
 minetest.register_decoration({
@@ -1128,6 +1139,7 @@ minetest.register_decoration({
 		"default:dirt_with_grass",
 		"aotearoa:dirt_with_dark_litter",
 		"default:dirt_with_rainforest_litter",
+		"aotearoa:dirt_with_beech_litter",
 	},
 	y_min = 5,
 	y_max = 100,
@@ -1138,7 +1150,8 @@ minetest.register_decoration({
 		"kauri_forest",
 		"northern_podocarp_forest",
 		"southern_podocarp_forest",
-		"fernland"
+		"fernland",
+		"fiordland_forest",
 	},
 	schematic = aotearoa.silver_fern1,
 })
@@ -1151,6 +1164,7 @@ minetest.register_decoration({
 		"default:dirt_with_grass",
 		"aotearoa:dirt_with_dark_litter",
 		"default:dirt_with_rainforest_litter",
+		"aotearoa:dirt_with_beech_litter",
 	},
 	y_min = 5,
 	y_max = 100,
@@ -1161,7 +1175,8 @@ minetest.register_decoration({
 		"kauri_forest",
 		"northern_podocarp_forest",
 		"southern_podocarp_forest",
-		"fernland"
+		"fernland",
+		"fiordland_forest",
 	},
 	schematic = aotearoa.silver_fern2,
 })
@@ -1762,6 +1777,7 @@ minetest.register_decoration({
 							"aotearoa:mud",
 							"aotearoa:mud_sinking",
 							"aotearoa:dirt_with_moss",
+							"aotearoa:dirt_with_beech_litter",
 							},
 	sidelen = 16,
 	fill_ratio = stump_fill,
@@ -1776,6 +1792,7 @@ minetest.register_decoration({
 						"pahautea_forest",
 						"raupo_swamp",
 						"kamahi_forest",
+						"fiordland_forest",
 						},
 	y_min = 1,
 	y_max = 31000,
@@ -1795,6 +1812,7 @@ minetest.register_decoration({
 		"aotearoa:mud",
 		"aotearoa:mud_sinking",
 		"aotearoa:dirt_with_moss",
+		"aotearoa:dirt_with_beech_litter",
 	},
 	y_min = 1,
 	y_max = 31000,
@@ -1810,6 +1828,7 @@ minetest.register_decoration({
 		"pahautea_forest",
 		"raupo_swamp",
 		"kamahi_forest",
+		"fiordland_forest",
 	},
 	schematic = aotearoa.stump1,
 })
@@ -1826,6 +1845,7 @@ minetest.register_decoration({
 		"aotearoa:mud",
 		"aotearoa:mud_sinking",
 		"aotearoa:dirt_with_moss",
+		"aotearoa:dirt_with_beech_litter",
 	},
 	y_min = 1,
 	y_max = 31000,
@@ -1841,6 +1861,7 @@ minetest.register_decoration({
 		"pahautea_forest",
 		"raupo_swamp",
 		"kamahi_forest",
+		"fiordland_forest",
 	},
 	schematic = aotearoa.stump2,
 })
