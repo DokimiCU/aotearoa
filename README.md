@@ -40,6 +40,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - New rocks: Andesite, Granite, Greywacke, Gneiss,
 - New Ores: limonite (iron), Cassiterite (tin), Chalcopyrite (copper).
 - Ocean/Basement rock biomes
+- Green Shovel (by Parasite)
 - Many other minor additions, fixes, and adjustments
 
 
