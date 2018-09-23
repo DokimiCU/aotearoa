@@ -121,6 +121,9 @@ local npodo_hum = 55
 --southern podocarp
 local spodo_temp = 35
 local spodo_hum = 45
+--fiordland forest
+local fiord_temp = 10
+local fiord_hum = 95
 --kamahi
 local kamahi_temp = 25
 local kamahi_hum = 100
@@ -868,6 +871,34 @@ minetest.register_biome({
 	heat_point = spodo_temp,
 	humidity_point = spodo_hum,
 })
+
+--Fiordland Forest
+--cold , very wet
+--flora: silver beech
+--flora:
+--flora: crown fern
+minetest.register_biome({
+	name = "fiordland_forest",
+	--node_dust = "",
+	node_top = "aotearoa:dirt_with_moss",
+	depth_top = 1,
+	node_filler = "default:gravel",
+	depth_filler = 1,
+	node_stone = "aotearoa:gneiss",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:gravel",
+  depth_riverbed = 2,
+	y_min = lowf_min,
+	y_max = lowf_max,
+	heat_point = fiord_temp,
+	humidity_point = fiord_hum,
+})
+
+
+
 
 --kamahi forest.
 --cold range and wet
