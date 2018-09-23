@@ -2,7 +2,8 @@
 ---------------------------------------------------------
 --CRAFTS
 
-
+--green_shovel
+dofile(aotearoa.path .. "/green_shovel.lua")
 
 -------------------------------------
 --SUBSTITUTES
