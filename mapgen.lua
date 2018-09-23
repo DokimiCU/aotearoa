@@ -119,7 +119,7 @@ local raupo_swamp_hum = 100
 local npodo_temp = 60
 local npodo_hum = 55
 --southern podocarp
-local spodo_temp = 25
+local spodo_temp = 35
 local spodo_hum = 45
 --kamahi
 local kamahi_temp = 25
@@ -1104,7 +1104,7 @@ minetest.register_biome({
 	depth_top = 1,
 	node_filler = "default:clay",
 	depth_filler = 2,
-	node_stone = "aotearoa:greywacke",
+	node_stone = "aotearoa:schist",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
