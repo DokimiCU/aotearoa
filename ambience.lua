@@ -34,7 +34,7 @@ ambience.add_set("mud_pool", {
 		local n = (def.totals["aotearoa:boiling_mud_source"] or 0) +
 			(def.totals["aotearoa:boiling_mud_flowing"] or 0)
 
-    if n > 1 then
+    if n >= 1 then
 			return "mud_pool"
 		end
 	end,
