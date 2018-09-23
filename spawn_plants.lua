@@ -524,6 +524,21 @@ minetest.register_decoration({
 	decoration = "aotearoa:kiokio",
 })
 
+--Crown Fern
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {
+		"aotearoa:dirt_with_beech_litter",
+						},
+	sidelen = 16,
+	fill_ratio = 0.09,
+	biomes = {
+		"fiordland_forest"
+	},
+	y_min = 7,
+	y_max = 100,
+	decoration = "aotearoa:crown_fern",
+})
 
 -----------------------------------------
 --ALPINE
