@@ -216,19 +216,12 @@ end
 
 aotearoa.shrublist = {
 	{"karo", "Karo (Pittosporum crassifolium)", 2},
-	{"kawakawa", "Kawakawa (Piper excelsum)", 2,nil, "kawakawa_fruit", "Kawakawa Fruit",{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8, 1},
+	{"kawakawa", "Kawakawa (Piper excelsum)", 2,nil, 0, "kawakawa_fruit", "Kawakawa Fruit",{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8, 1},
 	{"manuka", "Manuka (Leptospermum scoparium)", 2, "flower",},
 	{"common_tree_daisy", "Common Tree Daisy (Olearia arborescens)", 2, "flower",},
-	{"matagouri", "Matagouri (Discaria toumatou)", 2},
+	{"matagouri", "Matagouri (Discaria toumatou)", 2, nil, 1},
 	{"mahoe", "Mahoe (Melicytus ramiflorus)", 2},
 	{"rangiora", "Rangiora (Brachyglottis repanda)", 2, "flower"},
-
-
-
-	--lemonwood
---karamu (coprosma)
---kanuka?
-
 
 }
 
@@ -238,13 +231,15 @@ for i in ipairs(aotearoa.shrublist) do
 	local treedesc = aotearoa.shrublist[i][2]
 	local decay = aotearoa.shrublist[i][3]
 	local type = aotearoa.shrublist[i][4]
-	local fruit = aotearoa.shrublist[i][5]
-	local fruitdesc = aotearoa.shrublist[i][6]
-	local selbox = aotearoa.shrublist[i][7]
-	local vscale = aotearoa.shrublist[i][8]
-	local foodvalue = aotearoa.shrublist[i][9]
+	local damage = aotearoa.shrublist[i][5]
+	local fruit = aotearoa.shrublist[i][6]
+	local fruitdesc = aotearoa.shrublist[i][7]
+	local selbox = aotearoa.shrublist[i][8]
+	local vscale = aotearoa.shrublist[i][9]
+	local foodvalue = aotearoa.shrublist[i][10]
 
-	-- player will get a sapling with 1/40 chance
+
+	-- player will get a sapling with 1/30 chance
 	-- player will get leaves only if he/she gets no saplings,
 	-- this is because max_items is 1
 
