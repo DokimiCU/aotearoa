@@ -37,6 +37,7 @@ stairs.register_stair_and_slab(
 aotearoa.dirtlist = {
 	{"dirt_with_dark_litter", "Dirt with Dark Litter", "aotearoa_dirt_with_dark_litter_bottom.png","aotearoa_dirt_with_dark_litter_bottom.png"},
 	{"dirt_with_moss", "Dirt with Moss", "default_dirt.png", "default_rainforest_litter.png"},
+	{"dirt_with_beech_litter", "Dirt with Beech Litter", "aotearoa_dirt_with_dark_litter_bottom.png", "aotearoa_dirt_with_dark_litter_bottom.png"},
 
 }
 
