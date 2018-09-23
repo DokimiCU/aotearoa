@@ -122,14 +122,14 @@ local npodo_hum = 55
 local spodo_temp = 35
 local spodo_hum = 45
 --fiordland forest
-local fiord_temp = 10
-local fiord_hum = 95
+local fiord_temp = 0
+local fiord_hum = 90
 --kamahi
-local kamahi_temp = 25
+local kamahi_temp = 20
 local kamahi_hum = 100
 --peat_bog
-local peat_temp = 60
-local peat_hum = 125
+local peat_temp = 50
+local peat_hum = 120
 --Shrublands...
 --gumland
 local gumland_temp = 100
