@@ -42,6 +42,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - Ocean/Basement rock biomes
 - Green Shovel (by Parasite)
 - shrubs can be walked through, trees can't be cut by hand, stone axe craftable with gravel
+- Fiordland Forest biome (with new Silver Beech, Crown Fern, and Dirt with Beech litter)
 - Many other minor additions, fixes, and adjustments
 
 
