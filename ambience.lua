@@ -12,6 +12,8 @@ ambience.del_set("desert")
 ambience.del_set("night")
 ambience.del_set("day")
 
+--disable (and reorder) high up winds so it doesn't override alpine birds
+ambience.del_set("high_up")
 
 
 
@@ -43,7 +45,7 @@ ambience.add_set("mud_pool", {
 ---------------------
 -- tussock day
 ambience.add_set("aotearoa_tussock_day", {
-	frequency = 40,
+	frequency = 25,
   nodes = {
       "aotearoa:matagouri_leaves",
       "aotearoa:red_tussock"},
@@ -59,9 +61,9 @@ ambience.add_set("aotearoa_tussock_day", {
      )
 
 		if (def.tod > 0.2 and def.tod < 0.8)
-    and n > 10
-    and def.pos.y > 100
-    and def.pos.y < 200
+    and n > 6
+    and def.pos.y > 40
+    and def.pos.y < 500
     then
 			return "aotearoa_tussock_day"
 		end
@@ -245,4 +247,23 @@ ambience.add_set("aotearoa_insect_birds_day", {
 
 
 
+
 ---------------------------
+--Wind
+ambience.add_set("aotearoa_high_up", {
+	frequency = 50,
+	nodes = {"default:snowblock"},
+	sounds = {
+		{name = "desertwind", length = 8},
+		{name = "wind", length = 9},
+	},
+	sound_check = function(def)
+
+		local c = (def.totals["default:snowblock"] or 0)
+
+		if def.pos.y > 60
+		or c > 150 then
+			return "aotearoa_high_up"
+		end
+	end,
+})
