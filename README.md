@@ -41,6 +41,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - New Ores: limonite (iron), Cassiterite (tin), Chalcopyrite (copper).
 - Ocean/Basement rock biomes
 - Green Shovel (by Parasite)
+- shrubs can be walked through, trees can't be cut by hand, stone axe craftable with gravel
 - Many other minor additions, fixes, and adjustments
 
 
