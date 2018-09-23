@@ -5,6 +5,20 @@
 --green_shovel
 dofile(aotearoa.path .. "/green_shovel.lua")
 
+
+-----------------------------------------
+--Stone Axe recipe from gravel
+-- to make up for unbreakable trees.
+minetest.register_craft({
+	output = 'default:axe_stone',
+	recipe = {
+		{'default:gravel', 'default:gravel'},
+		{'default:gravel', 'group:stick'},
+		{'', 'group:stick'},
+	}
+})
+
+
 -------------------------------------
 --SUBSTITUTES
 -- replacements for defualt veg that didn't make it here.
