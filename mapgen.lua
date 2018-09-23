@@ -880,7 +880,7 @@ minetest.register_biome({
 minetest.register_biome({
 	name = "fiordland_forest",
 	--node_dust = "",
-	node_top = "aotearoa:dirt_with_moss",
+	node_top = "aotearoa:dirt_with_beech_litter",
 	depth_top = 1,
 	node_filler = "default:gravel",
 	depth_filler = 1,
