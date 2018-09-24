@@ -402,7 +402,7 @@ minetest.register_biome({
 --flora: none
 minetest.register_biome({
 	name = "subantarctic_shore",
-	--node_dust = "default:gravel",
+	node_dust = "default:snow",
 	--node_top = "",
 	--depth_top = 1,
 	node_filler = "aotearoa:andesite",
@@ -609,7 +609,7 @@ minetest.register_biome({
 --extend altitude in coastal forest
 minetest.register_biome({
 	name = "subantarctic_coast",
-	--node_dust = "",
+	node_dust = "default:snow",
 	node_top = "aotearoa:dirt_with_moss",
 	depth_top = 1,
 	node_filler = "aotearoa:andesite",
