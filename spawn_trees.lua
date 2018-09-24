@@ -1087,6 +1087,7 @@ minetest.register_decoration({
 		"aotearoa:dirt_with_dark_litter",
 		"default:dirt_with_rainforest_litter",
 		"default:dirt_with_dry_grass",
+		"aotearoa:dirt_with_moss",	
 	},
 	y_min = 4,
 	y_max = 100,
@@ -1100,11 +1101,12 @@ minetest.register_decoration({
 		"southern_podocarp_forest",
 		"gumland",
 		"fernland",
+		"kamahi_forest",	
 	},
 	schematic = aotearoa.nikau_palm1,
 })
 
--- nikau_palm1
+-- nikau_palm2
 minetest.register_decoration({
 	deco_type = "schematic",
 	sidelen = 16,
@@ -1113,6 +1115,7 @@ minetest.register_decoration({
 		"aotearoa:dirt_with_dark_litter",
 		"default:dirt_with_rainforest_litter",
 		"default:dirt_with_dry_grass",
+		"aotearoa:dirt_with_moss",	
 	},
 	y_min = 4,
 	y_max = 100,
@@ -1126,6 +1129,7 @@ minetest.register_decoration({
 		"southern_podocarp_forest",
 		"gumland",
 		"fernland",
+		"kamahi_forest",	
 	},
 	schematic = aotearoa.nikau_palm2,
 })
@@ -1502,7 +1506,6 @@ minetest.register_decoration({
 			"southern_podocarp_forest",
 			"fernland",
 			"pahautea_forest",
-			"kamahi_forest",
 		},
 		y_min = 9,
 		y_max = 100,
@@ -1512,7 +1515,7 @@ minetest.register_decoration({
 		rotation = "random",
 })
 
---mahoe1
+--mahoe2
 minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
@@ -1528,7 +1531,6 @@ minetest.register_decoration({
 			"southern_podocarp_forest",
 			"fernland",
 			"pahautea_forest",
-			"kamahi_forest",
 		},
 		y_min = 9,
 		y_max = 100,
