@@ -545,6 +545,42 @@ minetest.register_decoration({
 -----------------------------------------
 --ALPINE
 
+
+--Moss
+-- in wet cold places
+minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {
+				"aotearoa:dirt_with_beech_litter",
+				"aotearoa:dirt_with_moss",
+				"aotearoa:andesite",
+				"aotearoa:granite",
+				"aotearoa:schist",
+				"aotearoa:gneiss",
+				"default:gravel",
+				"default:dirt_with_rainforest_litter",
+				},
+		sidelen = 16,
+		fill_ratio = 0.9,
+		biomes = {
+							"fiordland_forest",
+							"mountain_beech_forest",
+							"subantarctic_shore",
+							"subantarctic_coast",
+							"muttonbird_scrub",
+							"kamahi_forest",
+							"pahautea_forest",
+							"fellfield",
+						},
+		y_min = 2,
+		y_max = 200,
+		decoration = "aotearoa:moss"
+		--spawn_by = "default:water_source",
+		--num_spawn_by = 1,
+	})
+
+
+
 --bristle_tussock
 minetest.register_decoration({
 	deco_type = "simple",
