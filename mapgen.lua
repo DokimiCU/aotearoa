@@ -681,6 +681,7 @@ minetest.register_biome({
 
 
 -- Coastal Scrub
+-- decent farmland
 --generic low coastal plants
 --flora: flax, grass, wiwi, bracken
 --flora:karo, karaka,manuka,
@@ -691,8 +692,8 @@ minetest.register_biome({
 	--node_dust = "",
 	node_top = "default:dirt_with_grass",
 	depth_top = 1,
-	node_filler = "aotearoa:silt",
-	depth_filler = 4,
+	node_filler = "default:dirt",
+	depth_filler = 3,
 	node_stone = "default:sandstone",
 	--node_water_top = "",
 	--depth_water_top = ,
@@ -701,7 +702,7 @@ minetest.register_biome({
   node_riverbed = "default:gravel",
   depth_riverbed = 1,
 	y_min = coastf_min,
-	y_max = coastf_max,
+	y_max = lowf_max/4,
 	heat_point = c_scrub_temp,
 	humidity_point = c_scrub_hum,
 })
