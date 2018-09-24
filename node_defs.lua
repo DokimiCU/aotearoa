@@ -473,6 +473,11 @@ for i in ipairs(aotearoa.bushlist) do
 	local plantname = aotearoa.bushlist[i][1]
 	local plantdesc = aotearoa.bushlist[i][2]
 	local type = aotearoa.bushlist[i][3]
+	local nodebox = aotearoa.bushlist[i][4]
+
+	if nodebox == nil then
+		nodebox = {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}
+	end
 
 	--put flowering in flower group
 	local g = nil
@@ -484,15 +489,23 @@ for i in ipairs(aotearoa.bushlist) do
 
 	minetest.register_node("aotearoa:"..plantname, {
 		description = plantdesc,
-		drawtype = "allfaces_optional",
+		drawtype = "nodebox",
+		node_box = {
+			type = "fixed",
+			fixed = {
+				nodebox,
+			},
+		},
 		tiles = {"aotearoa_"..plantname..".png"},
 		paramtype = "light",
 		is_ground_content = false,
-		groups = {snappy = 3, flammable = 2, leaves = 1},
+		groups = g,
 		sounds = default.node_sound_leaves_defaults(),
 	})
 
+
 end
+
 
 
 -------------------------------------------
