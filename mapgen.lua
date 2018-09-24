@@ -116,11 +116,11 @@ local raupo_swamp_hum = 100
 --lowland forests etc...
 --kauri uses pohutukawa
 --northern podocarp
-local npodo_temp = 60
-local npodo_hum = 55
+local npodo_temp = 70
+local npodo_hum = 50
 --southern podocarp
-local spodo_temp = 35
-local spodo_hum = 45
+local spodo_temp = 30
+local spodo_hum = 50
 --fiordland forest
 local fiord_temp = 0
 local fiord_hum = 90
@@ -693,7 +693,7 @@ minetest.register_biome({
 	node_top = "default:dirt_with_grass",
 	depth_top = 1,
 	node_filler = "default:dirt",
-	depth_filler = 3,
+	depth_filler = 4,
 	node_stone = "default:sandstone",
 	--node_water_top = "",
 	--depth_water_top = ,
@@ -796,7 +796,7 @@ minetest.register_biome({
 
 --kauri_forest
 -- warm
---flora: Kauri, tawa, puriri,
+--flora: Kauri, tawa,
 --  all podos:totara, rimu, miro, kahikatea,
 --flora: kawakawa, mamaku, silver_fern, wheki
 --grass, junglegrass,
@@ -804,7 +804,7 @@ minetest.register_biome({
 minetest.register_biome({
 	name = "kauri_forest",
 	--node_dust = "",
-	node_top = "aotearoa:dirt_with_dark_litter",
+	node_top = "aotearoa:dirt_with_dry_litter",
 	depth_top = 1,
 	node_filler = "default:clay",
 	depth_filler = 3,
@@ -822,11 +822,10 @@ minetest.register_biome({
 })
 
 
+--------------------------
 --northern_podocarp
---mid warm range
---flora: all podos, tawa, karaka, ,
---flora: kawakawa,mamaku, silver_fern, wheki
---flora: grass, junglegrass,
+--mid warm range. Restrict altitude
+--flora: pure podocarp, totara
 minetest.register_biome({
 	name = "northern_podocarp_forest",
 	--node_dust = "",
@@ -842,19 +841,92 @@ minetest.register_biome({
   node_riverbed = "default:gravel",
   depth_riverbed = 2,
 	y_min = lowf_min,
-	y_max = lowf_max,
+	y_max = lowf_max/2,
 	heat_point = npodo_temp,
 	humidity_point = npodo_hum,
 })
 
 
---southern_podocarp (lowland, mid-cold,)
---mid cold range
---flora: all podos, black beech, kamahi,
---flora: mamaku, silver_fern, wheki,
+--tawa_forest
+--northern podocarp broadleaf. Wetter.
+--flora: tawa canopy, with north understory
+--flora: kawakawa,mamaku, silver_fern, wheki
 --flora: grass, junglegrass,
 minetest.register_biome({
+	name = "tawa_forest",
+	--node_dust = "",
+	node_top = "aotearoa:dirt_with_dark_litter",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 3,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:gravel",
+  depth_riverbed = 2,
+	y_min = lowf_min,
+	y_max = lowf_max,
+	heat_point = npodo_temp,
+	humidity_point = npodo_hum + 15,
+})
+
+--maire_forest
+--northern podocarp broadleaf. drier.
+--flora: maire canopy, with north understory
+--flora: kawakawa,mamaku, silver_fern, wheki
+--flora: grass, junglegrass,
+minetest.register_biome({
+	name = "maire_forest",
+	--node_dust = "",
+	node_top = "aotearoa:dirt_with_dry_litter",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 3,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:gravel",
+  depth_riverbed = 2,
+	y_min = lowf_min,
+	y_max = lowf_max,
+	heat_point = npodo_temp,
+	humidity_point = npodo_hum - 15,
+})
+
+
+-----------------
+--southern_podocarp (lowland, mid-cold,)
+--mid cold range
+--flora: pure podocarp, rimu
+minetest.register_biome({
 	name = "southern_podocarp_forest",
+	--node_dust = "",
+	node_top = "aotearoa:dirt_with_dark_litter",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 3,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:gravel",
+  depth_riverbed = 2,
+	y_min = lowf_min,
+	y_max = lowf_max/2,
+	heat_point = spodo_temp,
+	humidity_point = spodo_hum,
+})
+
+--hinau (lowland, mid-cold,)
+--mid cold range. wetter
+--flora: southern broadleaf podocarp
+minetest.register_biome({
+	name = "hinau_forest",
 	--node_dust = "",
 	node_top = "aotearoa:dirt_with_dark_litter",
 	depth_top = 1,
@@ -870,9 +942,34 @@ minetest.register_biome({
 	y_min = lowf_min,
 	y_max = lowf_max,
 	heat_point = spodo_temp,
-	humidity_point = spodo_hum,
+	humidity_point = spodo_hum + 15,
 })
 
+--beech forest (lowland, mid-cold,)
+--mid cold range. drier
+--flora: mixed beech podocarp
+minetest.register_biome({
+	name = "beech_forest",
+	--node_dust = "",
+	node_top = "aotearoa:dirt_with_beech_litter",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 3,
+	node_stone = "aotearoa:greywacke",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:gravel",
+  depth_riverbed = 2,
+	y_min = lowf_min,
+	y_max = lowf_max,
+	heat_point = spodo_temp,
+	humidity_point = spodo_hum - 15,
+})
+
+
+-------------------
 --Fiordland Forest
 --cold , very wet
 --flora: silver beech
@@ -903,8 +1000,8 @@ minetest.register_biome({
 
 --kamahi forest.
 --cold range and wet
---above alt of swamps
---flora: kamahi,
+--flora: kamahi, and podocarps.
+--flora: ferns, moss
 minetest.register_biome({
 	name = "kamahi_forest",
 	--node_dust = "",
