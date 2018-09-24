@@ -493,7 +493,7 @@ minetest.register_node("aotearoa:limonite", {
 	description = "Limonite",
 	tiles = {"aotearoa_limonite.png"},
 	groups = {cracky = 3},
-	drop = "default:iron_lump 6",
+	drop = "default:iron_lump",
 	sounds = default.node_sound_stone_defaults(),
 })
 
@@ -515,7 +515,7 @@ minetest.register_node("aotearoa:cassiterite", {
 	description = "Cassiterite",
 	tiles = {"aotearoa_cassiterite.png"},
 	groups = {cracky = 3},
-	drop = "default:tin_lump 6",
+	drop = "default:tin_lump",
 	sounds = default.node_sound_stone_defaults(),
 })
 
