@@ -408,7 +408,7 @@ minetest.register_decoration({
 		"aotearoa:dirt_with_dark_litter",
 						},
 	sidelen = 16,
-	fill_ratio = gfern_fill * 5,
+	fill_ratio = 0.08,
 	biomes = {
 		"kauri_forest",
 	},
@@ -510,7 +510,7 @@ minetest.register_decoration({
 		"aotearoa:dirt_with_moss",
 						},
 	sidelen = 16,
-	fill_ratio = gfern_fill,
+	fill_ratio = 0.03,
 	biomes = {
 		"muttonbird_scrub",
 		"kahikatea_swamp",
