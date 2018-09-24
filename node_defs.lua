@@ -706,3 +706,22 @@ end
 ------------------------------------
 --ODD BALLS
 --Things that are just...mmmm.
+
+minetest.register_node("aotearoa:moss", {
+	description = "Moss",
+	drawtype = "nodebox",
+	node_box = {
+		type = "fixed",
+		fixed = {
+			{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
+		},
+	},
+	tiles = {"aotearoa_dirt_with_moss.png"},
+	paramtype = "light",
+	buildable_to = true,
+	floodable = true,
+	is_ground_content = false,
+	groups = {crumbly = 3, flammable = 2, leaves = 1, flora = 1, attached_node = 1,},
+	sounds = default.node_sound_leaves_defaults(),
+})
+
