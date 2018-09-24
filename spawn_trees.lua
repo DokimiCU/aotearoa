@@ -692,7 +692,7 @@ minetest.register_decoration({
 				"aotearoa:dirt_with_moss",
 				},
 		sidelen = 8,
-		fill_ratio = broadl_fill,
+		fill_ratio = fiord_forest_fill,
 		biomes = {
 			"kamahi_forest",
 		},
@@ -711,7 +711,7 @@ minetest.register_decoration({
 				"aotearoa:dirt_with_moss",
 				},
 		sidelen = 8,
-		fill_ratio = broadl_fill,
+		fill_ratio = fiord_forest_fill,
 		biomes = {
 			"kamahi_forest",
 		},
