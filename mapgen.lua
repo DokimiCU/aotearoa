@@ -980,11 +980,6 @@ minetest.register_biome({
 ]]
 
 
---Silver beech
---fiordland, very cold and wet
-
---Southern Rata Forest (subantarctic)
---very very cold and wet
 
 ------------------------------------
 --SHRUBLANDS
