@@ -412,7 +412,7 @@ minetest.register_ore({
 	noise_threshold = 0.0,
 	noise_params    = {
 		offset = 0.5,
-		scale = mineral_scale,
+		scale = mineral_scale/2,
 		spread = mineral_spread,
 		seed = 1222243,
 		octaves = mineral_oct,
