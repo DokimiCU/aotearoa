@@ -928,7 +928,7 @@ minetest.register_biome({
 minetest.register_biome({
 	name = "hinau_forest",
 	--node_dust = "",
-	node_top = "aotearoa:dirt_with_dark_litter",
+	node_top = "aotearoa:dirt_with_dry_litter",
 	depth_top = 1,
 	node_filler = "default:clay",
 	depth_filler = 3,
