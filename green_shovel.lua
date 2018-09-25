@@ -61,12 +61,13 @@
   -- a pounamu shovel blessed with rituals... makes as much sense as anything.
   -- must be things hard to get...or at least far apart
   --sand to polish the stone (volcanic so have to find it). kawakawa for the blessing. Rope (dyed, for attachment). Food as an offering.
-  minetest.register_craft({
+  --maire is good wood for tools.. and another thing to hunt for.
+ minetest.register_craft({
 	output = "aotearoa:shovel_green",
 	recipe = {
 		{"aotearoa:kawakawa_leaves", "aotearoa:volcanic_sand", "aotearoa:kawakawa_leaves"},
 		{"dye:red", "aotearoa:pounamu", "aotearoa:flax_rope"},
-		{"aotearoa:cooked_mamaku_pith", "default:stick", "aotearoa:cooked_nikau_shoots"},
+		{"aotearoa:cooked_mamaku_pith", "aotearoa:black_maire_wood", "aotearoa:cooked_nikau_shoots"},
 	}
   })
 
