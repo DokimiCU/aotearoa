@@ -549,7 +549,6 @@ minetest.register_decoration({
 		biomes = {
 			"kauri_forest",
 			"tawa_forest",
-			"maire_forest",
 		},
 		y_min = 12,
 		y_max = 150,
@@ -571,7 +570,6 @@ minetest.register_decoration({
 		biomes = {
 			"kauri_forest",
 			"tawa_forest",
-			"maire_forest",
 		},
 		y_min = 12,
 		y_max = 150,
@@ -580,6 +578,48 @@ minetest.register_decoration({
 		flags = "place_center_x, place_center_z",
 		rotation = "random",
 })
+
+-------------------
+--black_maire1
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_dry_litter",
+				},
+		sidelen = 8,
+		fill_ratio = broadl_fill,
+		biomes = {
+			"maire_forest",
+		},
+		y_min = 12,
+		y_max = 150,
+		schematic = aotearoa.path .. "/schematics/black_maire1.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+})
+
+--black_maire2
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_dry_litter",
+				},
+		sidelen = 8,
+		fill_ratio = broadl_fill,
+		biomes = {
+			"maire_forest",
+		},
+		y_min = 12,
+		y_max = 150,
+		schematic = aotearoa.path .. "/schematics/black_maire2.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+})
+
 
 --------------------------
 --black_beech1
