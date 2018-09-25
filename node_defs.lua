@@ -27,6 +27,7 @@ aotearoa.treelist = {
 	{"kowhai", "Kowhai (Sophora microphylla)", 3, "flower",},
 	{"silver_beech", "Silver Beech (Lophozonia menziesii)",2},
 	{"black_maire", "Black Maire (Nestegis cunninghamii)",2, "flower",},
+	{"hinau", "Hinau (Elaeocarpus dentatus)", 2,"flower", "hinau_fruit", "Hinau Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, 1},
 
 }
 
