@@ -127,6 +127,12 @@ minetest.register_craft({
   },
 })
 
+-- from hinau bark. Not sure how done. Possibly boiled
+minetest.register_craft({
+	type = "cooking",
+	output = "dye:black 4",
+	recipe = "aotearoa:hinau_tree",
+})
 
 ------------
 --Brown Dye.
