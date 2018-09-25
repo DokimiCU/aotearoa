@@ -632,7 +632,6 @@ minetest.register_decoration({
 		sidelen = 8,
 		fill_ratio = fiord_forest_fill,
 		biomes = {
-			"hinau_forest",
 			"beech_forest",
 		},
 		y_min = 12,
@@ -653,7 +652,6 @@ minetest.register_decoration({
 		sidelen = 8,
 		fill_ratio = fiord_forest_fill,
 		biomes = {
-			"hinau_forest",
 			"beech_forest",
 		},
 		y_min = 12,
@@ -664,6 +662,46 @@ minetest.register_decoration({
 		rotation = "random",
 })
 
+--------------------------
+--hinau1
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_dry_litter",
+				},
+		sidelen = 8,
+		fill_ratio = broadl_fill *1.1,
+		biomes = {
+			"hinau_forest",
+		},
+		y_min = 12,
+		y_max = 700,
+		schematic = aotearoa.path .. "/schematics/hinau1.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+})
+
+--hinau2
+minetest.register_decoration({
+		deco_type = "schematic",
+		place_on = {
+					"aotearoa:dirt_with_dark_litter",
+					"aotearoa:dirt_with_dry_litter",
+				},
+		sidelen = 8,
+		fill_ratio = broadl_fill*1.1,
+		biomes = {
+			"hinau_forest",
+		},
+		y_min = 12,
+		y_max = 700,
+		schematic = aotearoa.path .. "/schematics/hinau2.mts",
+		force_placement = false,
+		flags = "place_center_x, place_center_z",
+		rotation = "random",
+})
 
 --------------------------
 --silver_beech1
