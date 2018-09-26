@@ -153,34 +153,7 @@ minetest.register_decoration({
 		--spawn_by = "default:water_source",
 		--num_spawn_by = 1,
 	})
---[[
---disabled until a better location for spawing found
---Raupo
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"aotearoa:mud_sinking",
-				"aotearoa:mud",
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.95,
-			spread = {x = 5, y = 5, z = 5},
-			seed = -16213,
-			octaves = 2,
-			persist = 0.99
-		},
-		biomes = {
-							"raupo_swamp",
-						},
-		y_min = 2,
-		y_max = 700,
-		decoration = "aotearoa:raupo"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
-]]
+
 
 --Wiwi
 --sand and swamp
