@@ -40,6 +40,13 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = 'default:paper',
+	recipe = {
+		{'aotearoa:raupo', 'aotearoa:raupo', 'aotearoa:raupo'},
+	}
+})
+
 
 ------------------------------
 --- Dyes
@@ -227,6 +234,23 @@ minetest.register_craft({
 	output = "aotearoa:cooked_raupo_root",
 	recipe = "aotearoa:raupo",
 })
+
+
+-------------
+--Raupo pollen cake
+minetest.register_craftitem("aotearoa:pungapunga", {
+	description = "Pungapunga Pollen Cake",
+	inventory_image = "aotearoa_pungapunga.png",
+  on_use = minetest.item_eat(2),
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "aotearoa:pungapunga",
+	recipe = "aotearoa:raupo_flower",
+})
+
+
 
 --------
 --Cook karaka
