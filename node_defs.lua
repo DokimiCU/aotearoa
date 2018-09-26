@@ -398,7 +398,6 @@ aotearoa.plantlist = {
 	{"kiokio", "kiokio (Parablechnum novae-zelandiae)", nil,1,nil,"firelike"},
 	{"bristle_tussock", "Bristle tussock (Rytidosperma setifolium)",nil,1, "dry_grass",},
 	{"kauri_grass", "Kauri grass (Astelia trinervia)",nil,1,nil,"firelike"},
-	{"raupo", "Raupo (Typha orientalis)",nil,1.5, "dry_grass","firelike"},
 	{"crown_fern", "Crown Fern (Blechnum discolor)",nil,1,},
 
 }
@@ -709,6 +708,8 @@ end
 --ODD BALLS
 --Things that are just...mmmm.
 
+------
+--Moss
 minetest.register_node("aotearoa:moss", {
 	description = "Moss",
 	drawtype = "nodebox",
@@ -725,5 +726,66 @@ minetest.register_node("aotearoa:moss", {
 	is_ground_content = false,
 	groups = {crumbly = 3, flammable = 2, leaves = 1, flora = 1, attached_node = 1,},
 	sounds = default.node_sound_leaves_defaults(),
+})
+
+
+-------------
+--Raupo
+minetest.register_node("aotearoa:raupo", {
+	description = "Raupo (Typha orientalis)",
+	drawtype = "plantlike",
+	waving = 1,
+	tiles = {"aotearoa_raupo.png"},
+	inventory_image = "aotearoa_raupo.png",
+	wield_image = "aotearoa_raupo.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	groups = {snappy = 3, flammable = 1, dry_grass = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+	},
+	after_destruct = function(pos,oldnode)
+        local node = minetest.get_node({x=pos.x,y=pos.y+1,z=pos.z})
+        if node.name == "aotearoa:raupo"
+				or node.name == "aotearoa:raupo_flower" then
+            minetest.dig_node({x=pos.x,y=pos.y+1,z=pos.z})
+        end
+    end,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "aotearoa:raupo",
+	burntime = 1,
+})
+
+--raupo flower
+minetest.register_node("aotearoa:raupo_flower", {
+	description = "Raupo Flower (Typha orientalis)",
+	drawtype = "plantlike",
+	waving = 1,
+	tiles = {"aotearoa_raupo_flower.png"},
+	inventory_image = "aotearoa_raupo_flower.png",
+	wield_image = "aotearoa_raupo_flower.png",
+	paramtype = "light",
+	sunlight_propagates = true,
+	walkable = false,
+	buildable_to = true,
+	groups = {snappy = 3, flammable = 1, dry_grass = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
+	},
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "aotearoa:raupo_flower",
+	burntime = 1,
 })
 
