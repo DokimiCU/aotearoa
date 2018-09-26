@@ -36,7 +36,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - Initial release
 
 # 0.2
-- Adjust Subantarctic and Coastal volcanic biomes.
+- Adjust Subantarctic, Raupo, and Coastal volcanic biomes.
 - New rocks: Andesite, Granite, Greywacke, Gneiss,
 - New Ores: limonite (iron), Cassiterite (tin), Chalcopyrite (copper).
 - Ocean/Basement rock biomes
