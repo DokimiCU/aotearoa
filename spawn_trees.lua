@@ -2151,3 +2151,39 @@ minetest.register_decoration({
 	},
 	schematic = aotearoa.stump2,
 })
+
+
+--------------------------------------
+
+--raupo1
+minetest.register_decoration({
+	deco_type = "schematic",
+	sidelen = 16,
+	place_on = {
+		"aotearoa:mud_sinking",
+	},
+	y_min = 1,
+	y_max = 31000,
+	fill_ratio = 0.7,
+	biomes = {
+		"raupo_swamp",
+	},
+	schematic = aotearoa.raupo1,
+})
+
+--raupo2
+minetest.register_decoration({
+	deco_type = "schematic",
+	sidelen = 16,
+	place_on = {
+		"aotearoa:mud_sinking",
+	},
+	y_min = 1,
+	y_max = 31000,
+	fill_ratio = 0.7,
+	biomes = {
+		"raupo_swamp",
+	},
+	schematic = aotearoa.raupo2,
+})
+
