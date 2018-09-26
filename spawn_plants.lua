@@ -554,6 +554,7 @@ minetest.register_decoration({
 				"aotearoa:gneiss",
 				"default:gravel",
 				"default:dirt_with_rainforest_litter",
+				"aotearoa:restiad_peat",
 				},
 		sidelen = 16,
 		fill_ratio = 0.9,
@@ -566,6 +567,7 @@ minetest.register_decoration({
 							"kamahi_forest",
 							"pahautea_forest",
 							"fellfield",
+							"peat_bog",
 						},
 		y_min = 2,
 		y_max = 200,
@@ -573,7 +575,6 @@ minetest.register_decoration({
 		--spawn_by = "default:water_source",
 		--num_spawn_by = 1,
 	})
-
 
 
 --bristle_tussock
