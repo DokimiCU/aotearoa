@@ -108,8 +108,8 @@ local tussock_hum = 5
 local kahi_swamp_temp = 30
 local kahi_swamp_hum = 100
 --raupo_swamp
-local raupo_swamp_temp = 75
-local raupo_swamp_hum = 100
+local raupo_swamp_temp = 50
+local raupo_swamp_hum = 145
 
 
 
@@ -789,7 +789,28 @@ minetest.register_biome({
 })
 
 
-
+--raupo_swamp
+--extreme wet and warmer
+--flora: raupo
+minetest.register_biome({
+	name = "raupo_swamp",
+	--node_dust = "",
+	node_top = "aotearoa:mud_sinking",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 3,
+	node_stone = "aotearoa:greywacke",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:mud",
+  depth_riverbed = 1,
+	y_min = coastf_min,
+	y_max = lowf_max/2,
+	heat_point = raupo_swamp_temp,
+	humidity_point = raupo_swamp_hum,
+})
 
 ------------------------------------------
 -- LOWLAND FORESTS
@@ -1046,36 +1067,6 @@ minetest.register_biome({
 	humidity_point = peat_hum,
 })
 
-
---[[
---disabled until a more suitable location can be found
---raupo_swamp
---border on peat lower edge
---(restrict alt so no slopes..ideally this should be at zero..but it isnt marine)
---very wet and warmer
---flora: raupo
---flora: flax, wiwi, junglegrass
-minetest.register_biome({
-	name = "raupo_swamp",
-	--node_dust = "",
-	node_top = "aotearoa:mud_sinking",
-	depth_top = 1,
-	node_filler = "aotearoa:mud",
-	depth_filler = 10,
-	node_stone = "default:stone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:silt",
-  depth_riverbed = 1,
-	y_min = lowf_min + 1,
-	y_max = lowf_min + 1,
-	heat_point = raupo_swamp_temp,
-	humidity_point = raupo_swamp_hum,
-})
-
-]]
 
 
 
