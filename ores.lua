@@ -531,3 +531,32 @@ minetest.register_ore({
 	},
 	--biomes = {},
 })
+
+
+----------------------------------------------
+--WEIRD STUFF...
+
+--sinking mud holes in surface peat
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:mud_sinking",
+	wherein         = {
+		"aotearoa:restiad_peat",
+		"aotearoa:forest_peat",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 3,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = 0.6,
+		spread = {x = 10, y = 10, z = 10},
+		seed = 74331,
+		octaves = 1,
+		persist = 0.3
+	},
+	--biomes = {},
+})
+
