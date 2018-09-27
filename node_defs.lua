@@ -399,6 +399,7 @@ aotearoa.plantlist = {
 	{"bristle_tussock", "Bristle tussock (Rytidosperma setifolium)",nil,1, "dry_grass",},
 	{"kauri_grass", "Kauri grass (Astelia trinervia)",nil,1,nil,"firelike"},
 	{"crown_fern", "Crown Fern (Blechnum discolor)",nil,1,},
+	{"sea_rush", "Sea Rush (Juncus kraussii)",nil,1, "grass",},
 
 }
 
