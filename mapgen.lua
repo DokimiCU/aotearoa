@@ -131,7 +131,7 @@ local spodo_hum = 50
 local fiord_temp = 0
 local fiord_hum = 90
 --kamahi
-local kamahi_temp = 20
+local kamahi_temp = 35
 local kamahi_hum = 100
 --peat_bog
 local peat_temp = 50
