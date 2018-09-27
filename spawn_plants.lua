@@ -155,6 +155,27 @@ minetest.register_decoration({
 	})
 
 
+--Sea rush
+--salt marsh plant
+minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {
+				"aotearoa:mud"
+				},
+		sidelen = 16,
+		fill_ratio = 0.5,
+		biomes = {
+							"salt_marsh"
+						},
+		y_min = 2,
+		y_max = 7,
+		decoration = "aotearoa:sea_rush"
+		--spawn_by = "default:water_source",
+		--num_spawn_by = 1,
+	})
+
+
+
 --Wiwi
 --sand and swamp
 minetest.register_decoration({
