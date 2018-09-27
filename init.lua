@@ -7,6 +7,7 @@ aotearoa.path = minetest.get_modpath("aotearoa")
 
 
 -- Load files
+dofile(aotearoa.path .. "/functions.lua")
 dofile(aotearoa.path .. "/blocks.lua")
 dofile(aotearoa.path .. "/node_defs.lua")
 dofile(aotearoa.path .. "/schematics.lua")
