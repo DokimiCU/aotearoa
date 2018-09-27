@@ -86,10 +86,16 @@ local volcanic_isle_temp = 120
 local volcanic_isle_hum = 0
 --iron sands
 local iron_temp = 50
-local iron_hum = 90
+local iron_hum = 85
 --estuary
-local estuary_temp = 90
-local estuary_hum = 80
+local estuary_temp = 85
+local estuary_hum = 100
+--southern estuary
+local sth_estuary_temp = 30
+local sth_estuary_hum = 100
+--salt marsh
+local s_marsh_temp = 50
+local s_marsh_hum = 95
 
 --Coastal forest etc...
 --(i.e warm, subtropical ..also Kauri, mangroves t,)
@@ -402,7 +408,7 @@ minetest.register_biome({
 --flora: none
 minetest.register_biome({
 	name = "subantarctic_shore",
-	node_dust = "default:snow",
+	--node_dust = "default:snow",
 	--node_top = "",
 	--depth_top = 1,
 	node_filler = "aotearoa:andesite",
@@ -469,6 +475,7 @@ minetest.register_biome({
 	humidity_point = iron_hum,
 })
 
+
 --Northern Estuary
 --mangrove estuary
 --warm and wet
@@ -480,7 +487,7 @@ minetest.register_biome({
 	depth_top = 1,
 	node_filler = "aotearoa:mud",
 	depth_filler = 10,
-	node_stone = "default:desert_stone",
+	node_stone = "default:sandstone",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
@@ -493,10 +500,32 @@ minetest.register_biome({
 	humidity_point = estuary_hum,
 })
 
+--Southern Estuary
+--mudflats
+minetest.register_biome({
+	name = "southern_estuary",
+	--node_dust = "",
+	node_top = "aotearoa:mud",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 5,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:mud",
+  depth_riverbed = 1,
+  y_min = beach_min,
+	y_max = beach_max,
+	heat_point = s_estuary_temp,
+	humidity_point = s_estuary_hum,
+})
+
+
 
 ---------------
 --DUNELANDS
---(Add: toetoe?)
 
 
 --Pohutukawa Dunes
@@ -577,6 +606,31 @@ minetest.register_biome({
 	humidity_point = iron_hum,
 })
 
+
+--Salt Marsh
+-- coastal wetlands
+-- should border the inland swamps, and coastal estuaries
+--flora:
+--flora:
+minetest.register_biome({
+	name = "salt_marsh",
+	--node_dust = "",
+	node_top = "aotearoa:mud",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 3,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:mud",
+  depth_riverbed = 2,
+  y_min = dune_min,
+	y_max = dune_max,
+	heat_point = s_marsh_temp,
+	humidity_point = s_marsh_hum,
+})
 
 --Gravel dunes
 -- generic gravel dunes
