@@ -1905,53 +1905,8 @@ minetest.register_decoration({
 		rotation = "random",
 })
 
-----------------------
---common_tree_daisy1
-minetest.register_decoration({
-		deco_type = "schematic",
-		place_on = {
-				"default:dirt_with_rainforest_litter",
-				"aotearoa:dirt_with_moss",
-				"aotearoa:dirt_with_dark_litter",
-				},
-		sidelen = 8,
-		fill_ratio = shrub_fill,
-		biomes = {
-			"pahautea_forest",
-			"kamahi_forest",
-		},
-		y_min = 4,
-		y_max = 500,
-		schematic = aotearoa.path .. "/schematics/common_tree_daisy1.mts",
-		force_placement = false,
-		flags = "place_center_x, place_center_z",
-		rotation = "random",
-})
-
---common_tree_daisy2
-minetest.register_decoration({
-		deco_type = "schematic",
-		place_on = {
-				"default:dirt_with_rainforest_litter",
-				"aotearoa:dirt_with_moss",
-				"aotearoa:dirt_with_dark_litter",
-				},
-		sidelen = 8,
-		fill_ratio = shrub_fill,
-		biomes = {
-			"pahautea_forest",
-			"kamahi_forest",
-		},
-		y_min = 4,
-		y_max = 500,
-		schematic = aotearoa.path .. "/schematics/common_tree_daisy2.mts",
-		force_placement = false,
-		flags = "place_center_x, place_center_z",
-		rotation = "random",
-})
 
 ----------------------
---Dense in Muttonbird
 --common_tree_daisy1
 minetest.register_decoration({
 		deco_type = "schematic",
