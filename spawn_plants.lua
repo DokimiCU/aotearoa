@@ -578,7 +578,7 @@ minetest.register_decoration({
 				"aotearoa:restiad_peat",
 				},
 		sidelen = 16,
-		fill_ratio = 0.9,
+		fill_ratio = 0.66,
 		biomes = {
 							"fiordland_forest",
 							"mountain_beech_forest",
