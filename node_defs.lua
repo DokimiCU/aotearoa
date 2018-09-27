@@ -749,13 +749,9 @@ minetest.register_node("aotearoa:raupo", {
 		type = "fixed",
 		fixed = {-0.1, -0.5, -0.1, 0.1, 0.5, 0.1},
 	},
-	after_destruct = function(pos,oldnode)
-        local node = minetest.get_node({x=pos.x,y=pos.y+1,z=pos.z})
-        if node.name == "aotearoa:raupo"
-				or node.name == "aotearoa:raupo_flower" then
-            minetest.dig_node({x=pos.x,y=pos.y+1,z=pos.z})
-        end
-    end,
+	after_dig_node = function(pos, node, metadata, digger)
+		aotearoa.dig_up(pos, {"aotearoa:raupo", "aotearoa:raupo_flower"}, digger)
+	end,
 })
 
 minetest.register_craft({
