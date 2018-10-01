@@ -54,6 +54,7 @@ for i in ipairs(aotearoa.treelist) do
 				"aotearoa_"..treename.."_tree_top.png",
 				"aotearoa_"..treename.."_tree.png"
 			},
+			paramtype = "light",
 			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {tree = 1, choppy = 2, flammable = 2},
@@ -64,6 +65,7 @@ for i in ipairs(aotearoa.treelist) do
 		minetest.register_node("aotearoa:"..treename.."_wood", {
 			description = treedesc.." Wood",
 			tiles = {"aotearoa_"..treename.."_wood.png"},
+			paramtype = "light",
 			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2, wood = 1},
@@ -120,6 +122,7 @@ for i in ipairs(aotearoa.treelist) do
 			tiles ={"aotearoa_"..treename.."_leaves.png" },
 			paramtype = "light",
 			is_ground_content = false,
+			walkable = false,
 			groups = g,
 			sounds = default.node_sound_leaves_defaults(),
 
@@ -247,7 +250,7 @@ for i in ipairs(aotearoa.shrublist) do
 
 	local droprarity = 30
 
-	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
+	
 	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
 
 
@@ -267,6 +270,7 @@ for i in ipairs(aotearoa.shrublist) do
 				type = "fixed",
 				fixed = trunkbox,
 			},
+			paramtype = "light",
 			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2},
@@ -589,6 +593,7 @@ for i in ipairs(aotearoa.tfernlist) do
 			type = "fixed",
 			fixed = trunkbox,
 		},
+		paramtype = "light",	
 		paramtype2 = "facedir",
 		is_ground_content = false,
 		groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, attached_node=1,},
@@ -685,6 +690,7 @@ end,
 				type = "fixed",
 				fixed = {-1/3, -1/2, -1/3, 1/3, 1/2, 1/3},
 			},
+			paramtype = "light",	
 			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, attached_node=1},
