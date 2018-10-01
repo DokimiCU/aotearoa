@@ -165,6 +165,15 @@ for i in ipairs(aotearoa.treelist) do
 		groups = {snappy=1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
 		sounds = default.node_sound_wood_defaults(),
 	})
+	
+	--gate
+	doors.register_fencegate("aotearoa:gate_"..treename.."_wood",  {
+		description = treedesc.." Gate",
+		texture = "aotearoa_"..treename.."_wood.png",
+		material = "aotearoa:"..treename.."_wood",
+		groups = {snappy=1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
+		sounds = default.node_sound_wood_defaults(),
+	})
 
 
 	minetest.register_craft({
