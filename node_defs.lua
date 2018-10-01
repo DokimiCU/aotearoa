@@ -150,7 +150,7 @@ for i in ipairs(aotearoa.treelist) do
 	stairs.register_stair_and_slab(
 		"aotearoa_"..treename.."_wood",
 		"aotearoa:"..treename.."_wood",
-		{snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=3},
+		{snappy=1, choppy=2, oddly_breakable_by_hand=2, flammable=2},
 		{"aotearoa_"..treename.."_wood.png" },
 		treedesc.." Wood Stair",
 		treedesc.." Wood Slab",
@@ -162,7 +162,7 @@ for i in ipairs(aotearoa.treelist) do
 		description = treedesc.." Fence",
 		texture = "aotearoa_"..treename.."_wood.png",
 		material = "aotearoa:"..treename.."_wood",
-		groups = {snappy=1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 3},
+		groups = {snappy=1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 		sounds = default.node_sound_wood_defaults(),
 	})
 	
