@@ -422,32 +422,31 @@ minetest.register_node('aotearoa:ponga_fence', {
 })
 
 minetest.register_craft({
-	output = 'aotearoa:ponga_fence 3',
+	output = 'aotearoa:ponga_fence',
 	recipe = {
-		{'aotearoa:wheki_tree', 'aotearoa:wheki_tree', 'aotearoa:wheki_tree'},
-		{'aotearoa:wheki_tree', 'aotearoa:wheki_tree', 'aotearoa:wheki_tree'},
+		{'', '', ''},
+		{'', '', ''},
 		{'aotearoa:wheki_tree', 'aotearoa:wheki_tree', 'aotearoa:wheki_tree'},
 	}
 })
 
 minetest.register_craft({
-	output = 'aotearoa:ponga_fence 3',
+	output = 'aotearoa:ponga_fence',
 	recipe = {
-		{'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree'},
-		{'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree'},
+		{'', '', ''},
+		{'', '', ''},
 		{'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree'},
 	}
 })
 
 minetest.register_craft({
-	output = 'aotearoa:ponga_fence 3',
+	output = 'aotearoa:ponga_fence',
 	recipe = {
-		{'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree'},
-		{'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree'},
+		{'', '', ''},
+		{'', '', ''},
 		{'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree'},
 	}
 })
-
 
 minetest.register_craft({
 	type = "fuel",
