@@ -1194,8 +1194,8 @@ minetest.register_decoration({
 			persist = 0.3
 		},
 		biomes = {"northern_estuary", },
-		y_min = 1,
-		y_max = 2,
+		y_min = 2,
+		y_max = 3,
 		schematic = aotearoa.path .. "/schematics/mangrove1.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -1221,8 +1221,8 @@ minetest.register_decoration({
 			persist = 0.3
 		},
 		biomes = {"northern_estuary", },
-		y_min = 1,
-		y_max = 2,
+		y_min = 2,
+		y_max = 3,
 		schematic = aotearoa.path .. "/schematics/mangrove2.mts",
 		force_placement = false,
 		flags = "place_center_x, place_center_z",
@@ -1684,6 +1684,7 @@ minetest.register_decoration({
 minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
+				"aotearoa:restiad_peat",
 				"default:dirt_with_grass",
 			  "default:gravel",
 				"default:dirt_with_rainforest_litter",
@@ -1692,6 +1693,7 @@ minetest.register_decoration({
 		sidelen = 8,
 		fill_ratio = shrub_fill,
 		biomes = {
+			"fen",
 			"gravel_dunes",
 			"coastal_scrub",
 			"muttonbird_scrub",
@@ -1712,18 +1714,20 @@ minetest.register_decoration({
 minetest.register_decoration({
 		deco_type = "schematic",
 		place_on = {
+				"aotearoa:restiad_peat",
 				"default:dirt_with_grass",
 				"default:gravel",
 				"default:dirt_with_rainforest_litter",
-				--"default:dirt_with_dry_grass",
+				"default:dirt_with_dry_grass",
 				},
 		sidelen = 8,
 		fill_ratio = shrub_fill,
 		biomes = {
+			"fen",
 			"gravel_dunes",
 			"coastal_scrub",
 			"muttonbird_scrub",
-			--"coastal_tussock",
+			"coastal_tussock",
 			"gumland",
 			"fernland",
 		},
@@ -2141,4 +2145,3 @@ minetest.register_decoration({
 	},
 	schematic = aotearoa.raupo2,
 })
-
