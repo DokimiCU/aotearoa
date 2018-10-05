@@ -183,13 +183,13 @@ minetest.register_decoration({
 		place_on = {
 				"default:dirt_with_grass",
 				"aotearoa:forest_peat",
+				"aotearoa:restiad_peat",
 				"aotearoa:silt",
 				"default:dirt_with_dry_grass",
 				"default:dirt_with_rainforest_litter",
 				"default:sand",
 				"default:gravel",
 				"aotearoa:iron_sand",
-				"aotearoa:mud_sinking",
 				"aotearoa:mud",
 				},
 		sidelen = 16,
@@ -202,6 +202,7 @@ minetest.register_decoration({
 			persist = 0.9
 		},
 		biomes = {
+							"fen",
 							"northern_estuary",
 							"pohutukawa_dunes",
 							"sand_dunes",
@@ -210,7 +211,6 @@ minetest.register_decoration({
 							"coastal_scrub",
 							"muttonbird_scrub",
 							"kahikatea_swamp",
-							"raupo_swamp",
 						},
 		y_min = 2,
 		y_max = 700,
@@ -232,7 +232,6 @@ minetest.register_decoration({
 				"default:sand",
 				"default:gravel",
 				"aotearoa:iron_sand",
-				"aotearoa:mud_sinking",
 				"aotearoa:mud",
 				},
 		sidelen = 16,
@@ -251,7 +250,6 @@ minetest.register_decoration({
 							"kahikatea_swamp",
 							"gumland",
 							"fernland",
-							"raupo_swamp",
 						},
 		y_min = 3,
 		y_max = 100,
@@ -259,6 +257,27 @@ minetest.register_decoration({
 		--spawn_by = "default:water_source",
 		--num_spawn_by = 1,
 	})
+
+
+--Dense Flax in fen
+minetest.register_decoration({
+		deco_type = "simple",
+		place_on = {
+				"aotearoa:restiad_peat",
+				},
+		sidelen = 16,
+		fill_ratio = 0.3,
+		biomes = {
+							"fen",
+						},
+		y_min = 3,
+		y_max = 150,
+		decoration = "aotearoa:flax"
+		--spawn_by = "default:water_source",
+		--num_spawn_by = 1,
+	})
+
+
 
 --Pohuehue
 --Back dune scrub, forms dense smothering tangles
