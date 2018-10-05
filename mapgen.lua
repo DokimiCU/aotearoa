@@ -110,14 +110,22 @@ local muttonbird_hum = 70
 --tussock (also higher alt tussock)
 local tussock_temp = 15
 local tussock_hum = 5
+
 --kahikatea_swamp
 local kahi_swamp_temp = 30
 local kahi_swamp_hum = 100
 --raupo_swamp
 local raupo_swamp_temp = 50
 local raupo_swamp_hum = 145
-
-
+--gumland
+local gumland_temp = 110
+local gumland_hum = 85
+--fen
+local fen_temp = 90
+local fen_hum = 110
+--peat_bog
+local peat_temp = 50
+local peat_hum = 120
 
 --lowland forests etc...
 --kauri uses pohutukawa
@@ -133,13 +141,7 @@ local fiord_hum = 90
 --kamahi
 local kamahi_temp = 35
 local kamahi_hum = 100
---peat_bog
-local peat_temp = 50
-local peat_hum = 120
 --Shrublands...
---gumland
-local gumland_temp = 100
-local gumland_hum = 0
 --fernland
 local fernland_temp = 50
 local fernland_hum = 0
@@ -813,6 +815,10 @@ minetest.register_biome({
 })
 
 
+------------------------------
+--WETLANDS
+
+
 --kahikatea_swamp
 --(back (ie up) a little from dunes)
 --(extended alt into lowland)
@@ -865,6 +871,75 @@ minetest.register_biome({
 	heat_point = raupo_swamp_temp,
 	humidity_point = raupo_swamp_hum,
 })
+
+
+
+--gumland
+minetest.register_biome({
+	name = "gumland",
+	--node_dust = "",
+	node_top = "default:dirt_with_dry_grass",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 4,
+	node_stone = "default:desert_sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "default:clay",
+  depth_riverbed = 1,
+	y_min = lowf_min,
+	y_max = lowf_max,
+	heat_point = gumland_temp,
+	humidity_point = gumland_hum,
+})
+
+--Fen
+-- fertile version of peat bog
+minetest.register_biome({
+	name = "fen",
+	--node_dust = "",
+	node_top = "aotearoa:restiad_peat",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 3,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:mud",
+  depth_riverbed = 1,
+	y_min = lowf_min,
+	y_max = lowf_max,
+	heat_point = fen_temp,
+	humidity_point = fen_hum,
+})
+
+--Peat bog
+--more restricted altitude
+--extreme wet, warmish
+minetest.register_biome({
+	name = "peat_bog",
+	--node_dust = "",
+	node_top = "aotearoa:restiad_peat",
+	depth_top = 1,
+	node_filler = "aotearoa:peat",
+	depth_filler = 15,
+	node_stone = "aotearoa:greywacke",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:peat",
+  depth_riverbed = 4,
+	y_min = lowf_min,
+	y_max = lowf_max/2,
+	heat_point = peat_temp,
+	humidity_point = peat_hum,
+})
+
 
 ------------------------------------------
 -- LOWLAND FORESTS
@@ -1098,28 +1173,7 @@ minetest.register_biome({
 })
 
 
---Peat bog
---more restricted altitude
---extreme wet, warmish
-minetest.register_biome({
-	name = "peat_bog",
-	--node_dust = "",
-	node_top = "aotearoa:restiad_peat",
-	depth_top = 1,
-	node_filler = "aotearoa:peat",
-	depth_filler = 15,
-	node_stone = "aotearoa:greywacke",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "aotearoa:peat",
-  depth_riverbed = 4,
-	y_min = lowf_min,
-	y_max = lowf_max/2,
-	heat_point = peat_temp,
-	humidity_point = peat_hum,
-})
+
 
 
 
@@ -1128,30 +1182,6 @@ minetest.register_biome({
 --SHRUBLANDS
 --lowland
 
---gumland
--- hot and dry
---flora: manuka, flax, dry grass,
---flora: wheki, bracken, dry_shrub
---gumland grass tree,?
-minetest.register_biome({
-	name = "gumland",
-	--node_dust = "",
-	node_top = "default:dirt_with_dry_grass",
-	depth_top = 1,
-	node_filler = "default:clay",
-	depth_filler = 4,
-	node_stone = "default:desert_sandstone",
-	--node_water_top = "",
-	--depth_water_top = ,
-	--node_water = "",
-  node_river_water = "default:river_water_source",
-  node_riverbed = "default:gravel",
-  depth_riverbed = 1,
-	y_min = lowf_min,
-	y_max = lowf_max,
-	heat_point = gumland_temp,
-	humidity_point = gumland_hum,
-})
 
 
 --Fernland
