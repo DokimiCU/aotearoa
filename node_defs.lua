@@ -11,7 +11,7 @@
 
 
 aotearoa.treelist = {
-	{"mangrove", "Mangrove (Avicennia marina)", 2,},
+	--{"mangrove", "Mangrove (Avicennia marina)", 2,},
 	{"pohutukawa", "Pohutukawa (Metrosideros excelsa)", 3, "flower"},
 	{"kauri", "Kauri (Agathis australis)", 2},
 	{"karaka", "Karaka (Corynocarpus laevigatus)", 3, nil,"karaka_fruit", "Karaka Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, -5},
@@ -229,6 +229,7 @@ end
 
 
 aotearoa.shrublist = {
+	{"mangrove", "Mangrove (Avicennia marina)", 2,},
 	{"karo", "Karo (Pittosporum crassifolium)", 2},
 	{"kawakawa", "Kawakawa (Piper excelsum)", 2,nil, 0, "kawakawa_fruit", "Kawakawa Fruit",{-0.2, -0.5, -0.2, 0.2, 0, 0.2},	0.8, 1},
 	{"manuka", "Manuka (Leptospermum scoparium)", 2, "flower",},
