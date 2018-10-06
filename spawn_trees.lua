@@ -7,7 +7,7 @@ local podo_scale = 0.0015
 local podo_persist = 0.35
 local kauri_fill = 0.001
 --braodleaves
-local broadl_fill = 0.0038
+local broadl_fill = 0.004
 --pohutukawa
 local pohutu_fill = 0.002
 --kahikatea swamp
@@ -15,10 +15,10 @@ local kahi_swamp_fill = 0.01
 
 
 --treeferns
-local tfern_fill = 0.00025
+local tfern_fill = 0.0005
 
 --shrubs (manuka, kawakawa, t-daisy)
-local shrub_fill = 0.0042
+local shrub_fill = 0.005
 
 --montane forest.
 local mt_forest_fill = 0.014
