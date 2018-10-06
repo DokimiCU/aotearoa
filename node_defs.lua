@@ -123,6 +123,7 @@ for i in ipairs(aotearoa.treelist) do
 			paramtype = "light",
 			is_ground_content = false,
 			walkable = false,
+			--sunlight_propagates = true,
 			groups = g,
 			sounds = default.node_sound_leaves_defaults(),
 
@@ -165,7 +166,7 @@ for i in ipairs(aotearoa.treelist) do
 		groups = {snappy=1, choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 		sounds = default.node_sound_wood_defaults(),
 	})
-	
+
 	--gate
 	doors.register_fencegate("aotearoa:gate_"..treename.."_wood",  {
 		description = treedesc.." Gate",
@@ -260,8 +261,8 @@ for i in ipairs(aotearoa.shrublist) do
 
 	local droprarity = 30
 
-	
-	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
+
+	local trunkbox = {-1/6, -1/2, -1/6, 1/6, 1/2, 1/6}
 
 
 			minetest.register_node("aotearoa:"..treename.."_tree", {
@@ -282,6 +283,7 @@ for i in ipairs(aotearoa.shrublist) do
 			},
 			paramtype = "light",
 			paramtype2 = "facedir",
+			climbable = true,
 			is_ground_content = false,
 			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2},
 			sounds = default.node_sound_wood_defaults(),
@@ -339,6 +341,7 @@ for i in ipairs(aotearoa.shrublist) do
 			is_ground_content = false,
 			walkable = false,
 			damage_per_second = damage,
+			--sunlight_propagates = true,
 			groups = g,
 			sounds = default.node_sound_leaves_defaults(),
 			drop = {
@@ -550,8 +553,7 @@ for i in ipairs(aotearoa.tfernlist) do
 	-- player will get a sapling with 1/10 chance
 	local droprarity = 3
 
-	--(gives an odd lighting effect at night when near edges...but it's like glowworms!)
-	local trunkbox = {-1/5, -1/2, -1/5, 1/5, 1/2, 1/5}
+	local trunkbox = {-1/6, -1/2, -1/6, 1/6, 1/2, 1/6}
 	--set a default selection box, for those that don't need special treatment
 	if crownbox == nil then
 		crownbox = {-7/16, -1/2, -7/16, 7/16, 0, 7/16}
@@ -603,8 +605,9 @@ for i in ipairs(aotearoa.tfernlist) do
 			type = "fixed",
 			fixed = trunkbox,
 		},
-		paramtype = "light",	
+		paramtype = "light",
 		paramtype2 = "facedir",
+		climbable = true,
 		is_ground_content = false,
 		groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, attached_node=1,},
 		sounds = default.node_sound_wood_defaults(),
@@ -659,6 +662,7 @@ end,
 		tiles = {"aotearoa_"..treename.."_crown.png"},
 		inventory_image = "aotearoa_"..treename.."_crown.png",
 		walkable = false,
+		sunlight_propagates = true,
 		groups = {snappy = 3, flammable = 2, leaves = 1, attached_node=1,},
 		drop = {
 			max_items = 1,
@@ -700,7 +704,7 @@ end,
 				type = "fixed",
 				fixed = {-1/3, -1/2, -1/3, 1/3, 1/2, 1/3},
 			},
-			paramtype = "light",	
+			paramtype = "light",
 			paramtype2 = "facedir",
 			is_ground_content = false,
 			groups = {tree = 1, choppy = 3, oddly_breakable_by_hand = 1, flammable = 2, attached_node=1},
@@ -801,4 +805,3 @@ minetest.register_craft({
 	recipe = "aotearoa:raupo_flower",
 	burntime = 1,
 })
-
