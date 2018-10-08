@@ -333,7 +333,7 @@ aotearoa.stonelist = {
 	{"siltstone", "Siltstone", 3, 2, "sediment", "aotearoa:silt",},
 	{"claystone", "Claystone", 3, 2, "sediment", "default:clay",},
 	{"conglomerate", "Conglomerate", 3, 2, "sediment", "default:gravel",},
-	{"schist", "Schist", 2, 2, "cooked", "", {"aotearoa:greywacke", "aotearoa:andesite"}},
+	{"schist", "Schist", 2, 2, "cooked", "", {"aotearoa:greywacke", "aotearoa:andesite", "aotearoa:scoria", "aotearoa:basalt"}},
 	{"coquina_limestone", "Coquina Limestone", 3, 2, "sediment", "aotearoa:seashells",},
 	{"limestone", "Limestone", 2, 2, "cooked", "", {"aotearoa:coquina_limestone","default:coral"}},
 	{"concrete","Concrete",3,2,},
@@ -341,7 +341,10 @@ aotearoa.stonelist = {
 	{"granite", "Granite", 1, 1,},
 	{"greywacke", "Greywacke", 3, 2, "cooked", "", {"aotearoa:siltstone","aotearoa:claystone", "default:sandstone", "default:silver_sandstone", "default:desert_sandstone"}},
 	{"gneiss", "Gneiss", 1, 1, "cooked", "", {"aotearoa:schist","aotearoa:granite"}},
+	{"scoria", "Scoria", 3, 2,},
+	{"basalt", "Basalt", 2, 2,},
 }
+
 
 
 
