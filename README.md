@@ -37,7 +37,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 
 # 0.2
 - Adjust Subantarctic, Raupo, gumland, and Coastal volcanic biomes.
-- New rocks: Andesite, Granite, Greywacke, Gneiss,
+- New rocks: Andesite, Granite, Greywacke, Gneiss, Basalt, Scoria
 - New Ores: limonite (iron), Cassiterite (tin), Chalcopyrite (copper).
 - Ocean/Basement rock biomes
 - Green Shovel (by Parasite)
@@ -46,6 +46,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - Split off new biomes from Northern and Southern podocarps, including new trees and dirt with dry litter (Tawa, Hinau, Beech, Black Maire Forests)
 - Salt marsh (with new sea rush), and Southern estuary biomes
 - Fen biome
+- Volcanic field biome
 - Some new leaf textures to (hopefully) improve performance
 - Many other minor additions, fixes, and adjustments
 
