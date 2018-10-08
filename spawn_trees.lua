@@ -14,11 +14,11 @@ local pohutu_fill = 0.002
 local kahi_swamp_fill = 0.01
 
 
---treeferns
-local tfern_fill = 0.0005
+--treeferns/palms etc
+local tfern_fill = 0.001
 
---shrubs (manuka, kawakawa, t-daisy)
-local shrub_fill = 0.005
+--shrubs (e.g. manuka, kawakawa, t-daisy)
+local shrub_fill = 0.01
 
 --montane forest.
 local mt_forest_fill = 0.014
