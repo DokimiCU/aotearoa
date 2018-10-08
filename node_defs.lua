@@ -341,7 +341,7 @@ for i in ipairs(aotearoa.shrublist) do
 			is_ground_content = false,
 			walkable = false,
 			damage_per_second = damage,
-			--sunlight_propagates = true,
+			sunlight_propagates = true,
 			groups = g,
 			sounds = default.node_sound_leaves_defaults(),
 			drop = {
