@@ -14,6 +14,7 @@ minetest.register_ore({
 		"default:stone",
 	 	"aotearoa:andesite",
 		"aotearoa:granite",
+		"aotearoa:basalt",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 10,
@@ -173,6 +174,28 @@ minetest.register_ore({
 	},
 })
 
+-- basalt into deep stone, and greywacke
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:basalt",
+	wherein         = {
+		"default:stone",
+		"aotearoa:greywacke",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 15,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0,
+		scale = 1,
+		spread = {x = 15, y = 15, z = 15},
+		seed = -800317,
+		octaves = 1,
+		persist = 0.0
+	},
+})
 
 -- limestone into sandstone
 minetest.register_ore({
@@ -301,7 +324,7 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:volcanic_sand",
 	wherein         = {
-		"aotearoa:andesite",	
+		"aotearoa:andesite",
 		"default:desert_sandstone",
 		"default:sandstone",
 		"default:silver_sandstone",
@@ -344,6 +367,28 @@ minetest.register_ore({
 	},
 })
 
+-- Small bits of scoria in Volcanic
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:scoria",
+	wherein         = {
+		"aotearoa:basalt",
+		"aotearoa:andesite",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 3,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = 0.01,
+		spread = {x = 5, y = 5, z = 5},
+		seed = 7701112,
+		octaves = 1,
+		persist = 0.2
+	},
+})
 
 -----------------------------------------
 --SPECIAL FEATURES & MINERALS
@@ -560,3 +605,30 @@ minetest.register_ore({
 	--biomes = {},
 })
 
+
+--air pockets.
+--for rocks with lots of caves
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "air",
+	wherein         = {
+		"aotearoa:coquina_limestone",
+		"aotearoa:limestone",
+		"aotearoa:scoria",
+		"aotearoa:basalt",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = 0.6,
+		spread = {x = 10, y = 10, z = 10},
+		seed = -999931,
+		octaves = 2,
+		persist = 0.9
+	},
+	--biomes = {},
+})
