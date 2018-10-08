@@ -84,6 +84,9 @@ local subantartic_hum = 100
 --volcanic_isle_shore (bare rock and volcanic)
 local volcanic_isle_temp = 120
 local volcanic_isle_hum = 0
+--volcanic_field (bare basaltic volcanism)
+local volcanic_field_temp = 120
+local volcanic_field_hum = 48
 --iron sands
 local iron_temp = 50
 local iron_hum = 85
@@ -451,6 +454,33 @@ minetest.register_biome({
 	heat_point = volcanic_isle_temp,
 	humidity_point = volcanic_isle_hum,
 })
+
+
+--volcanic_field
+--What: basaltic/scoria volcanism like Rangitoto
+--extend into lowland, same stuff
+--Where: extreme hot
+--flora:
+minetest.register_biome({
+	name = "volcanic_field",
+	--node_dust = "default:gravel",
+	node_top = "aotearoa:scoria",
+	depth_top = 1,
+	node_filler = "aotearoa:scoria",
+	depth_filler = 8,
+	node_stone = "aotearoa:basalt",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "aotearoa:basalt",
+  node_riverbed = "aotearoa:basalt",
+  depth_riverbed = 5,
+  y_min = beach_min,
+	y_max = lowf_max/2,
+	heat_point = volcanic_field_temp,
+	humidity_point = volcanic_field_hum,
+})
+
 
 
 --Iron sand
