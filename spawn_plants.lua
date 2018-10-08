@@ -9,6 +9,28 @@ local gfern_fill = 0.01
 --------------------------
 --NON-LIVING... because they had to go somewhere.
 
+--Boulders for  volcanic_field
+minetest.register_decoration({
+	deco_type = "simple",
+	place_on = {
+							"aotearoa:scoria",
+							},
+	sidelen = 16,
+	noise_params = {
+		offset = 0,
+		scale = 0.1,
+		spread = {x = 32, y = 32, z = 32},
+		seed = 12209,
+		octaves = 2,
+		persist = 0.9
+	},
+	biomes = {
+						"volcanic_field",
+						},
+	y_min = -10,
+	y_max = 31000,
+	decoration = "aotearoa:scoria",
+})
 
 
 --Boulders for  fellfield
