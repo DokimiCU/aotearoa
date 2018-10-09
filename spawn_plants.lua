@@ -801,35 +801,4 @@ minetest.register_decoration({
 })
 
 
-	-- Dry shrub
 
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:gravel",
-							"aotearoa:iron_sand",
-							"default:sand",
-							"default:dirt_with_dry_grass",
-							"default:stone",
-							"default:dirt_with_grass",
-						},
-	sidelen = 16,
-	fill_ratio = 0.0005,
-	biomes = {
-						"gravel_beach",
-	 					"pohutukawa_dunes",
-						"iron_sand_beach",
-						"sandy_beach",
-						"sand_dunes",
-						"iron_sand_dunes",
-						"gravel_dunes",
-						"gumland",
-						"matagouri_scrub",
-						"rocky_coast",
-						"mountain_tussock",
-						"subantarctic_coast",
-					},
-	y_min = 2,
-	y_max = 31000,
-	decoration = "default:dry_shrub",
-})
