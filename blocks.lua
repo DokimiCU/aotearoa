@@ -191,6 +191,8 @@ minetest.register_node("aotearoa:mud_sinking", {
 	--diggable = false,
 	--pointable = false,
 	buildable_to = true,
+	drowning = 1,
+	post_effect_color = {a = 250, r = 20, g = 20, b = 20},
 	groups = {crumbly = 3},
 	drop = "aotearoa:silt",
 	sounds = default.node_sound_dirt_defaults({
