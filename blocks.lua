@@ -193,14 +193,12 @@ minetest.register_node("aotearoa:mud_sinking", {
 	buildable_to = true,
 	drowning = 1,
 	post_effect_color = {a = 250, r = 20, g = 20, b = 20},
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, puts_out_fire = 1, cools_lava = 1},
 	drop = "aotearoa:silt",
-	sounds = default.node_sound_dirt_defaults({
-		footstep = {name = "default_water_footstep", gain = 0.2},
-	}),
+	sounds = default.node_sound_water_defaults(),
 })
 
---this is so you get the walking sound effect
+--solid mud
 minetest.register_node("aotearoa:mud", {
 	description = "Mud",
 	tiles = {
@@ -210,7 +208,7 @@ minetest.register_node("aotearoa:mud", {
 	--diggable = false,
 	--pointable = false,
 	--buildable_to = true,
-	groups = {crumbly = 3},
+	groups = {crumbly = 3, puts_out_fire = 1},
 	drop = "aotearoa:silt",
 	sounds = default.node_sound_dirt_defaults({
 		footstep = {name = "default_water_footstep", gain = 0.2},
