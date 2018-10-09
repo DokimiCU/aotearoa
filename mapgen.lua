@@ -1536,3 +1536,5 @@ minetest.register_biome({
 dofile(aotearoa.path .. "/spawn_trees.lua")
 --Plants
 dofile(aotearoa.path .. "/spawn_plants.lua")
+--aquatic
+dofile(aotearoa.path .. "/spawn_aquatic.lua")
