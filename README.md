@@ -48,6 +48,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - Fen biome
 - Volcanic field biome
 - Some new leaf textures to (hopefully) improve performance
+- Sea life: pipi
 - Many other minor additions, fixes, and adjustments
 
 
