@@ -195,7 +195,9 @@ minetest.register_node("aotearoa:mud_sinking", {
 	post_effect_color = {a = 250, r = 20, g = 20, b = 20},
 	groups = {crumbly = 3, puts_out_fire = 1, cools_lava = 1},
 	drop = "aotearoa:silt",
-	sounds = default.node_sound_water_defaults(),
+		sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "default_water_footstep", gain = 0.2},
+	}),
 })
 
 --solid mud
