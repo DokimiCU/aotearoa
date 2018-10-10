@@ -174,13 +174,14 @@ minetest.register_ore({
 	},
 })
 
--- basalt into deep stone, and greywacke
+-- basalt into deep stone, and greywacke, granite
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:basalt",
 	wherein         = {
 		"default:stone",
 		"aotearoa:greywacke",
+		"aotearoa:granite",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 15,
