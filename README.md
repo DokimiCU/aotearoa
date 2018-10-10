@@ -28,6 +28,7 @@ https://www.doc.govt.nz/nature/native-animals/birds/bird-songs-and-calls/
 
 boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbible.com/51-Bubbling-Cauldron.html
 
+mud footstep sounds (http://www.freesound.org/people/dobroide/sounds/16771) copyright (C) 2006 by dobroide, [CC by 3.0]
 
 
 # Changelog:
@@ -48,7 +49,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 - Fen biome
 - Volcanic field biome
 - Some new leaf textures to (hopefully) improve performance
-- Sea life: pipi
+- Sea life: pipi, cockles
 - Many other minor additions, fixes, and adjustments
 
 
