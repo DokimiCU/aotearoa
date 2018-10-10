@@ -20,10 +20,13 @@ dofile(aotearoa.path .. "/ores.lua")
 ----------------------------------
 --altitude splits
 
---ocean
-local ocean_min = -15000
-local ocean_max = -21
+--basement
+local basement_max = -400
+local basement_min = -15000
 
+--ocean
+local ocean_max = -21
+local ocean_min = basement_max - 2
 
 ------------
 --beaches
@@ -53,7 +56,7 @@ local high_alp_min = alp_max -2
 --temp and humidity
 -- many here for re-use and access!
 
---oceans/basement rock
+--basement rock
 --greywacke
 local gw_heat = 50
 local gw_hum = 40
@@ -66,6 +69,42 @@ local gn_hum = 70
 --granite
 local gr_heat = 10
 local gr_hum = 90
+
+
+--Oceans
+--kermadec_ocean
+local kerm_o_heat = 120
+local kerm_o_hum = 0
+-- north_eastern_ocean.
+local n_east_o_heat = 90
+local n_east_o_hum = 50
+-- west_coast_north_ocean.
+local wc_nth_o_heat = 50
+local wc_nth_o_hum = 85
+-- east_coast_north ocean.
+local ec_nth_o_heat = 50
+local ec_nth_o_hum = 0
+-- north_cook_straight
+local n_cook_o_heat = 50
+local n_cook_o_hum = 50
+-- south_cook_straight
+local s_cook_o_heat = 30
+local s_cook_o_hum = 50
+-- west_coast_south_ocean
+local wc_sth_o_heat = 30
+local wc_sth_o_hum = 100
+-- east_coast_south_ocean
+local ec_sth_o_heat = 15
+local ec_sth_o_hum = 5
+-- fiordland_ocean.
+local fiord_o_heat = 0
+local fiord_o_hum = 90
+-- southern_ocean
+local sth_o_heat = 20
+local sth_o_hum = 70
+-- subantarctic ocean.
+local subant_o_heat = 0
+local subant_o_hum = 100
 
 
 --Shorelines...(from beach to dunes)
@@ -189,7 +228,7 @@ minetest.register_biome({
 	--node_water = "",
 	--node_river_water = "default:river_water_source",
 	y_min = -31000,
-	y_max = ocean_min + 100,
+	y_max = basement_min + 6000,
 	heat_point = 50,
 	humidity_point = 50,
 })
@@ -210,7 +249,7 @@ minetest.register_biome({
 	--node_water = "",
 	--node_river_water = "default:river_water_source",
 	y_min = -31000,
-	y_max = ocean_min + 100,
+	y_max = basement_min + 3000,
 	heat_point = 60,
 	humidity_point = 60,
 })
@@ -230,25 +269,193 @@ minetest.register_biome({
 	--node_water = "",
 	--node_river_water = "default:river_water_source",
 	y_min = -31000,
-	y_max = ocean_min + 100,
+	y_max = basement_min + 1500,
 	heat_point = 70,
 	humidity_point = 30,
 })
 
+--------------------------------------------------------------
+--BASEMENT ROCKS
+
+--greywacke_basement
+minetest.register_biome({
+	name = "greywacke_basement",
+	--node_dust = "",
+	node_top = "aotearoa:greywacke",
+	depth_top = 5,
+	node_filler = "aotearoa:greywacke",
+	depth_filler = 5,
+	node_stone = "aotearoa:greywacke",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = basement_min,
+	y_max = basement_max,
+	heat_point = gw_heat,
+	humidity_point = gw_hum,
+})
+
+
+--schist_basement
+minetest.register_biome({
+	name = "schist_basement",
+	--node_dust = "",
+	node_top = "aotearoa:schist",
+	depth_top = 5,
+	node_filler = "aotearoa:schist",
+	depth_filler = 5,
+	node_stone = "aotearoa:schist",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = basement_min,
+	y_max = basement_max,
+	heat_point = sch_heat,
+	humidity_point = sch_hum,
+})
+
+
+--gneiss_basement
+minetest.register_biome({
+	name = "gneiss_basement",
+	--node_dust = "",
+	node_top = "aotearoa:gneiss",
+	depth_top = 5,
+	node_filler = "aotearoa:gneiss",
+	depth_filler = 5,
+	node_stone = "aotearoa:gneiss",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = basement_min,
+	y_max = basement_max,
+	heat_point = gn_heat,
+	humidity_point = gn_hum,
+})
+
+
+
+--granite_basement
+minetest.register_biome({
+	name = "granite_basement",
+	--node_dust = "",
+	node_top = "aotearoa:granite",
+	depth_top = 5,
+	node_filler = "aotearoa:granite",
+	depth_filler = 5,
+	node_stone = "aotearoa:granite",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = basement_min,
+	y_max = basement_max,
+	heat_point = gr_heat,
+	humidity_point = gr_hum,
+})
+
+
+
+
+
 ------------------------------------------------------------
 --MARINE
---this also controls the basement rocks, hence the names
+--this also controls the shallow rocks,
 
---greywacke_ocean
---What: East Coast...seabed and rocks
---flora: none
+--kermadec_ocean
 minetest.register_biome({
-	name = "greywacke_ocean",
+	name = "kermadec_ocean",
+	--node_dust = "",
+	node_top = "default:gravel",
+	depth_top = 1,
+	node_filler = "aotearoa:andesite",
+	depth_filler = 2,
+	node_stone = "aotearoa:andesite",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = kerm_o_heat,
+	humidity_point = kerm_o_hum,
+})
+
+--north_eastern_ocean
+--(e.g. Coromandel, BoP)
+minetest.register_biome({
+	name = "north_eastern_ocean",
 	--node_dust = "",
 	node_top = "aotearoa:mud_sinking",
 	depth_top = 1,
 	node_filler = "aotearoa:mud",
-	depth_filler = 10,
+	depth_filler = 6,
+	node_stone = "default:silver_sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = n_east_o_heat,
+	humidity_point = n_east_o_hum,
+})
+
+
+--west_coast_north_ocean
+--(e.g. Taranaki, Waikato)
+minetest.register_biome({
+	name = "west_coast_north_ocean",
+	--node_dust = "",
+	node_top = "aotearoa:iron_sand",
+	depth_top = 1,
+	node_filler = "aotearoa:iron_sand",
+	depth_filler = 3,
+	node_stone = "default:desert_sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = wc_nth_o_heat,
+	humidity_point = wc_nth_o_hum,
+})
+
+
+--east_coast_north ocean
+--(e.g. Hawkes bay)
+minetest.register_biome({
+	name = "east_coast_north ocean",
+	--node_dust = "",
+	node_top = "aotearoa:mud_sinking",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 4,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = ec_nth_o_heat,
+	humidity_point = ec_nth_o_hum,
+})
+
+
+--north_cook_straight
+--(e.g. Wellington)
+minetest.register_biome({
+	name = "north_cook_straight",
+	--node_dust = "",
+	node_top = "aotearoa:mud",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 3,
 	node_stone = "aotearoa:greywacke",
 	--node_water_top = "",
 	--depth_water_top = ,
@@ -256,21 +463,20 @@ minetest.register_biome({
 	--node_river_water = "default:river_water_source",
 	y_min = ocean_min,
 	y_max = ocean_max,
-	heat_point = gw_heat,
-	humidity_point = gw_hum,
+	heat_point = n_cook_o_heat,
+	humidity_point = n_cook_o_hum,
 })
 
 
---schist_ocean
---What: East Coast, colder...seabed and rocks
---flora: none
+--south_cook_straight
+--(e.g. Marlborough)
 minetest.register_biome({
-	name = "schist_ocean",
+	name = "south_cook_straight",
 	--node_dust = "",
-	node_top = "aotearoa:mud_sinking",
+	node_top = "default:sand",
 	depth_top = 1,
-	node_filler = "aotearoa:mud",
-	depth_filler = 10,
+	node_filler = "default:sand",
+	depth_filler = 3,
 	node_stone = "aotearoa:schist",
 	--node_water_top = "",
 	--depth_water_top = ,
@@ -278,21 +484,63 @@ minetest.register_biome({
 	--node_river_water = "default:river_water_source",
 	y_min = ocean_min,
 	y_max = ocean_max,
-	heat_point = sch_heat,
-	humidity_point = sch_hum,
+	heat_point = s_cook_o_heat,
+	humidity_point = s_cook_o_hum,
 })
 
 
---gneiss_ocean
---What: West Coast...seabed and rocks
---flora: none
+
+--west_coast_south_ocean
+--(e.g. west_coast)
 minetest.register_biome({
-	name = "gneiss_ocean",
+	name = "west_coast_south_ocean",
+	--node_dust = "",
+	node_top = "aotearoa:mud",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 3,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = wc_sth_o_heat,
+	humidity_point = wc_sth_o_hum,
+})
+
+
+--east_coast_south_ocean
+--(e.g. Canterbury)
+minetest.register_biome({
+	name = "east_coast_south_ocean",
 	--node_dust = "",
 	node_top = "aotearoa:mud_sinking",
 	depth_top = 1,
 	node_filler = "aotearoa:mud",
-	depth_filler = 10,
+	depth_filler = 6,
+	node_stone = "aotearoa:greywacke",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = ec_sth_o_heat,
+	humidity_point = ec_sth_o_hum,
+})
+
+
+--fiordland_ocean
+--(e.g. fiordland)
+minetest.register_biome({
+	name = "fiordland_ocean",
+	--node_dust = "",
+	node_top = "aotearoa:mud",
+	depth_top = 1,
+	node_filler = "aotearoa:mud",
+	depth_filler = 2,
 	node_stone = "aotearoa:gneiss",
 	--node_water_top = "",
 	--depth_water_top = ,
@@ -300,22 +548,43 @@ minetest.register_biome({
 	--node_river_water = "default:river_water_source",
 	y_min = ocean_min,
 	y_max = ocean_max,
-	heat_point = gn_heat,
-	humidity_point = gn_hum,
+	heat_point = fiord_o_heat,
+	humidity_point = fiord_o_hum,
 })
 
 
 
---granite_ocean
---What: Stewart Island...seabed and rocks
---flora: none
+--southern_ocean
+--(e.g. Otago, Stewart Island)
 minetest.register_biome({
-	name = "granite_ocean",
+	name = "southern_ocean",
 	--node_dust = "",
-	node_top = "aotearoa:mud_sinking",
+	node_top = "default:gravel",
 	depth_top = 1,
-	node_filler = "aotearoa:mud",
-	depth_filler = 10,
+	node_filler = "default:gravel",
+	depth_filler = 1,
+	node_stone = "aotearoa:schist",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+	--node_river_water = "default:river_water_source",
+	y_min = ocean_min,
+	y_max = ocean_max,
+	heat_point = sth_o_heat,
+	humidity_point = sth_o_hum,
+})
+
+
+
+--subantarctic_ocean
+--(e.g. subs)
+minetest.register_biome({
+	name = "subantarctic_ocean",
+	--node_dust = "",
+	node_top = "default:gravel",
+	depth_top = 1,
+	node_filler = "default:gravel",
+	depth_filler = 1,
 	node_stone = "aotearoa:granite",
 	--node_water_top = "",
 	--depth_water_top = ,
@@ -323,11 +592,9 @@ minetest.register_biome({
 	--node_river_water = "default:river_water_source",
 	y_min = ocean_min,
 	y_max = ocean_max,
-	heat_point = gr_heat,
-	humidity_point = gr_hum,
+	heat_point = subant_o_heat,
+	humidity_point = subant_o_hum,
 })
-
-
 
 
 
