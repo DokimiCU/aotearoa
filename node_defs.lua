@@ -725,11 +725,11 @@ end,
 end
 
 
-------------------------------------
+--------------------------------------------------------
 --ODD BALLS
 --Things that are just...mmmm.
 
-------
+---------------
 --Moss
 minetest.register_node("aotearoa:moss", {
 	description = "Moss",
@@ -745,6 +745,7 @@ minetest.register_node("aotearoa:moss", {
 	buildable_to = true,
 	floodable = true,
 	is_ground_content = false,
+	walkable = false,	
 	groups = {crumbly = 3, flammable = 2, leaves = 1, flora = 1, attached_node = 1,},
 	sounds = default.node_sound_leaves_defaults(),
 })
