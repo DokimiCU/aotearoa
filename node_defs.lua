@@ -871,3 +871,53 @@ minetest.register_node("aotearoa:iron_sand_with_pipi", {
 		minetest.set_node(pos, {name = "aotearoa:iron_sand"})
 	end,
 })
+
+-----------------------------
+-- Cockle (shellfish)
+
+minetest.register_node("aotearoa:cockle", {
+	description = "Cockle (Austrovenus stutchburyi)",
+	drawtype = "plantlike",
+	paramtype = "light",
+	visual_scale = 0.6,
+	tiles = {"aotearoa_cockle.png"},
+	inventory_image = "aotearoa_cockle.png",
+	sunlight_propagates = true,
+	walkable = false,
+	selection_box = {
+		type = "fixed",
+		fixed = {-0.1, -0.5, -0.1, 0.1, -0.2, 0.1}
+	},
+	groups = {fleshy = 3, dig_immediate = 3},
+
+	sounds = default.node_sound_gravel_defaults(),
+	--rebury shellfish
+	on_timer = function(pos)
+		local below = {x = pos.x, y = pos.y - 1, z = pos.z}
+			if minetest.get_node(below).name == "aotearoa:mud" then
+				minetest.set_node(pos, {name = "air"})
+				minetest.set_node(below, {name = "aotearoa:mud_with_cockles"})
+			end
+	end,
+	on_construct = function(pos)
+		minetest.get_node_timer(pos):start(math.random(3, 5))
+	end,
+	--eat and get shells
+	on_use = minetest.item_eat(3,"aotearoa:seashells")
+})
+
+--cockle in mud
+minetest.register_node("aotearoa:mud_with_cockles", {
+	description = "Mud with Cockles",
+	tiles = {"aotearoa_mud_with_cockles.png"},
+	groups = {crumbly = 3, puts_out_fire = 1},
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "aotearoa_mud", gain = 0.4},
+		dug = {name = "aotearoa_mud", gain = 0.4},
+	}),
+	--dig up the shellfish
+	on_punch = function(pos, node, puncher)
+		puncher:get_inventory():add_item('main', "aotearoa:cockle")
+		minetest.set_node(pos, {name = "aotearoa:mud"})
+	end,
+})
