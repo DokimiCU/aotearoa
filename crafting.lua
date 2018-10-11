@@ -19,6 +19,31 @@ minetest.register_craft({
 })
 
 
+-------------------------
+--Kauri Gum
+minetest.register_craftitem("aotearoa:kauri_gum", {
+	description = "Kauri Gum",
+	inventory_image = "aotearoa_kauri_gum.png",
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "aotearoa:kauri_gum",
+	burntime = 3,
+})
+
+------------
+--Kauri gum torch
+minetest.register_craft({
+	output = 'default:torch 4',
+	recipe = {
+		{'aotearoa:kauri_gum'},
+		{'group:stick'},
+	}
+})
+
+
+
 -------------------------------------
 --SUBSTITUTES
 -- replacements for defualt veg that didn't make it here.
@@ -114,6 +139,17 @@ minetest.register_craft({
 
 --------------
 --Black Dye
+
+--from kauri gum soot
+minetest.register_craft({
+	output = "dye:black 4",
+  recipe = {
+    {'aotearoa:kauri_gum'},
+    {'default:torch'},
+  },
+  replacements = {{"default:torch", "default:torch"}}
+})
+ 
 --from Kahikatea soot
 minetest.register_craft({
 	output = "dye:black 4",
@@ -126,6 +162,8 @@ minetest.register_craft({
 
 --Karo, but don't know how it is made.
 
+--[[
+--disabled because makes it too easy
 --from mahoe (technically the berries)
 minetest.register_craft({
 	output = "dye:black 4",
@@ -133,6 +171,7 @@ minetest.register_craft({
     {'aotearoa:mahoe_leaves'},
   },
 })
+]]
 
 -- from hinau bark. Not sure how done. Possibly boiled
 minetest.register_craft({
