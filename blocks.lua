@@ -26,7 +26,22 @@ stairs.register_stair_and_slab(
 )
 
 
---gold drop from gravel?
+-----------------------------------------------------
+--CLAY
+minetest.register_node("aotearoa:gumland_hardpan", {
+	description = "Gumland Hardpan",
+	tiles = {"aotearoa_gumland_hardpan.png"},
+	groups = {crumbly = 2},
+	drop = {
+		max_items = 2,
+		items = {
+			{items = {"aotearoa:kauri_gum"}, rarity = 15 },
+			{items = {'default:clay'} }
+		}
+	},
+	sounds = default.node_sound_dirt_defaults(),
+})
+
 
 
 
