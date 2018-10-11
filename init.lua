@@ -26,3 +26,15 @@ minetest.log("MOD: Aotearoa loaded")
 
 
 ----------------------
+
+----------------------
+--intro world creation (the geneaology of creation)
+--seeds to make up for removing default sources
+minetest.register_on_newplayer(function(player)
+  local you = player:get_player_name()
+
+  local inventory = player:get_inventory()
+  inventory:add_item("main", "farming:seed_wheat 2")
+  inventory:add_item("main", "farming:seed_cotton 2")
+  minetest.sound_play("te_kore_whakapapa", {to_player = you, gain = 2})
+end)
