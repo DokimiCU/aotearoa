@@ -30,6 +30,7 @@ boiling_mud sound adapted from Bubbling Cauldron, Mike Koenig , http://soundbibl
 
 mud footstep sounds (http://www.freesound.org/people/dobroide/sounds/16771) copyright (C) 2006 by dobroide, [CC by 3.0]
 
+te_kore_whakapapa adapted from https://teara.govt.nz/en/speech/30768/te-kore-whakapapa  Creative Commons Attribution-NonCommercial 3.0 New Zealand Licence. See below for text and translation.
 
 # Changelog:
 
@@ -53,6 +54,58 @@ mud footstep sounds (http://www.freesound.org/people/dobroide/sounds/16771) copy
 - Many other minor additions, fixes, and adjustments
 
 
+
+# Te Kore Whakapapa:
+The Geneaology of Creation:
+
+I te timatanga Te Kore.
+Te Kore.
+Te Kore-te-whiwhia.
+Te Kore-te-rawea.
+Te Kore-i-ai.
+Te Kore-te-wiwia.
+
+Te Kore Te Po.
+Te Po-nui.
+Te Po-roa.
+Te Po-uriuri.
+Te Po-kerekere.
+Te Po-tiwhatiwha.
+Te Po-te-kitea.
+Te Po-tangotango.
+Te Po-whawha.
+Te Po-namunamu-ki-taiao.
+Te Po-tahuri-atu.
+Te Po-tahuri-mai-ki-taiao.
+
+Te Whai-ao.
+Te Ao-marama.
+Tihei mauri-ora.
+
+
+In the beginning was the Void.
+The Void.
+The Void in which nothing is possessed.
+The Void in which nothing is felt.
+The Void with nothing in union.
+The Void without boundaries.
+
+From the void the Night.
+The great Night.
+The long Night.
+The deep Night.
+The intense Night.
+The dark Night.
+The Night in which nothing is seen.
+The intensely dark Night.
+The Night of feeling.
+The Night of seeking the passage to the world.
+The Night of restless turning.
+The Night of turning towards the revealed world.
+
+The glimmer of dawn.
+The bright light of day.
+There is life.
 
 
 
