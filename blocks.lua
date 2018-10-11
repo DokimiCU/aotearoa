@@ -26,6 +26,26 @@ stairs.register_stair_and_slab(
 )
 
 
+----------------------------------------------------
+-- GRAVEL
+
+minetest.register_node("aotearoa:gravel_with_algae", {
+	description = "Gravel with Algae",
+	tiles = {"aotearoa_gravel_with_algae.png"},
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	drop = {
+		max_items = 1,
+		items = {
+			{items = {'default:flint'}, rarity = 16},
+			{items = {'default:gravel'}}
+		}
+	}
+})
+
+
+
+
 -----------------------------------------------------
 --CLAY
 minetest.register_node("aotearoa:gumland_hardpan", {
@@ -88,6 +108,7 @@ end
 aotearoa.sandlist = {
 	{"iron_sand", "Iron-sand"},
 	{"volcanic_sand", "Volcanic Sand"},
+	{"river_sand", "River Sand"},
 }
 
 
@@ -110,6 +131,19 @@ minetest.register_craft({
 	output = "default:obsidian",
 	recipe = "aotearoa:volcanic_sand",
 })
+
+
+--craft river sand into regular sandstone
+--(less than ideal, but will do for now.)
+minetest.register_craft({
+	output = "default:sandstone",
+	recipe = {
+		{"aotearoa:river_sand", "aotearoa:river_sand",""},
+		{"aotearoa:river_sand", "aotearoa:river_sand",""},
+		{"", "",""},
+	}
+})
+
 
 --------------------------------------------------
 --PEAT BLOCKS
