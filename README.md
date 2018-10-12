@@ -44,7 +44,7 @@ te_kore_whakapapa adapted from https://teara.govt.nz/en/speech/30768/te-kore-wha
 - New Ores: limonite (iron), Cassiterite (tin), Chalcopyrite (copper).
 - Ocean/Basement rock biomes
 - Green Shovel (by Parasite)
-- shrubs can be walked through, trees can't be cut by hand, stone axe craftable with gravel
+- leaves can be walked through, large trees can't be cut by hand, stone axe craftable with gravel
 - Fiordland Forest biome (with new Silver Beech, Crown Fern, and Dirt with Beech litter)
 - Split off new biomes from Northern and Southern podocarps, including new trees and dirt with dry litter (Tawa, Hinau, Beech, Black Maire Forests)
 - Salt marsh (with new sea rush), and Southern estuary biomes
