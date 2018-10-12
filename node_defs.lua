@@ -11,7 +11,6 @@
 
 
 aotearoa.treelist = {
-	--{"mangrove", "Mangrove (Avicennia marina)", 2,},
 	{"pohutukawa", "Pohutukawa (Metrosideros excelsa)", 3, "flower"},
 	{"kauri", "Kauri (Agathis australis)", 2},
 	{"karaka", "Karaka (Corynocarpus laevigatus)", 3, nil,"karaka_fruit", "Karaka Fruit",{-0.2, 0, -0.2, 0.2, 0.5, 0.2},	1, -5},
@@ -88,7 +87,7 @@ for i in ipairs(aotearoa.treelist) do
 			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 			sounds = default.node_sound_defaults(),
 			on_timer = function(pos,elapsed)
-				aotearoa.grow_sapling(pos, treename)
+				aotearoa.grow_sapling(pos, treename, "aotearoa:"..treename.."_tree")
 			end,
 			on_construct = function(pos)
 				minetest.get_node_timer(pos):start(math.random(300, 1500))
@@ -305,7 +304,7 @@ for i in ipairs(aotearoa.shrublist) do
 			groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 			sounds = default.node_sound_defaults(),
 			on_timer = function(pos,elapsed)
-				aotearoa.grow_shrub_sapling(pos, treename)
+				aotearoa.grow_shrub_sapling(pos, treename, "aotearoa:"..treename.."_tree")
 			end,
 			on_construct = function(pos)
 				minetest.get_node_timer(pos):start(math.random(300, 1500))
@@ -406,6 +405,8 @@ end
 --ground cover plants
 
 aotearoa.plantlist = {
+	{"moss", "Moss",{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},1,"crumbly","nodebox"},
+	{"pohuehue", "Pohuehue (Muehlenbeckia complexa)",{-0.47, -0.5, -0.47, 0.47, 0.37,0.47},1,"leaves","nodebox"},
 	{"pingao", "Pingao (Ficinia spiralis)",nil,1, "dry_grass"},
 	{"spinifex", "Spinifex (Spinifex sericeus)",nil,1, "dry_grass"},
 	{"wiwi", "Wiwi (Ficinia nodosa)",nil,1, "grass", "firelike"},
@@ -440,11 +441,13 @@ for i in ipairs(aotearoa.plantlist) do
 		g = {snappy = 3, attached_node = 1, flammable = 1, flora = 1, dry_grass = 1}
 	elseif type == "flower" then
 		g = {snappy = 3, attached_node = 1, flammable = 1, flora = 1, flower = 1}
+	elseif type == "leaves" then
+			g = {snappy = 3, attached_node = 1, flammable = 1, flora = 1, leaves = 1}
+	elseif type == "crumbly" then
+			g = {crumbly = 3, attached_node = 1, flammable = 1, flora = 1}
 	else
 		g = {snappy = 3, attached_node = 1, flammable = 1, flora = 1}
 	end
-
-
 
 
 	minetest.register_node("aotearoa:"..plantname, {
@@ -467,6 +470,29 @@ for i in ipairs(aotearoa.plantlist) do
 		},
 	})
 
+	--singlenode bushes etc
+	if draw == "nodebox" then
+		minetest.register_node("aotearoa:"..plantname, {
+			description = plantdesc,
+			drawtype = "nodebox",
+			node_box = {
+				type = "fixed",
+				fixed = {
+					selbox,
+				},
+			},
+			tiles = {"aotearoa_"..plantname..".png"},
+			paramtype = "light",
+			sunlight_propagates = true,
+			is_ground_content = false,
+			walkable = false,
+			buildable_to = true,
+			groups = g,
+			sounds = default.node_sound_leaves_defaults(),
+		})
+	end
+
+
 	minetest.register_craft({
 		type = "fuel",
 		recipe = "aotearoa:"..plantname,
@@ -479,10 +505,9 @@ end
 
 ------------------------------------------
 --BUSHES
---single leaf block plants
+--woody bushes
 
 aotearoa.bushlist = {
-	{"pohuehue", "Pohuehue (Muehlenbeckia complexa)",},
 	{"leatherwood", "Leatherwood (Olearia colensoi)",},
 	{"kokomuka", "Kokomuka (Veronica elliptica)", "flower"},
 
@@ -494,6 +519,9 @@ for i in ipairs(aotearoa.bushlist) do
 	local type = aotearoa.bushlist[i][3]
 	local nodebox = aotearoa.bushlist[i][4]
 
+	local droprarity = 5
+
+
 	if nodebox == nil then
 		nodebox = {-0.5, -0.5, -0.5, 0.5, 0.5, 0.5}
 	end
@@ -501,13 +529,51 @@ for i in ipairs(aotearoa.bushlist) do
 	--put flowering in flower group
 	local g = nil
 	if type == "flower" then
-		g = {snappy = 3, flammable = 2, leaves = 1, flora = 1, flower = 1,}
+		g = {snappy = 3, flammable = 2, leaves = 1, flower = 1,}
 	else
-		g = {snappy = 3, flammable = 2, leaves = 1, flora = 1,}
+		g = {snappy = 3, flammable = 2, leaves = 1,}
 	end
 
+	--sapling
+	minetest.register_node("aotearoa:"..plantname.."_sapling", {
+		description = plantdesc.." Sapling",
+		drawtype = "plantlike",
+		tiles = {"aotearoa_"..plantname.."_sapling.png"},
+		inventory_image = {"aotearoa_"..plantname.."_sapling.png"},
+		paramtype = "light",
+		paramtype2 = "waving",
+		walkable = false,
+		is_ground_content = true,
+		selection_box = {
+			type = "fixed",
+			fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
+		},
+		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
+		sounds = default.node_sound_defaults(),
+		on_timer = function(pos,elapsed)
+			aotearoa.grow_bush_sapling(pos, plantname, "aotearoa:"..plantname.."_stem")
+		end,
+		on_construct = function(pos)
+			minetest.get_node_timer(pos):start(math.random(300, 1500))
+		end,
+		on_place = function(itemstack, placer, pointed_thing)
+			itemstack = default.sapling_on_place(itemstack, placer, pointed_thing,
+		"aotearoa:"..plantname.."_sapling",
+		-- minp, maxp to be checked, relative to sapling pos
+		-- minp_relative.y = 1 because sapling pos has been checked
+		{x = -2, y = 1, z = -2},
+		{x = 2, y = 6, z = 2},
+		-- maximum interval of interior volume check
+		4)
+
+	return itemstack
+end,
+
+	})
+
+	--leaves
 	minetest.register_node("aotearoa:"..plantname, {
-		description = plantdesc,
+		description = plantdesc.. " Leaves",
 		drawtype = "nodebox",
 		node_box = {
 			type = "fixed",
@@ -517,9 +583,51 @@ for i in ipairs(aotearoa.bushlist) do
 		},
 		tiles = {"aotearoa_"..plantname..".png"},
 		paramtype = "light",
+		sunlight_propagates = true,
 		is_ground_content = false,
+		walkable = false,
 		groups = g,
+		drop = {
+		max_items = 1,
+		items = {
+			{items = {"aotearoa:"..plantname.."_sapling",}, rarity = droprarity},
+			{items = {"aotearoa:"..plantname}}
+		}
+	},
 		sounds = default.node_sound_leaves_defaults(),
+	})
+
+	--stem
+	minetest.register_node("aotearoa:"..plantname.."_stem", {
+		description = plantdesc.." Stem",
+		drawtype = "plantlike",
+		visual_scale = 1.41,
+		tiles = {"aotearoa_"..plantname.."_stem.png"},
+		inventory_image = "aotearoa_"..plantname.."_stem.png",
+		wield_image = "aotearoa_"..plantname.."_stem.png",
+		paramtype = "light",
+		sunlight_propagates = true,
+		groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
+		sounds = default.node_sound_wood_defaults(),
+		selection_box = {
+			type = "fixed",
+			fixed = {-7 / 16, -0.5, -7 / 16, 7 / 16, 0.5, 7 / 16},
+		},
+	})
+
+	--craft stem into stick.
+	minetest.register_craft({
+	output = "default:stick",
+	recipe = {
+		{"aotearoa:"..plantname.."_stem"},
+	}
+	})
+
+	--burnables
+	minetest.register_craft({
+		type = "fuel",
+		recipe = "aotearoa:"..plantname.."_stem",
+		burntime = 2,
 	})
 
 
@@ -634,7 +742,7 @@ for i in ipairs(aotearoa.tfernlist) do
 		groups = {snappy=2,dig_immediate=3,flammable=2,attached_node=1,sapling=1},
 		sounds = default.node_sound_defaults(),
 		on_timer = function(pos,elapsed)
-			aotearoa.grow_tree_fern_sapling(pos, treename)
+			aotearoa.grow_tree_fern_sapling(pos, treename, "aotearoa:"..treename.."_tree")
 		end,
 		on_construct = function(pos)
 			minetest.get_node_timer(pos):start(math.random(300, 1500))
@@ -729,26 +837,7 @@ end
 --ODD BALLS
 --Things that are just...mmmm.
 
----------------
---Moss
-minetest.register_node("aotearoa:moss", {
-	description = "Moss",
-	drawtype = "nodebox",
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, -0.5, -0.5, 0.5, -0.25, 0.5},
-		},
-	},
-	tiles = {"aotearoa_dirt_with_moss.png"},
-	paramtype = "light",
-	buildable_to = true,
-	floodable = true,
-	is_ground_content = false,
-	walkable = false,	
-	groups = {crumbly = 3, flammable = 2, leaves = 1, flora = 1, attached_node = 1,},
-	sounds = default.node_sound_leaves_defaults(),
-})
+
 
 
 -------------
