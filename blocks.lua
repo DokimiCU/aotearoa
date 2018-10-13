@@ -59,8 +59,35 @@ minetest.register_node("aotearoa:gumland_hardpan", {
 			{items = {'default:clay'} }
 		}
 	},
-	sounds = default.node_sound_dirt_defaults(),
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "aotearoa_mud", gain = 0.4},
+		dug = {name = "aotearoa_mud", gain = 0.4},
+	}),
 })
+
+minetest.register_node("aotearoa:gumland_soil", {
+	description = "Gumland Soil",
+	tiles = {"aotearoa_gumland_soil.png"},
+	tiles = {
+		"aotearoa_gumland_soil.png",
+		"aotearoa_gumland_hardpan.png",
+		{name ="aotearoa_gumland_hardpan.png".."^aotearoa_gumland_soil_side.png",
+		tileable_vertical = false}
+	},
+	groups = {crumbly = 3},
+	drop = {
+		max_items = 2,
+		items = {
+			{items = {"aotearoa:kauri_gum"}, rarity = 20 },
+			{items = {'default:clay'} }
+		}
+	},
+	sounds = default.node_sound_dirt_defaults({
+		footstep = {name = "aotearoa_mud", gain = 0.4},
+		dug = {name = "aotearoa_mud", gain = 0.4},
+	}),
+})
+
 
 
 
