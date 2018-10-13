@@ -582,6 +582,9 @@ minetest.register_ore({
 ----------------------------------------------
 --WEIRD STUFF...
 
+----------------------------------------------
+--WEIRD STUFF...
+
 --sinking mud holes in surface peat
 minetest.register_ore({
 	ore_type        = "blob",
@@ -589,6 +592,7 @@ minetest.register_ore({
 	wherein         = {
 		"aotearoa:restiad_peat",
 		"aotearoa:forest_peat",
+		"aotearoa:gumland_soil",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 3,
@@ -606,6 +610,29 @@ minetest.register_ore({
 	--biomes = {},
 })
 
+
+--river water holes in some surface peat
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "default:river_water_source",
+	wherein         = {
+		"aotearoa:forest_peat",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = 0.6,
+		spread = {x = 10, y = 10, z = 10},
+		seed = 110388,
+		octaves = 1,
+		persist = 0.3
+	},
+	--biomes = {},
+})
 
 --air pockets.
 --for rocks with lots of caves
