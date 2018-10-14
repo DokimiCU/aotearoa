@@ -235,7 +235,6 @@ minetest.register_biome({
 
 
 --wet mantle
---  life should start to get tough...
 minetest.register_biome({
 	name = "wet_mantle",
 	--node_dust = "",
@@ -255,7 +254,6 @@ minetest.register_biome({
 })
 
 --mantle
--- life should start to get tough...
 minetest.register_biome({
 	name = "mantle",
 	--node_dust = "default:lava_source",
@@ -385,7 +383,6 @@ minetest.register_biome({
 })
 
 --north_eastern_ocean
---(e.g. Coromandel, BoP)
 minetest.register_biome({
 	name = "north_eastern_ocean",
 	--node_dust = "",
@@ -406,7 +403,6 @@ minetest.register_biome({
 
 
 --west_coast_north_ocean
---(e.g. Taranaki, Waikato)
 minetest.register_biome({
 	name = "west_coast_north_ocean",
 	--node_dust = "",
@@ -427,7 +423,6 @@ minetest.register_biome({
 
 
 --east_coast_north ocean
---(e.g. Hawkes bay)
 minetest.register_biome({
 	name = "east_coast_north ocean",
 	--node_dust = "",
@@ -448,7 +443,6 @@ minetest.register_biome({
 
 
 --north_cook_straight
---(e.g. Wellington)
 minetest.register_biome({
 	name = "north_cook_straight",
 	--node_dust = "",
@@ -469,7 +463,6 @@ minetest.register_biome({
 
 
 --south_cook_straight
---(e.g. Marlborough)
 minetest.register_biome({
 	name = "south_cook_straight",
 	--node_dust = "",
@@ -491,7 +484,6 @@ minetest.register_biome({
 
 
 --west_coast_south_ocean
---(e.g. west_coast)
 minetest.register_biome({
 	name = "west_coast_south_ocean",
 	--node_dust = "",
@@ -512,7 +504,6 @@ minetest.register_biome({
 
 
 --east_coast_south_ocean
---(e.g. Canterbury)
 minetest.register_biome({
 	name = "east_coast_south_ocean",
 	--node_dust = "",
@@ -533,7 +524,6 @@ minetest.register_biome({
 
 
 --fiordland_ocean
---(e.g. fiordland)
 minetest.register_biome({
 	name = "fiordland_ocean",
 	--node_dust = "",
@@ -555,7 +545,6 @@ minetest.register_biome({
 
 
 --southern_ocean
---(e.g. Otago, Stewart Island)
 minetest.register_biome({
 	name = "southern_ocean",
 	--node_dust = "",
@@ -577,7 +566,6 @@ minetest.register_biome({
 
 
 --subantarctic_ocean
---(e.g. subs)
 minetest.register_biome({
 	name = "subantarctic_ocean",
 	--node_dust = "",
@@ -602,9 +590,6 @@ minetest.register_biome({
 --SEASHORE
 
 --Sandy Beach.
---What: generic sandy Beach
---Where: mid range, shore to depth
---flora: some sand binders
 minetest.register_biome({
 	name = "sandy_beach",
 	--node_dust = "",
@@ -626,9 +611,6 @@ minetest.register_biome({
 })
 
 --Shelly Beach.
---What: seashells
---Where: similar to sandy
---restricted depth
 minetest.register_biome({
 	name = "shelly_beach",
 	--node_dust = "",
@@ -650,10 +632,6 @@ minetest.register_biome({
 })
 
 --Gravel Beach
---What: generic pebble Beach
---Where: hmmmm
---dry... (actually from rivers, but associate it with dry scrub)
---flora: some dry_shrub, dry grass, flax
 minetest.register_biome({
 	name = "gravel_beach",
 	--node_dust = "",
@@ -675,9 +653,6 @@ minetest.register_biome({
 })
 
 --subantarctic_shore
---What: harsh bare rock coast
---Where: extreme cold and wet
---flora: none
 minetest.register_biome({
 	name = "subantarctic_shore",
 	--node_dust = "default:snow",
@@ -699,9 +674,6 @@ minetest.register_biome({
 })
 
 --volcanic_isle_shore
---What: bare volcanic rock coast
---Where: extreme hot and dry
---flora: none
 minetest.register_biome({
 	name = "volcanic_isle_shore",
 	--node_dust = "default:gravel",
@@ -724,10 +696,6 @@ minetest.register_biome({
 
 
 --volcanic_field
---What: basaltic/scoria volcanism like Rangitoto
---extend into lowland, same stuff
---Where: extreme hot
---flora:
 minetest.register_biome({
 	name = "volcanic_field",
 	--node_dust = "default:gravel",
@@ -751,9 +719,6 @@ minetest.register_biome({
 
 
 --Iron sand
---Black sand beach
---coldish and wet (West coast NI)
---flora: some sand binders
 minetest.register_biome({
 	name = "iron_sand_beach",
 	--node_dust = "",
@@ -776,9 +741,6 @@ minetest.register_biome({
 
 
 --Northern Estuary
---mangrove estuary
---warm and wet
---flora: mangroves, wiwi, flax,
 minetest.register_biome({
 	name = "northern_estuary",
 	--node_dust = "",
@@ -800,7 +762,6 @@ minetest.register_biome({
 })
 
 --Southern Estuary
---mudflats
 minetest.register_biome({
 	name = "southern_estuary",
 	--node_dust = "",
@@ -828,11 +789,6 @@ minetest.register_biome({
 
 
 --Pohutukawa Dunes
---pohutukawa growing on sand, stable sand dunes
---warm coastal
---flora: pohutukawa,
---flora:  karo, cabbage_tree
---flora: pohuehue, dry grasses, dry shrub, flax, wiwi
 minetest.register_biome({
 	name = "pohutukawa_dunes",
 	--node_dust = "",
@@ -855,10 +811,6 @@ minetest.register_biome({
 
 
 --Sand dunes
--- generic sand dunes
--- too cold for pohutukawa, less stable
---flora: sand binders, pohuehue, dry grasses, dry shrub, flax, wiwi
---flora: cabbage_tree, karo
 minetest.register_biome({
 	name = "sand_dunes",
 	--node_dust = "",
@@ -881,10 +833,6 @@ minetest.register_biome({
 
 
 --Iron Sand dunes
--- generic iron sand dunes
--- too cold for pohutukawa, less stable. Cold and wet
---flora: sand binders, pohuehue, dry grasses, dry shrub, flax, wiwi
---flora: cabbage_tree, karo
 minetest.register_biome({
 	name = "iron_sand_dunes",
 	--node_dust = "",
@@ -907,10 +855,6 @@ minetest.register_biome({
 
 
 --Salt Marsh
--- coastal wetlands
--- should border the inland swamps, and coastal estuaries
---flora:
---flora:
 minetest.register_biome({
 	name = "salt_marsh",
 	--node_dust = "",
@@ -932,9 +876,6 @@ minetest.register_biome({
 })
 
 --Gravel dunes
--- generic gravel dunes
--- too cold for pohutukawa,. Cold and dry(e.g. SI east)
---flora: manuka, pohuehue, karo, dry grasses, dry shrub, flax, wiwi
 minetest.register_biome({
 	name = "gravel_dunes",
 	--node_dust = "",
@@ -957,9 +898,6 @@ minetest.register_biome({
 
 
 --subantarctic_coast
--- extreme cold and wet,
--- herb field
---extend altitude in coastal forest
 minetest.register_biome({
 	name = "subantarctic_coast",
 	node_dust = "default:snow",
@@ -982,7 +920,6 @@ minetest.register_biome({
 
 
 --white_island (volcanic dunes)
--- extreme warm and dry,
 minetest.register_biome({
 	name = "white_island",
 	--node_dust = "",
@@ -1007,11 +944,6 @@ minetest.register_biome({
 -- COASTAL FORESTS
 
 --Pohutukawa Forest
---warm coastal forest.
---flora: pohutukawa, karaka, karo,
---flora: Kawakawa, mamaku, silver_fern, wheki
---flora: flax, grass, junglegrass
---(add: puriri?, kohekohe? Tree ferns, nikua, cabbage tree, bracken)
 minetest.register_biome({
 	name = "pohutukawa_forest",
 	--node_dust = "",
@@ -1034,12 +966,6 @@ minetest.register_biome({
 
 
 -- Coastal Scrub
--- decent farmland
---generic low coastal plants
---flora: flax, grass, wiwi, bracken
---flora:karo, karaka,manuka,
---flora: silver_fern, wheki
---flora: nikua, cabbage tree,
 minetest.register_biome({
 	name = "coastal_scrub",
 	--node_dust = "",
@@ -1064,9 +990,6 @@ minetest.register_biome({
 
 
 --Muttonbird Scrub
---wet and cold (e.g. Stewart Isl.)
---flora:manuka, common tree daisy, leatherwood, wheki
---flora: bracken, flax, wiwi, grass, kiokio,
 minetest.register_biome({
 	name = "muttonbird_scrub",
 	--node_dust = "",
@@ -1088,9 +1011,6 @@ minetest.register_biome({
 })
 
 --Coastal Tussock land
--- cold and dry
---flora: manuka, cabbage_tree, matagouri
---flora: red tussock, flax, kokomuka, dry grass,
 minetest.register_biome({
 	name = "coastal_tussock",
 	--node_dust = "",
@@ -1117,12 +1037,6 @@ minetest.register_biome({
 
 
 --kahikatea_swamp
---(back (ie up) a little from dunes)
---(extended alt into lowland)
---very wet
---flora: kahikatea
---flora: mamaku, wheki
---flora: flax, wiwi, junglegrass
 minetest.register_biome({
 	name = "kahikatea_swamp",
 	--node_dust = "",
@@ -1145,8 +1059,6 @@ minetest.register_biome({
 
 
 --raupo_swamp
---extreme wet and warmer
---flora: raupo
 minetest.register_biome({
 	name = "raupo_swamp",
 	--node_dust = "",
@@ -1191,7 +1103,6 @@ minetest.register_biome({
 })
 
 --Fen
--- fertile version of peat bog
 minetest.register_biome({
 	name = "fen",
 	--node_dust = "",
@@ -1213,8 +1124,6 @@ minetest.register_biome({
 })
 
 --Peat bog
---more restricted altitude
---extreme wet, warmish
 minetest.register_biome({
 	name = "peat_bog",
 	--node_dust = "",
@@ -1240,12 +1149,6 @@ minetest.register_biome({
 -- LOWLAND FORESTS
 
 --kauri_forest
--- warm
---flora: Kauri, tawa,
---  all podos:totara, rimu, miro, kahikatea,
---flora: kawakawa, mamaku, silver_fern, wheki
---grass, junglegrass,
---
 minetest.register_biome({
 	name = "kauri_forest",
 	--node_dust = "",
@@ -1269,8 +1172,6 @@ minetest.register_biome({
 
 --------------------------
 --northern_podocarp
---mid warm range. Restrict altitude
---flora: pure podocarp, totara
 minetest.register_biome({
 	name = "northern_podocarp_forest",
 	--node_dust = "",
@@ -1293,10 +1194,6 @@ minetest.register_biome({
 
 
 --tawa_forest
---northern podocarp broadleaf. Wetter.
---flora: tawa canopy, with north understory
---flora: kawakawa,mamaku, silver_fern, wheki
---flora: grass, junglegrass,
 minetest.register_biome({
 	name = "tawa_forest",
 	--node_dust = "",
@@ -1318,10 +1215,6 @@ minetest.register_biome({
 })
 
 --maire_forest
---northern podocarp broadleaf. drier.
---flora: maire canopy, with north understory
---flora: kawakawa,mamaku, silver_fern, wheki
---flora: grass, junglegrass,
 minetest.register_biome({
 	name = "maire_forest",
 	--node_dust = "",
@@ -1345,8 +1238,6 @@ minetest.register_biome({
 
 -----------------
 --southern_podocarp (lowland, mid-cold,)
---mid cold range
---flora: pure podocarp, rimu
 minetest.register_biome({
 	name = "southern_podocarp_forest",
 	--node_dust = "",
@@ -1368,8 +1259,6 @@ minetest.register_biome({
 })
 
 --hinau (lowland, mid-cold,)
---mid cold range. wetter
---flora: southern broadleaf podocarp
 minetest.register_biome({
 	name = "hinau_forest",
 	--node_dust = "",
@@ -1391,8 +1280,6 @@ minetest.register_biome({
 })
 
 --beech forest (lowland, mid-cold,)
---mid cold range. drier
---flora: mixed beech podocarp
 minetest.register_biome({
 	name = "beech_forest",
 	--node_dust = "",
@@ -1416,13 +1303,9 @@ minetest.register_biome({
 
 -------------------
 --Fiordland Forest
---cold , very wet
---flora: silver beech
---flora:
---flora: crown fern
 minetest.register_biome({
 	name = "fiordland_forest",
-	--node_dust = "",
+	node_dust = "default:snow",
 	node_top = "aotearoa:dirt_with_beech_litter",
 	depth_top = 1,
 	node_filler = "default:gravel",
@@ -1444,9 +1327,6 @@ minetest.register_biome({
 
 
 --kamahi forest.
---cold range and wet
---flora: kamahi, and podocarps.
---flora: ferns, moss
 minetest.register_biome({
 	name = "kamahi_forest",
 	--node_dust = "",
@@ -1480,11 +1360,6 @@ minetest.register_biome({
 
 
 --Fernland
--- warmish and dry
--- regenerating forest
---flora: silver_fern, wheki,
---flora: bracken, mahoe, manuka, flax, dry grass, grass, junglegrass
---kanuka (bigger)?
 minetest.register_biome({
 	name = "fernland",
 	--node_dust = "",
@@ -1507,8 +1382,6 @@ minetest.register_biome({
 
 
 --Matagouri scrub
--- cold and dry
---flora: matagouri, red_tussock, dry grass, dry_shrub
 minetest.register_biome({
 	name = "matagouri_scrub",
 	--node_dust = "",
@@ -1536,15 +1409,10 @@ minetest.register_biome({
 
 
 --pahautea_forest
---warm and wet
---flora: pahautea, kamahi
---flora: tree daisy,
---flora: grass
-
 minetest.register_biome({
 	name = "pahautea_forest",
 	node_dust = "default:snow",
-	node_top = "default:dirt_with_rainforest_litter",
+	node_top = "aotearoa:dirt_with_moss",
 	depth_top = 1,
 	node_filler = "default:clay",
 	depth_filler = 2,
@@ -1563,9 +1431,6 @@ minetest.register_biome({
 
 
 --rangipo_desert
---more restricted altitude
---warm and dry
---flora: bristle tussock,
 minetest.register_biome({
 	name = "rangipo_desert",
 	--node_dust = "default:snow",
@@ -1580,7 +1445,7 @@ minetest.register_biome({
   node_river_water = "default:river_water_source",
   node_riverbed = "aotearoa:volcanic_sand",
   depth_riverbed = 3,
-	y_min = highf_min + 10,
+	y_min = highf_min + 12,
 	y_max = highf_max,
 	heat_point = rangipo_temp,
 	humidity_point = rangipo_hum,
@@ -1588,9 +1453,6 @@ minetest.register_biome({
 
 
 --mountain beech (alpine)
---cold and damp
---flora: kamahi, mt beech
---flora: hard fern? (blechnum?)?
 minetest.register_biome({
 	name = "mountain_beech_forest",
 	node_dust = "default:snow",
@@ -1614,8 +1476,6 @@ minetest.register_biome({
 
 
 --Mountain tussock
---cold and dry
---flora: bristle tussock, red tussock, leatherwood,
 minetest.register_biome({
 	name = "mountain_tussock",
 	node_dust = "default:snow",
@@ -1631,15 +1491,13 @@ minetest.register_biome({
   node_riverbed = "aotearoa:gravel_with_algae",
   depth_riverbed = 1,
 	y_min = highf_min,
-	y_max = highf_max,
+	y_max = highf_max + 1,
 	heat_point = mt_tussock_temp,
 	humidity_point = mt_tussock_hum,
 })
 
 
 --peat bog
---extreme wet
---flora: none...the texture is enough
 minetest.register_biome({
 	name = "alpine_peat_bog",
 	--node_dust = "",
@@ -1661,9 +1519,6 @@ minetest.register_biome({
 })
 
 --scree
---extreme dry and cold
---Extend to snow level (it's the same stuff up there)
---flora:
 minetest.register_biome({
 	name = "scree",
 	--node_dust = "",
@@ -1671,7 +1526,7 @@ minetest.register_biome({
 	depth_top = 1,
 	node_filler = "aotearoa:silt",
 	depth_filler = 1,
-	node_stone = "aotearoa:schist",
+	node_stone = "aotearoa:greywacke",
 	--node_water_top = "",
 	--depth_water_top = ,
 	--node_water = "",
@@ -1692,10 +1547,6 @@ minetest.register_biome({
 
 
 --fellfield
---more stable rock debris
---mid range.
---Flora: SI edielwies Leucogenes grandiceps, snow totara
---Flora: vegetable sheep (Haastia pulvinaris), bristle_tussock
 minetest.register_biome({
 	name = "fellfield",
 	node_dust = "default:snow",
@@ -1746,8 +1597,6 @@ minetest.register_biome({
 })
 
 --glacier
---(altitude - extend down, )
---cold and wet
 minetest.register_biome({
 	name = "glacier",
 	node_dust = "default:snow",
@@ -1770,15 +1619,13 @@ minetest.register_biome({
 
 
 --volcano
---(altitude - extend down to meet rangipo, )
---hot and dry
 minetest.register_biome({
 	name = "volcano",
 	node_dust = "default:snow",
 	node_top = "aotearoa:volcanic_sand",
-	depth_top = 10,
+	depth_top = 2,
 	node_filler = "default:gravel",
-	depth_filler = 3,
+	depth_filler = 5,
 	node_stone = "aotearoa:andesite",
 	--node_water_top = "",
 	--depth_water_top = ,
