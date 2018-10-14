@@ -292,6 +292,55 @@ minetest.register_craft({
 
 
 --------
+--Tree Seeds.
+-- slight simplification...but...
+-->berry (some edible)->seed meal (useless) ->seed cake
+--raw fruit =1. Cooking releases a little value. 4 go into a cake.
+--cake = 1.25 *4 = 5 (same as default bread.)
+
+minetest.register_craftitem("aotearoa:seed_meal", {
+	description = "Seed Meal",
+	inventory_image = "aotearoa_cooked_karaka_kernels.png",
+  --on_use = minetest.item_eat(2),
+})
+
+minetest.register_craftitem("aotearoa:seed_cake", {
+	description = "Seed Cake",
+	inventory_image = "aotearoa_pungapunga.png",
+  on_use = minetest.item_eat(5),
+})
+
+--craft seed meal
+--karaka
+minetest.register_craft({
+	type = "shapeless",
+	output = "aotearoa:seed_meal",
+	recipe = {"aotearoa:karaka_fruit", "aotearoa:karaka_fruit", "aotearoa:karaka_fruit", "aotearoa:karaka_fruit"}
+})
+
+--tawa
+minetest.register_craft({
+	type = "shapeless",
+	output = "aotearoa:seed_meal",
+	recipe = {"aotearoa:tawa_fruit", "aotearoa:tawa_fruit", "aotearoa:tawa_fruit", "aotearoa:tawa_fruit"}
+})
+
+--hinau
+minetest.register_craft({
+	type = "shapeless",
+	output = "aotearoa:seed_meal",
+	recipe = {"aotearoa:hinau_fruit", "aotearoa:hinau_fruit", "aotearoa:hinau_fruit", "aotearoa:hinau_fruit"}
+})
+
+--cook seed meal to seed cake.
+minetest.register_craft({
+	type = "cooking",
+	output = "aotearoa:seed_cake",
+	recipe = "aotearoa:seed_meal",
+})
+
+--[[
+--Redundant 0.1 code and items...
 --Cook karaka
 minetest.register_craftitem("aotearoa:cooked_karaka_kernels", {
 	description = "Cooked Karaka Kernels",
@@ -318,6 +367,8 @@ minetest.register_craft({
 	output = "aotearoa:cooked_tawa_kernels",
 	recipe = "aotearoa:tawa_fruit",
 })
+
+]]
 
 ---------------
 --Fern fiddleheads
