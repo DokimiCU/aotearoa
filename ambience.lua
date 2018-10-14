@@ -73,11 +73,10 @@ ambience.add_set("aotearoa_tussock_day", {
 ------------------------
 -- muttonbird day
 ambience.add_set("aotearoa_muttonbird_day", {
-	frequency = 40,
+	frequency = 30,
   nodes = {
       "aotearoa:common_tree_daisy_leaves",
 			"aotearoa:common_tree_daisy_tree",
-      "aotearoa:leatherwood",
     },
 	sounds = {
     {name = "shearwater", length = 25},
@@ -109,19 +108,20 @@ ambience.add_set("aotearoa_muttonbird_day", {
 
 --Night in the forest
 ambience.add_set("aotearoa_forest_night", {
-	frequency = 50,
+	frequency = 40,
   nodes = {
     "default:dirt_with_grass",
     "default:dirt_with_rainforest_litter",
     "aotearoa:forest_peat",
+		"aotearoa:gumland_soil",
     "aotearoa:restiad_peat",
     "aotearoa:dirt_with_dark_litter",
-    "aotearoa:dirt_with_dry_litter",			
+    "aotearoa:dirt_with_dry_litter",
     "aotearoa:dirt_with_moss",
     "aotearoa:dirt_with_beech_litter",
   },
 	sounds = {
-		{name = "morepork", length = 14},
+		{name = "morepork", length = 14, gain = 0.5},
 		{name = "morepork", length = 14},
 		{name = "male_kiwi", length = 19, gain = 0.5},
 		{name = "female_kiwi", length = 18, gain = 0.5},
@@ -152,7 +152,7 @@ ambience.add_set("aotearoa_forest_night", {
 --Bird Trees.
 -- trees that attract fuit/nectar bird.
 ambience.add_set("aotearoa_birdtrees_day", {
-	frequency = 110,
+	frequency = 80,
   nodes = {
     "aotearoa:pohutukawa_leaves",
     "aotearoa:karaka_fruit",
@@ -168,7 +168,7 @@ ambience.add_set("aotearoa_birdtrees_day", {
     "aotearoa:cabbage_tree_crown",
     "aotearoa:nikau_palm_crown",
     "aotearoa:black_maire_leaves",
-    "aotearoa:hinau_fruit",			
+    "aotearoa:hinau_fruit",
   },
 	sounds = {
 		{name = "bellbirds", length = 181, gain = 1.1},
@@ -210,13 +210,14 @@ ambience.add_set("aotearoa_birdtrees_day", {
 -- Insect birds
 -- ground level birds. near soil,
 ambience.add_set("aotearoa_insect_birds_day", {
-	frequency = 100,
+	frequency = 70,
   nodes = {
     "default:dirt_with_grass",
     "default:dirt_with_dry_grass",
     "default:dirt_with_rainforest_litter",
     "aotearoa:forest_peat",
     "aotearoa:restiad_peat",
+		"aotearoa:gumland_soil",
     "aotearoa:dirt_with_dark_litter",
     "aotearoa:dirt_with_dry_litter",
     "aotearoa:dirt_with_moss",
@@ -257,7 +258,7 @@ ambience.add_set("aotearoa_insect_birds_day", {
 ---------------------------
 --Wind
 ambience.add_set("aotearoa_high_up", {
-	frequency = 50,
+	frequency = 40,
 	nodes = {"default:snowblock"},
 	sounds = {
 		{name = "desertwind", length = 8},
