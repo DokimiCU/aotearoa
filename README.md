@@ -52,6 +52,7 @@ te_kore_whakapapa adapted from https://teara.govt.nz/en/speech/30768/te-kore-wha
 - Volcanic field biome
 - Some new leaf textures to (hopefully) improve performance
 - Sea life: pipi, cockles
+- revised cooking of tree seeds: seed meal -> seed cake.
 - Many other minor additions, fixes, and adjustments
 
 
