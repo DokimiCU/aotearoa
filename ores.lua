@@ -203,9 +203,8 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:limestone",
 	wherein         = {
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 25,
@@ -222,14 +221,58 @@ minetest.register_ore({
 	},
 })
 
+
+-- grey_sandstone into pale_sandstone
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:grey_sandstone",
+	wherein         = {
+		"aotearoa:pale_sandstone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 20,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0,
+		scale = 1,
+		spread = {x = 15, y = 15, z = 15},
+		seed = -1009674,
+		octaves = 2,
+		persist = 0.4
+	},
+})
+
+-- pale_sandstone into grey_sandstone
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:pale_sandstone",
+	wherein         = {
+		"aotearoa:grey_sandstone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 15,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0,
+		scale = 1,
+		spread = {x = 15, y = 15, z = 15},
+		seed = -104074,
+		octaves = 2,
+		persist = 0.4
+	},
+})
+
 -- claystone into sandstone
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:claystone",
 	wherein         = {
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 25,
@@ -251,9 +294,8 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:siltstone",
 	wherein         = {
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 25,
@@ -275,9 +317,7 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:coquina_limestone",
 	wherein         = {
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:pale_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 25,
@@ -301,12 +341,11 @@ minetest.register_ore({
 	ore             = "aotearoa:conglomerate",
 	wherein         = {
 		"aotearoa:andesite",
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
-	clust_size      = 15,
+	clust_size      = 18,
 	y_min           = -31000,
 	y_max           = 31000,
 	noise_threshold = 0.0,
@@ -326,9 +365,8 @@ minetest.register_ore({
 	ore             = "aotearoa:volcanic_sand",
 	wherein         = {
 		"aotearoa:andesite",
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 4,
@@ -397,21 +435,17 @@ local mineral_scale = 0.03
 local mineral_spread = {x = 40, y = 40, z = 40}
 local mineral_oct = 3
 local mineral_persist = 0.8
+local deep_scatter = -256
 
 ------------------------
 --Iron Ore ...Limonite
 -- NZ has very little apart from Iron sands. A bit of limonite in NW Nelson (Southern podo)
 --not sure where it really ought to go... shall put it in sedimentary rocks..
---sandstone, conglomerate, clay/siltstone...
--- has to be spread around otherwise too rare
 
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:limonite",
 	wherein         = {
-		"default:sandstone",
-		"default:silver_sandstone",
-		"default:desert_sandstone",
 		"aotearoa:conglomerate",
 		"aotearoa:siltstone",
 		"aotearoa:claystone",
@@ -432,6 +466,48 @@ minetest.register_ore({
 	--biomes = {},
 })
 
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:limonite",
+	wherein         = {
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
+		"basalt",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 2,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = mineral_scale,
+		spread = mineral_spread,
+		seed = 1184053,
+		octaves = mineral_oct,
+		persist = mineral_persist
+	},
+	--biomes = {},
+})
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "aotearoa:limonite",
+	wherein         = {
+		"aotearoa:conglomerate",
+		"aotearoa:siltstone",
+		"aotearoa:claystone",
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
+		"basalt",
+	 },
+	clust_scarcity = 9 * 9 * 9,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = -31000,
+	y_max          = deep_scatter,
+})
+
 
 ----------------------
 --Copper
@@ -445,11 +521,8 @@ minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "aotearoa:chalcopyrite",
 	wherein         = {
-		  "aotearoa:gneiss",
-			"aotearoa:schist",
-			"aotearoa:greywacke",
-			"aotearoa:andesite",
-			"aotearoa:granite",
+		"aotearoa:andesite",
+		"aotearoa:granite",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 5,
@@ -465,6 +538,47 @@ minetest.register_ore({
 		persist = mineral_persist
 	},
 	--biomes = {},
+})
+
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "aotearoa:chalcopyrite",
+	wherein         = {
+		"aotearoa:greywacke",
+		"aotearoa:gneiss",
+		"aotearoa:schist",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 2,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = mineral_scale/2,
+		spread = mineral_spread,
+		seed = 1222243,
+		octaves = mineral_oct,
+		persist = mineral_persist
+	},
+	--biomes = {},
+})
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "aotearoa:chalcopyrite",
+	wherein         = {
+		  "aotearoa:gneiss",
+			"aotearoa:schist",
+			"aotearoa:greywacke",
+			"aotearoa:andesite",
+			"aotearoa:granite",
+	 },
+	clust_scarcity = 9 * 9 * 9,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = -31000,
+	y_max          = deep_scatter,
 })
 
 
@@ -495,15 +609,26 @@ minetest.register_ore({
 	--biomes = {},
 })
 
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "aotearoa:cassiterite",
+	wherein         = {
+		"aotearoa:granite",
+	 },
+	clust_scarcity = 9 * 9 * 9,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = -31000,
+	y_max          = deep_scatter,
+})
+
 -------------------
 -- West Coast Coal
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "default:coalblock",
 	wherein         = {
-		"default:desert_sandstone",
-		"default:sandstone",
-		"default:silver_sandstone",
+		"aotearoa:grey_sandstone",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 5,
@@ -521,6 +646,42 @@ minetest.register_ore({
 	--biomes = {},
 })
 
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "default:coalblock",
+	wherein         = {
+		"aotearoa:pale_sandstone",
+	 },
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 2,
+	y_min           = -31000,
+	y_max           = 31000,
+	noise_threshold = 0.0,
+	noise_params    = {
+		offset = 0.5,
+		scale = mineral_scale,
+		spread = mineral_spread,
+		seed = 7886,
+		octaves = mineral_oct,
+		persist = mineral_persist
+	},
+	--biomes = {},
+})
+
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "default:coalblock",
+	wherein         = {
+		"aotearoa:pale_sandstone",
+		"aotearoa:grey_sandstone",
+	 },
+	clust_scarcity = 9 * 9 * 9,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = -31000,
+	y_max          = deep_scatter,
+})
 
 --------------------
 --Pounamu
@@ -577,6 +738,38 @@ minetest.register_ore({
 	},
 	--biomes = {},
 })
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "aotearoa:quartz_with_gold",
+	wherein         = {
+		"aotearoa:andesite",
+		"aotearoa:schist",
+	 },
+	clust_scarcity = 9 * 9 * 9,
+	clust_num_ores = 5,
+	clust_size     = 3,
+	y_min          = -31000,
+	y_max          = deep_scatter,
+})
+
+
+--------------------------
+--Diamonds.
+
+minetest.register_ore({
+		ore_type       = "scatter",
+		ore            = "default:diamondblock",
+		wherein        = {
+			"aotearoa:gneiss",
+			"aotearoa:schist",
+		},
+		clust_scarcity = 15 * 15 * 15,
+		clust_num_ores = 4,
+		clust_size     = 3,
+		y_min          = -31000,
+		y_max          = deep_scatter *1.5,
+	})
 
 
 ----------------------------------------------
@@ -646,7 +839,7 @@ minetest.register_ore({
 		"aotearoa:basalt",
 	 },
 	clust_scarcity  = 16 * 16 * 16,
-	clust_size      = 5,
+	clust_size      = 4,
 	y_min           = -31000,
 	y_max           = 31000,
 	noise_threshold = 0.0,
