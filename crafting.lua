@@ -6,6 +6,18 @@
 dofile(aotearoa.path .. "/green_shovel.lua")
 
 
+---------------------------------------------------------
+--Furnace from soft sedimentary rocks
+minetest.register_craft({
+	output = 'default:furnace',
+	recipe = {
+		{'group:soft_stone', 'group:soft_stone', 'group:soft_stone'},
+		{'group:soft_stone', '', 'group:soft_stone'},
+		{'group:soft_stone', 'group:soft_stone', 'group:soft_stone'},
+	}
+})
+
+
 -----------------------------------------
 --Stone Axe recipe from gravel
 -- to make up for unbreakable trees.
@@ -149,7 +161,7 @@ minetest.register_craft({
   },
   replacements = {{"default:torch", "default:torch"}}
 })
- 
+
 --from Kahikatea soot
 minetest.register_craft({
 	output = "dye:black 4",
@@ -656,7 +668,7 @@ minetest.register_craft({
 	}
 })
 
-------------------------------------------------
+--[[----------------------------------------------
 --ARTIFIICAL DIAMONDS...
 -- because NZ has no diamonds
 --slow.
@@ -667,7 +679,7 @@ minetest.register_craft({
 	recipe = 'default:coalblock',
 	cooktime = 360,
 })
-
+]]
 
 ----------------------------------------------
 --ARTIFICIAL MESE...
