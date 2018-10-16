@@ -72,17 +72,17 @@ aotearoa.gc_deco_list = {
   {"default:gravel", {"aotearoa:schist","aotearoa:andesite"}, nil, {"fellfield","subantarctic_shore"},alp_max,beach_min, {offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 1100, octaves = gc_oct, persist = gc_pers}},
 
   --crown fern
-  {"aotearoa:crown_fern", {"aotearoa:dirt_with_moss","default:dirt_with_rainforest_litter",}, gc_fill, {"mountain_beech_forest","kamahi_forest","muttonbird_scrub",},highf_max,coastf_min,},
+  {"aotearoa:crown_fern", {"aotearoa:dirt_with_moss","default:dirt_with_rainforest_litter",}, gc_fill, {"manuka_scrub","mountain_beech_forest","kamahi_forest","muttonbird_scrub",},highf_max,coastf_min,},
   --dense crown fern
   {"aotearoa:crown_fern", {"aotearoa:dirt_with_beech_litter",}, gc_fill_dense, {"fiordland_forest","beech_forest",},lowf_max,lowf_min,},
   --rare kiokio
-  {"aotearoa:kiokio", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"fernland","kauri_forest",},lowf_max,lowf_min,},
+  {"aotearoa:kiokio", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"broadleaf_scrub","geothermal_scrub","manuka_scrub","kauri_forest",},lowf_max,lowf_min,},
   -- kiokio
   {"aotearoa:kiokio", {"aotearoa:dirt_with_moss","aotearoa:dirt_with_dry_litter","aotearoa:dirt_with_dark_litter",}, gc_fill, {"kamahi_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest",},lowf_max,lowf_min,},
   --coastal
   {"aotearoa:pohuehue", {"default:sand","aotearoa:iron_sand"}, nil, {"pohutukawa_dunes","sand_dunes", "iron_sand_dunes",},dune_max,beach_max, {offset = gc_off,	scale = gc_sc_dense, spread = gc_spr,	seed = 337121, octaves = gc_oct, persist = gc_pers}},
   {"aotearoa:wiwi", {"default:dirt_with_rainforest_litter","default:dirt_with_grass","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill, {"muttonbird_scrub","coastal_scrub","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
-  {"aotearoa:flax", {"default:dirt_with_grass","default:dirt_with_rainforest_litter","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill, {"fernland","coastal_scrub","pohutukawa_forest","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
+  {"aotearoa:flax", {"default:dirt_with_grass","default:dirt_with_rainforest_litter","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill, {"geothermal_scrub","coastal_scrub","pohutukawa_forest","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
   {"aotearoa:pingao", {"default:sand", "aotearoa:iron_sand"}, gc_fill_dense, {"pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "sandy_beach","iron_sand_beach"},dune_max,beach_max -1,},
   {"aotearoa:spinifex", {"default:sand", "aotearoa:iron_sand"}, gc_fill_x_dense, {"pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "sandy_beach","iron_sand_beach"},dune_max,beach_max-1,},
   {"aotearoa:sea_rush", {"aotearoa:mud"}, gc_fill_x_dense, {"salt_marsh"},dune_max,dune_min,},
@@ -91,14 +91,14 @@ aotearoa.gc_deco_list = {
   --clumped bracken
   {"aotearoa:bracken", {"default:dirt_with_grass",}, nil, {"coastal_scrub",},lowf_max,coastf_min +2,{offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 557864, octaves = gc_oct, persist = gc_pers}},
   --dense bracken
-  {"aotearoa:bracken", {"default:dirt_with_rainforest_litter"}, gc_fill_x_dense, {"fernland",},lowf_max,lowf_min,},
+  {"aotearoa:bracken", {"default:dirt_with_rainforest_litter"}, gc_fill_dense, {"manuka_scrub","geothermal_scrub", "broadleaf_scrub"},lowf_max,lowf_min,},
 
   --"babies" palms etc.
-  {"aotearoa:cabbage_tree_crown", {"aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","default:dirt_with_grass","default:dirt_with_rainforest_litter","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill_rare, {"fernland","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","coastal_scrub","pohutukawa_forest","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
+  {"aotearoa:cabbage_tree_crown", {"aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","default:dirt_with_grass","default:dirt_with_rainforest_litter","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill_rare, {"broadleaf_scrub","geothermal_scrub","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","coastal_scrub","pohutukawa_forest","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
   {"aotearoa:nikau_palm_crown", {"aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","default:dirt_with_grass","default:dirt_with_rainforest_litter",}, gc_fill_rare, {"hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","coastal_scrub","pohutukawa_forest",},lowf_max,coastf_min +2},
-  {"aotearoa:wheki_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_moss","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"fernland","kamahi_forest","fiordland_forest","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
-  {"aotearoa:mamaku_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"fernland","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
-  {"aotearoa:silver_fern_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"fernland","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
+  {"aotearoa:wheki_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_moss","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"manuka_scrub","broadleaf_scrub","geothermal_scrub","kamahi_forest","fiordland_forest","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
+  {"aotearoa:mamaku_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"broadleaf_scrub","geothermal_scrub","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
+  {"aotearoa:silver_fern_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"manuka_scrub","broadleaf_scrub","geothermal_scrub","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
   --alpine
   -- bristle_tussock
   {"aotearoa:bristle_tussock", {"aotearoa:schist","default:dirt_with_dry_grass","aotearoa:volcanic_sand",}, gc_fill, {"fellfield","mountain_tussock","rangipo_desert",},alp_max-2,highf_min,},
@@ -111,13 +111,13 @@ aotearoa.gc_deco_list = {
   --dense red tussock
   {"aotearoa:red_tussock", {"default:dirt_with_dry_grass",}, gc_fill_x_dense, {"mountain_tussock","matagouri_scrub","coastal_tussock",},alp_max + 5,coastf_min,},
   --rotten stump
-  {"aotearoa:rotten_wood", {"aotearoa:dirt_with_moss","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","aotearoa:restiad_peat","aotearoa:gumland_soil","aotearoa:forest_peat","default:dirt_with_rainforest_litter",},gc_fill_rare,{"mountain_beech_forest","pahautea_forest","fernland","kamahi_forest","fiordland_forest","beech_forest","hinau_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","fen","gumland","kahikatea_swamp",},highf_max,coastf_min+2,},
+  {"aotearoa:rotten_wood", {"aotearoa:dirt_with_moss","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","aotearoa:restiad_peat","aotearoa:gumland_soil","aotearoa:forest_peat","default:dirt_with_rainforest_litter",},gc_fill_rare,{"mountain_beech_forest","pahautea_forest","manuka_scrub","broadleaf_scrub","geothermal_scrub","kamahi_forest","fiordland_forest","beech_forest","hinau_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","fen","gumland","kahikatea_swamp",},highf_max,coastf_min+2,},
   --stunted manuka
   {"aotearoa:manuka_leaves", {"aotearoa:gumland_soil",},nil,{"gumland",},lowf_max,lowf_min, {offset = gc_off,	scale = gc_sc_dense, spread = gc_spr2,	seed = 8787761, octaves = gc_oct, persist = 0.1}},
   --dense moss
   {"aotearoa:moss", {"aotearoa:dirt_with_beech_litter","aotearoa:restiad_peat","aotearoa:forest_peat","default:dirt_with_rainforest_litter","aotearoa:andesite", "aotearoa:dirt_with_moss"}, gc_fill_x_dense, {"alpine_peat_bog","mountain_beech_forest","pahautea_forest","kamahi_forest","fiordland_forest","peat_bog","kahikatea_swamp","muttonbird_scrub","subantarctic_shore","subantarctic_coast",},highf_max,beach_max,},
   --rare moss clumps
-  {"aotearoa:moss", {"aotearoa:schist","default:dirt_with_dry_grass","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","aotearoa:restiad_peat","aotearoa:gumland_soil",},nil, {"fellfield","mountain_tussock","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","gumland","fen",},alp_max,lowf_min,{offset = gc_off, scale =gc_scale, spread = gc_spr2,	seed = 8755361, octaves = gc_oct, persist = 0.7}},
+  {"aotearoa:moss", {"default:dirt_with_rainforest_litter","aotearoa:schist","default:dirt_with_dry_grass","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","aotearoa:restiad_peat","aotearoa:gumland_soil",},nil, {"broadleaf_scrub", "geothermal_scrub","fellfield","mountain_tussock","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","gumland","fen",},alp_max,lowf_min,{offset = gc_off, scale =gc_scale, spread = gc_spr2,	seed = 8755361, octaves = gc_oct, persist = 0.7}},
 
 
 }
