@@ -160,17 +160,6 @@ minetest.register_craft({
 })
 
 
---craft river sand into regular sandstone
---(less than ideal, but will do for now.)
-minetest.register_craft({
-	output = "default:sandstone",
-	recipe = {
-		{"aotearoa:river_sand", "aotearoa:river_sand",""},
-		{"aotearoa:river_sand", "aotearoa:river_sand",""},
-		{"", "",""},
-	}
-})
-
 
 --------------------------------------------------
 --PEAT BLOCKS
@@ -429,6 +418,8 @@ minetest.register_node("aotearoa:seashells", {
 
 aotearoa.stonelist = {
 	{"pounamu", "Pounamu", 1, 1,},
+	{"pale_sandstone", "Pale Sandstone",3,2, "sediment", "default:sand",},
+	{"grey_sandstone", "Grey Sandstone",3,2, "sediment", "aotearoa:river_sand",},
 	{"siltstone", "Siltstone", 3, 2, "sediment", "aotearoa:silt",},
 	{"claystone", "Claystone", 3, 2, "sediment", "default:clay",},
 	{"conglomerate", "Conglomerate", 3, 2, "sediment", "default:gravel",},
@@ -438,7 +429,7 @@ aotearoa.stonelist = {
 	{"concrete","Concrete",3,2,},
 	{"andesite", "Andesite", 3, 2,},
 	{"granite", "Granite", 1, 1,},
-	{"greywacke", "Greywacke", 3, 2, "cooked", "", {"aotearoa:siltstone","aotearoa:claystone", "default:sandstone", "default:silver_sandstone", "default:desert_sandstone"}},
+	{"greywacke", "Greywacke", 3, 2, "cooked", "", {"aotearoa:siltstone","aotearoa:claystone", "aotearoa:pale_sandstone","aotearoa:grey_sandstone","default:sandstone", "default:silver_sandstone", "default:desert_sandstone"}},
 	{"gneiss", "Gneiss", 1, 1, "cooked", "", {"aotearoa:schist","aotearoa:granite"}},
 	{"scoria", "Scoria", 3, 2,},
 	{"basalt", "Basalt", 2, 2,},
@@ -462,7 +453,10 @@ for i in ipairs(aotearoa.stonelist) do
 	--and allow them to be dug
 	local g = nil
 	if type == "sediment" then
-		g = {cracky = hardness, crumbly = 1},
+		g = {cracky = hardness, crumbly = 1, soft_stone = 1}
+		--for bricks, blocks
+		g2 = {cracky = hardness2, soft_stone = 1}
+
 		minetest.register_craft({
 			output = "aotearoa:"..stonename,
 			recipe = {
@@ -480,6 +474,8 @@ for i in ipairs(aotearoa.stonelist) do
 
 	else
 		g = {cracky = hardness, stone = 1}
+		--for bricks, blocks
+		g2 = {cracky = hardness2, stone = 1}
 	end
 
 	--can get raw stone by cooking something else
@@ -508,14 +504,14 @@ for i in ipairs(aotearoa.stonelist) do
 	minetest.register_node("aotearoa:"..stonename.."brick", {
 		description = stonedesc.." Brick",
 		tiles = {"aotearoa_"..stonename.."brick.png"},
-		groups = {cracky = hardness2, stone = 1},
+		groups = g2,
 		sounds = default.node_sound_stone_defaults(),
 	})
 
 	minetest.register_node("aotearoa:"..stonename.."_block", {
 		description = stonedesc.. " Block",
 		tiles = {"aotearoa_"..stonename.."_block.png"},
-		groups = {cracky = hardness2, stone = 1},
+		groups = g2,
 		sounds = default.node_sound_stone_defaults(),
 	})
 
