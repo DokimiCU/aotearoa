@@ -41,6 +41,7 @@ te_kore_whakapapa adapted from https://teara.govt.nz/en/speech/30768/te-kore-wha
 - Adjust Subantarctic, Raupo, gumland, and Coastal volcanic biomes.
 - New plant class: woody bushes.
 - New rocks: Andesite, Granite, Greywacke, Gneiss, Basalt, Scoria
+- Replace default sandstones with aotearoa versions
 - New Ores: limonite (iron), Cassiterite (tin), Chalcopyrite (copper).
 - Ocean/Basement rock biomes
 - Green Shovel (by Parasite)
