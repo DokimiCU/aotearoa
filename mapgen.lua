@@ -183,10 +183,17 @@ local fiord_hum = 90
 --kamahi
 local kamahi_temp = 35
 local kamahi_hum = 100
+
 --Shrublands...
---fernland
-local fernland_temp = 50
-local fernland_hum = 0
+--broadleaf_scrub
+local bl_scrub_temp = 50
+local bl_scrub_hum = 50
+--geothermal_scrub
+local geo_scrub_temp = 60
+local geo_scrub_hum = -10
+--manuka_scrub
+local ma_scrub_temp = 50
+local ma_scrub_hum = 0
 --matagouri_scrub..use tussock
 
 --Highlands...
@@ -1357,11 +1364,9 @@ minetest.register_biome({
 --SHRUBLANDS
 --lowland
 
-
-
---Fernland
+--broadleaf_scrub
 minetest.register_biome({
-	name = "fernland",
+	name = "broadleaf_scrub",
 	--node_dust = "",
 	node_top = "default:dirt_with_rainforest_litter",
 	depth_top = 1,
@@ -1373,11 +1378,53 @@ minetest.register_biome({
 	--node_water = "",
   node_river_water = "default:river_water_source",
   node_riverbed = "aotearoa:gravel_with_algae",
-  depth_riverbed = 1,
+  depth_riverbed = 2,
+	y_min = (lowf_max/4) -4,
+	y_max = lowf_max/2,
+	heat_point = bl_scrub_temp,
+	humidity_point = bl_scrub_hum,
+})
+
+--geothermal_scrub
+minetest.register_biome({
+	name = "geothermal_scrub",
+	--node_dust = "",
+	node_top = "default:dirt_with_rainforest_litter",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 4,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:gravel_with_algae",
+  depth_riverbed = 2,
+	y_min = lowf_min,
+	y_max = lowf_max/3,
+	heat_point = geo_scrub_temp,
+	humidity_point = geo_scrub_hum,
+})
+
+--manuka_scrub
+minetest.register_biome({
+	name = "manuka_scrub",
+	--node_dust = "",
+	node_top = "default:dirt_with_rainforest_litter",
+	depth_top = 1,
+	node_filler = "default:clay",
+	depth_filler = 4,
+	node_stone = "default:sandstone",
+	--node_water_top = "",
+	--depth_water_top = ,
+	--node_water = "",
+  node_river_water = "default:river_water_source",
+  node_riverbed = "aotearoa:gravel_with_algae",
+  depth_riverbed = 2,
 	y_min = lowf_min,
 	y_max = lowf_max,
-	heat_point = fernland_temp,
-	humidity_point = fernland_hum,
+	heat_point = ma_scrub_temp,
+	humidity_point = ma_scrub_hum,
 })
 
 
