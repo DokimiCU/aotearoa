@@ -3,7 +3,7 @@ THE WHAT-THE-#%^&@-IS-GOING-ON-IN-THAT-BIOME GUIDE
 
 This is a working document to help figure out what species belong where.
 
-Caution, may or may not match with what actually got done. 
+Caution, may or may not match with what actually got done.
 
 Forest Structure
 
@@ -489,24 +489,49 @@ Pseudopanax arboreus?
 ------------------------------------
 --SHRUBLANDS
 
-
-
---Fernland
-More manuka land... but names shmames! It has ferns.
-Regenerating forest, shrubs and tree ferns. Dry area, e.g. recovering from fire.
-And some Rotorua mud pools because they had to go somewhere.
-
+--broadleaf_scrub
+Wetter Regenerating forest. Dominated by tree ferns, various broadleaf species.
+Height limited. Make it an extension of coastal scrub.
 Dominant Emergent:na
 Rare Emergent: na
 Dominant Canopy: ,
 Rare Canopy: kowhai
-Sub-canopy: dense wheki,silver_fern, mamaku, cabbage_tree, manuka
-Rare Sub-canopy: mahoe, rangiora,
+Sub-canopy: mahoe, rangiora, dense wheki,
+Rare Sub-canopy:  cabbage_tree,silver_fern,mamaku,
 Ground cover: bracken
-Rare ground cover: kiokio, flax,
-Decorations: dense stumps, mudpools (low)
-(needs: kanuka)
+Rare ground cover: kiokio, moss
+Decorations: dense stumps,
 (To add?: Aristotelia serrata, five finger, pigeonwood, Pittosporum tenuifolium, tree fuchsia, Schefflera digitata,Coprosma lucida,)
+
+
+--geothermal_scrub
+Rotorua style. Forest recovering from volcanoes, with various geothermal features.
+Similar to broadleaf/manuka scrub, make a bit sparser so can see geothermal stuff.
+Height limited. Geothermal stuff is best on flat lower areas.
+Dominant Emergent:na
+Rare Emergent: na
+Dominant Canopy: ,
+Rare Canopy: kowhai
+Sub-canopy:
+Rare Sub-canopy: mahoe, rangiora, manuka, mamaku, cabbage_tree, wheki,silver_fern,
+Ground cover: bracken
+Rare ground cover: kiokio, flax, moss
+Decorations: dense stumps, mudpools (low)
+
+
+--Manuka scrub
+Drier Regenerating forest. Manuka dominated.
+Dominant Emergent:na
+Rare Emergent: na
+Dominant Canopy: ,
+Rare Canopy:
+Sub-canopy: dense manuka,
+Rare Sub-canopy: wheki,silver_fern,
+Ground cover: bracken, crown fern
+Rare ground cover: kiokio,
+Decorations: dense stumps,
+(needs: kanuka)
+
 
 
 
