@@ -135,6 +135,9 @@ ambience.add_set("aotearoa_forest_night", {
         + (def.totals["aotearoa:forest_peat"] or 0)
         + (def.totals["aotearoa:restiad_peat"] or 0)
         + (def.totals["aotearoa:dirt_with_dark_litter"] or 0)
+				+ (def.totals["aotearoa:dirt_with_dry_litter"] or 0)
+				+ (def.totals["aotearoa:gumland_soil"] or 0)
+				+ (def.totals["aotearoa:dirt_with_beech_litter"] or 0)
         + (def.totals["aotearoa:dirt_with_moss"] or 0)
      )
 
@@ -197,6 +200,8 @@ ambience.add_set("aotearoa_birdtrees_day", {
         + (def.totals["aotearoa:flax"] or 0)
         + (def.totals["aotearoa:cabbage_tree_crown"] or 0)
         + (def.totals["aotearoa:nikau_palm_crown"] or 0)
+				+ (def.totals["aotearoa:black_maire_leaves"] or 0)
+				+ (def.totals["aotearoa:hinau_fruit"] or 0)
      )
 
 		if (def.tod > 0.2 and def.tod < 0.8)
@@ -241,6 +246,9 @@ ambience.add_set("aotearoa_insect_birds_day", {
         + (def.totals["aotearoa:forest_peat"] or 0)
         + (def.totals["aotearoa:restiad_peat"] or 0)
         + (def.totals["aotearoa:dirt_with_dark_litter"] or 0)
+				+ (def.totals["aotearoa:dirt_with_dry_litter"] or 0)
+				+ (def.totals["aotearoa:gumland_soil"] or 0)
+				+ (def.totals["aotearoa:dirt_with_beech_litter"] or 0)
         + (def.totals["aotearoa:dirt_with_moss"] or 0)
      )
 
