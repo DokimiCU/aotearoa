@@ -39,3 +39,14 @@ minetest.register_on_newplayer(function(player)
   inventory:add_item("main", "default:axe_stone")  
   minetest.sound_play("te_kore_whakapapa", {to_player = you, gain = 2})
 end)
+
+----------------------------------------
+--custom groups:
+--[[
+soft_stone = 1
+Soft rocks that can be dug with a shovel (like sandstone and other loosely consolidated sedimentary rocks),
+ and are unusable for tools. Yet they are still good enough for furnaces etc
+ (considering mud would be good enough for a furnace.)
+
+
+]]
