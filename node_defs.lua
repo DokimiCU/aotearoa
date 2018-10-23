@@ -940,7 +940,8 @@ minetest.register_node("aotearoa:pipi", {
 		minetest.get_node_timer(pos):start(math.random(3, 5))
 	end,
 	--eat and get shells
-	on_use = minetest.item_eat(1,"aotearoa:seashells")
+	--on_use = minetest.item_eat(1,"aotearoa:seashells")
+	on_use = minetest.item_eat(1)	
 })
 
 --pipi in sand
@@ -999,7 +1000,8 @@ minetest.register_node("aotearoa:cockle", {
 		minetest.get_node_timer(pos):start(math.random(3, 5))
 	end,
 	--eat and get shells
-	on_use = minetest.item_eat(1,"aotearoa:seashells")
+	--on_use = minetest.item_eat(1,"aotearoa:seashells")
+	on_use = minetest.item_eat(1)	
 })
 
 --cockle in mud
