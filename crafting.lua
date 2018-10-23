@@ -2,6 +2,58 @@
 ---------------------------------------------------------
 --CRAFTS
 
+--green_shovel
+dofile(aotearoa.path .. "/green_shovel.lua")
+
+
+---------------------------------------------------------
+--Furnace from soft sedimentary rocks
+minetest.register_craft({
+	output = 'default:furnace',
+	recipe = {
+		{'group:soft_stone', 'group:soft_stone', 'group:soft_stone'},
+		{'group:soft_stone', '', 'group:soft_stone'},
+		{'group:soft_stone', 'group:soft_stone', 'group:soft_stone'},
+	}
+})
+
+
+-----------------------------------------
+--Stone Axe recipe from gravel
+-- to make up for unbreakable trees.
+minetest.register_craft({
+	output = 'default:axe_stone',
+	recipe = {
+		{'default:gravel', 'default:gravel'},
+		{'default:gravel', 'group:stick'},
+		{'', 'group:stick'},
+	}
+})
+
+
+-------------------------
+--Kauri Gum
+minetest.register_craftitem("aotearoa:kauri_gum", {
+	description = "Kauri Gum",
+	inventory_image = "aotearoa_kauri_gum.png",
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "aotearoa:kauri_gum",
+	burntime = 3,
+})
+
+------------
+--Kauri gum torch
+minetest.register_craft({
+	output = 'default:torch 4',
+	recipe = {
+		{'aotearoa:kauri_gum'},
+		{'group:stick'},
+	}
+})
+
 
 
 -------------------------------------
@@ -22,6 +74,13 @@ minetest.register_craft({
 	output = 'default:paper',
 	recipe = {
 		{'aotearoa:flax', 'aotearoa:flax', 'aotearoa:flax'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:paper',
+	recipe = {
+		{'aotearoa:raupo', 'aotearoa:raupo', 'aotearoa:raupo'},
 	}
 })
 
@@ -92,6 +151,17 @@ minetest.register_craft({
 
 --------------
 --Black Dye
+
+--from kauri gum soot
+minetest.register_craft({
+	output = "dye:black 4",
+  recipe = {
+    {'aotearoa:kauri_gum'},
+    {'default:torch'},
+  },
+  replacements = {{"default:torch", "default:torch"}}
+})
+
 --from Kahikatea soot
 minetest.register_craft({
 	output = "dye:black 4",
@@ -104,6 +174,8 @@ minetest.register_craft({
 
 --Karo, but don't know how it is made.
 
+--[[
+--disabled because makes it too easy
 --from mahoe (technically the berries)
 minetest.register_craft({
 	output = "dye:black 4",
@@ -111,7 +183,14 @@ minetest.register_craft({
     {'aotearoa:mahoe_leaves'},
   },
 })
+]]
 
+-- from hinau bark. Not sure how done. Possibly boiled
+minetest.register_craft({
+	type = "cooking",
+	output = "dye:black 4",
+	recipe = "aotearoa:hinau_tree",
+})
 
 ------------
 --Brown Dye.
@@ -207,7 +286,73 @@ minetest.register_craft({
 	recipe = "aotearoa:raupo",
 })
 
+
+-------------
+--Raupo pollen cake
+minetest.register_craftitem("aotearoa:pungapunga", {
+	description = "Pungapunga Pollen Cake",
+	inventory_image = "aotearoa_pungapunga.png",
+  on_use = minetest.item_eat(2),
+})
+
+minetest.register_craft({
+	type = "cooking",
+	output = "aotearoa:pungapunga",
+	recipe = "aotearoa:raupo_flower",
+})
+
+
+
 --------
+--Tree Seeds.
+-- slight simplification...but...
+-->berry (some edible)->seed meal (useless) ->seed cake
+--raw fruit =1. Cooking releases a little value. 4 go into a cake.
+--cake = 1.25 *4 = 5 (same as default bread.)
+
+minetest.register_craftitem("aotearoa:seed_meal", {
+	description = "Seed Meal",
+	inventory_image = "aotearoa_cooked_karaka_kernels.png",
+  --on_use = minetest.item_eat(2),
+})
+
+minetest.register_craftitem("aotearoa:seed_cake", {
+	description = "Seed Cake",
+	inventory_image = "aotearoa_pungapunga.png",
+  on_use = minetest.item_eat(5),
+})
+
+--craft seed meal
+--karaka
+minetest.register_craft({
+	type = "shapeless",
+	output = "aotearoa:seed_meal",
+	recipe = {"aotearoa:karaka_fruit", "aotearoa:karaka_fruit", "aotearoa:karaka_fruit", "aotearoa:karaka_fruit"}
+})
+
+--tawa
+minetest.register_craft({
+	type = "shapeless",
+	output = "aotearoa:seed_meal",
+	recipe = {"aotearoa:tawa_fruit", "aotearoa:tawa_fruit", "aotearoa:tawa_fruit", "aotearoa:tawa_fruit"}
+})
+
+--hinau
+minetest.register_craft({
+	type = "shapeless",
+	output = "aotearoa:seed_meal",
+	recipe = {"aotearoa:hinau_fruit", "aotearoa:hinau_fruit", "aotearoa:hinau_fruit", "aotearoa:hinau_fruit"}
+})
+
+--cook seed meal to seed cake.
+minetest.register_craft({
+	type = "cooking",
+	output = "aotearoa:seed_cake",
+	recipe = "aotearoa:seed_meal",
+})
+
+--[[
+--Redundant 0.1 code and items...
 --Cook karaka
 minetest.register_craftitem("aotearoa:cooked_karaka_kernels", {
 	description = "Cooked Karaka Kernels",
@@ -234,6 +379,8 @@ minetest.register_craft({
 	output = "aotearoa:cooked_tawa_kernels",
 	recipe = "aotearoa:tawa_fruit",
 })
+
+]]
 
 ---------------
 --Fern fiddleheads
@@ -377,32 +524,31 @@ minetest.register_node('aotearoa:ponga_fence', {
 })
 
 minetest.register_craft({
-	output = 'aotearoa:ponga_fence 3',
+	output = 'aotearoa:ponga_fence',
 	recipe = {
-		{'aotearoa:wheki_tree', 'aotearoa:wheki_tree', 'aotearoa:wheki_tree'},
-		{'aotearoa:wheki_tree', 'aotearoa:wheki_tree', 'aotearoa:wheki_tree'},
+		{'', '', ''},
+		{'', '', ''},
 		{'aotearoa:wheki_tree', 'aotearoa:wheki_tree', 'aotearoa:wheki_tree'},
 	}
 })
 
 minetest.register_craft({
-	output = 'aotearoa:ponga_fence 3',
+	output = 'aotearoa:ponga_fence',
 	recipe = {
-		{'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree'},
-		{'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree'},
+		{'', '', ''},
+		{'', '', ''},
 		{'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree', 'aotearoa:silver_fern_tree'},
 	}
 })
 
 minetest.register_craft({
-	output = 'aotearoa:ponga_fence 3',
+	output = 'aotearoa:ponga_fence',
 	recipe = {
-		{'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree'},
-		{'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree'},
+		{'', '', ''},
+		{'', '', ''},
 		{'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree', 'aotearoa:mamaku_tree'},
 	}
 })
-
 
 minetest.register_craft({
 	type = "fuel",
@@ -441,15 +587,14 @@ minetest.register_craft({
 
 ----------------------------------------
 --IRON SAND
-minetest.register_craft({
-	output = 'default:iron_lump',
-	recipe = {
-		{'aotearoa:iron_sand', 'aotearoa:iron_sand', 'aotearoa:iron_sand'},
-		{'aotearoa:iron_sand', 'aotearoa:iron_sand', 'aotearoa:iron_sand'},
-		{'aotearoa:iron_sand', 'aotearoa:iron_sand', 'aotearoa:iron_sand'},
-	}
-})
 
+--iron sand is famously difficult to smelt.
+minetest.register_craft({
+	type = 'cooking',
+	output = 'default:iron_lump',
+	recipe = 'aotearoa:iron_sand',
+	cooktime = 30,
+})
 
 
 -----------------------------------
@@ -520,5 +665,33 @@ minetest.register_craft({
 	output = "aotearoa:concrete 6",
 	recipe = {
 		{"aotearoa:quicklime", "group:sand", "default:gravel"},
+	}
+})
+
+--[[----------------------------------------------
+--ARTIFIICAL DIAMONDS...
+-- because NZ has no diamonds
+--slow.
+
+minetest.register_craft({
+	type = 'cooking',
+	output = 'default:diamond',
+	recipe = 'default:coalblock',
+	cooktime = 360,
+})
+]]
+
+----------------------------------------------
+--ARTIFICIAL MESE...
+-- because... its ...mese
+-- something hocus pocus!?
+-- pounamu is the most mystical rock... so it can be transformed.
+
+minetest.register_craft({
+	output = 'default:mese',
+	recipe = {
+		{'aotearoa:granite', 'default:gold_ingot', 'aotearoa:gneiss'},
+		{'default:copper_ingot', 'aotearoa:pounamu', 'default:steel_ingot'},
+		{'aotearoa:andesite', 'default:tin_ingot', 'aotearoa:limestone'},
 	}
 })

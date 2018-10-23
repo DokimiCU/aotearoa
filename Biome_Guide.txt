@@ -1,0 +1,637 @@
+------------------------------------------------------
+THE WHAT-THE-#%^&@-IS-GOING-ON-IN-THAT-BIOME GUIDE
+
+This is a working document to help figure out what species belong where.
+
+Caution, may or may not match with what actually got done.
+
+Forest Structure
+
+Dominant Emergent:
+Rare Emergent:
+Dominant Canopy:
+Rare Canopy:
+Sub-canopy:
+Rare Sub-canopy:
+Ground cover:
+Rare ground cover:
+Decorations:
+
+
+------------------------------------------------------
+--MANTLE
+These occassionally turn up in caves near the bottom of basement rock level.
+This is about the  depth at which drilling deeper is actually impossible.
+
+--cold mantle
+Some volcanic sand to go 'Ohhhh Volcanoey!''
+
+--wet mantle
+boiling mud
+
+--mantle
+lava
+
+--------------------------------------------------------------
+--BASEMENT ROCKS
+The deep underlying rocks of the country. Self-explanatory.
+Greywacke hitting the plate boundary and being turned into schist, then gneiss.
+And some random granite.
+
+--greywacke_basement
+
+--schist_basement
+
+--gneiss_basement
+
+--granite_basement
+
+
+
+------------------------------------------------------------
+--MARINE
+Deeper oceans.
+This also controls the shallow rocks.
+Sediment based on charts. The actual rock they should really have isn't always clear.
+
+--kermadec_ocean
+e.g. The volcanic kermadec islands. Sub Tropical.
+
+--north_eastern_ocean
+e.g. Coromandel, BoP
+Warm.
+Muddy.
+
+--west_coast_north_ocean
+e.g. Taranaki, Waikato
+Warmish, wet?
+Sandy.
+
+
+--east_coast_north ocean
+e.g. Hawkes bay
+Muddy.
+Dry.
+
+--north_cook_straight
+e.g. Wellington
+Muddy.
+
+
+--south_cook_straight
+e.g. Marlborough
+Sandy (could also have done muddy)
+
+
+--west_coast_south_ocean
+-e.g. west_coast
+Muddy.
+Wet.
+
+--east_coast_south_ocean
+e.g. Canterbury
+Muddy.
+Dry
+
+
+--fiordland_ocean
+e.g. fiordland
+Muddy.
+Cold and wet.
+
+
+--southern_ocean
+e.g. Otago, Stewart Island
+gravel
+Cold
+
+
+--subantarctic_ocean
+e.g. subantarctic
+gravel
+Cold
+
+
+----------------------------------------------------
+--SEASHORE
+Beach and shallow waters. No plants, except extreme salt tolerant plants.
+
+--Sandy Beach.
+generic sandy Beach
+flora: spinifex, pingao
+Aquatic: pipi beds.
+
+--Shelly Beach.
+generic shelly Beach
+Aquatic: pipi beds.
+
+--Gravel Beach
+generic pebble Beach
+Aquatic: pipi beds.
+
+--subantarctic_shore
+harsh bare rock coast
+decorations: boulders, gravel
+
+--volcanic_isle_shore
+White Island volcanic coast
+
+--volcanic_field
+basaltic/scoria volcanism e.g Rangitoto island.
+For simplicity, done as a "fresh" lava field.
+So no life, extends into lowland with no difference in soils etc
+decorations: boulders
+
+--iron_sand_beach
+e.g. North West Coast black sand beaches
+flora: spinifex, pingao
+Aquatic: pipi beds.
+
+--Northern Estuary
+mud and warm enough for mangroves
+Flora: mangroves.
+
+
+--Southern Estuary
+mudflats. Too cold for mangroves.
+(needs: seagrass (Zostera muelleri),? ought to be underwater )
+
+
+-------------------------------------------------------------
+--DUNELANDS
+Coastal, but out of reach of waves. e.g. mid to back dunes.
+
+
+--Pohutukawa Dunes
+Dunes with occasional pohutukawa trees.
+Ground cover: pohuehue, wiwi, flax, spinifex, pingao
+Sub-canopy: clumps of cabbage tree, and karo,
+Canopy: sparse pohutukawa
+(To add?: coastal toetoe (Cortarderia splendis), sand coprosma, ngaio)
+
+
+--Sand dunes
+Generic sand dunes. Too cold for pohutukawa,
+Ground cover: pohuehue, wiwi, flax, spinifex, pingao
+Sub-canopy: clumps of cabbage tree, and karo,
+Canopy:
+(To add?: coastal toetoe (Cortarderia splendis), sand coprosma, ngaio)
+
+
+--Iron Sand dunes
+Iron sand dunes. Too cold for pohutukawa.
+Ground cover: pohuehue, wiwi, flax, spinifex, pingao
+Sub-canopy: clumps of cabbage tree, and karo,
+Canopy:
+(To add?: coastal toetoe (Cortarderia splendis), sand coprosma, ngaio)
+
+
+--Salt Marsh
+Coastal wetlands.
+Ground cover: sea_rush,
+(needs: Plagianthus divaricatus, oioi)
+
+
+--Gravel dunes
+Generic gravel dunes. Cold and dry.
+Ground cover: flax, wiwi,
+Sub-canopy: karo,
+(needs: mingimingi)
+(to add?: Griselinia littoralis. Calystegia soldanella (bindweed). Cyperus ustulatus (cutty grass). )
+
+
+--subantarctic_coast
+Extreme cold and wet e.g. Auckland islands.
+Herbfield. An extreme place. Extend altitude in coastal forest.
+Ground cover: a little bit of moss above salt line.
+(needs:megaherbs. tussock - Poa litorosa (done tree-like?)?, Muttonbird Poa (Poa foliosa))
+
+
+
+--white_island
+"Volcanic dunes". Something vaguely like the active volcano of White island.
+Extends into lowland forest.
+Lifeless.
+Decorations: mudpools
+(need: fumaroles)
+
+
+
+------------------------------------------
+-- COASTAL FORESTS
+
+--Pohutukawa Forest
+Warm coastal forest.
+Dominant Emergent: na
+Rare Emergent: na
+Dominant Canopy: dense pohutukawa
+Rare Canopy: karaka
+Sub-canopy: karo,
+Rare Sub-canopy: kawakawa, cabbage_tree, nikau palm
+Ground cover: bracken
+Rare ground cover: flax, bracken
+Decorations:
+(needs: Wharawhara (Astelia banksii), poa anceps)
+(to add? hangehange, houpara, )
+
+
+
+
+-- Coastal Scrub
+Too cold for pohutukawa. Also extends into lowlands as areas of decent farmland.
+Treating this like a cleared/burnt/semi-settled area. Gives open space from the forest.
+Would otherwise be occupied by some variant of coastal forest.
+Dominant Emergent: na
+Rare Emergent: na
+Dominant Canopy: ...
+Rare Canopy: groves of karaka, -kowhai,
+Sub-canopy: clumps of karo, and  manuka,
+Rare Sub-canopy: nikau palm, cabbage tree,
+Ground cover: wiwi, bracken,
+Rare ground cover: flax
+Decorations:
+(needs: mingimingi?, ngaio?,Tauhinu, kanuka, a native grass)
+
+
+
+--Muttonbird Scrub
+Wet and cold. Vaguely sub-subantarctic/southern. The kind of place muttonbirds burrow.
+Dominant Emergent: na
+Rare Emergent: na
+Dominant Canopy:
+Rare Canopy: kamahi
+Sub-canopy: common_tree_daisy,
+Rare Sub-canopy:
+Ground cover: leatherwood,
+Rare ground cover: wiwi, moss, crown fern
+Decorations:
+(needs: southern rata, Brachyglottis rotundifolia (muttonbird scrub) )
+(to add?:Tauhinu, Olearia lyallii, muttonbird burrow(dirt block, dig for muttonbird)?)
+
+
+--Coastal Tussock land
+Cold and dry. South Island.
+Dominant Emergent: na
+Rare Emergent:na
+Dominant Canopy:na
+Rare Canopy: na
+Sub-canopy: manuka, matagouri, cabbage_tree, nikau,
+Rare Sub-canopy:
+Ground cover: kokomuka, dense red tussock, dense flax,
+Rare ground cover:
+Decorations:
+
+
+
+
+------------------------------
+--WETLANDS
+
+
+--kahikatea_swamp
+Forested swamp.
+
+Dominant Emergent: kahikatea
+Rare Emergent:
+Dominant Canopy:
+Rare Canopy:
+Sub-canopy: cabbage_tree,
+Rare Sub-canopy:
+Ground cover: flax, moss,
+Rare ground cover:
+Decorations: rotten stumps
+(needs: sedges Carex virgata, Pukatea, mingimingi,)
+(to add? bush lawyer, Coprosma tenuicaulis, Syzygium maire, Astelia grandis)
+
+
+
+--raupo_swamp
+Muddy, open swamp. Lake edge sort of stuff.
+Ground cover: raupo
+
+
+--gumland
+Northland podzol. Former kauri forest. Hardpan makes it a wetland. Heath vegetation.
+
+Rare Emergent:na
+Dominant Canopy:na
+Rare Canopy:na
+Sub-canopy:
+Rare Sub-canopy: manuka
+Ground cover: manuka leaves, moss
+Rare ground cover:
+Decorations: stumps
+(needs:tangle fern Gleichenia dicarpa,Dracophyllum lessonianum, Schoenus brevifolius,  )
+(to add?: tamingi,Machaerina teretifolia)
+
+
+--Fen
+Fertile version of peat bog.
+Rare Sub-canopy: manuka
+Ground cover: flax
+Rare ground cover: moss
+Decorations: stumps
+(needs: tangle fern Gleichenia dicarpa,sedge)
+(to add?: ..)
+
+
+--Peat bog
+Deep lowland peatland.
+Ground cover: moss
+(needs:Sporadanthus ferrugineus,tangle fern, )
+(to add?: tamingi)
+
+
+------------------------------------------
+-- LOWLAND FORESTS
+(to add: more ground ferns - hounds tounge, hen and chicken..., )
+shrubs;Coprosma robusta,Pseudopanax arboreus, Schefflera digitata
+
+--kauri_forest
+Northern forest. Warm enough for kauri and other warm loving species.
+Dense kauri dominated canopy.
+Dominant Emergent: kauri
+Rare Emergent: all podocarps.
+Dominant Canopy:
+Rare Canopy: kowhai, tawa, hinau,
+Sub-canopy:kawakawa, mahoe,
+Rare Sub-canopy: rangiora, nikau, cabbage_tree, all tree ferns,
+Ground cover: kauri grass,
+Rare ground cover: kiokio, moss,
+Decorations: stumps,
+(to add?: Gahnia xanthocarpa, kiekie, puriri, kohekohe)
+
+
+
+--northern_podocarp
+Northern. Pure podocarp forest. Restricted to lower areas where podos would dominate.
+Mainly for the sake of contrast. Totara dominated.
+Dense but more open understory.
+Dominant Emergent: totara
+Rare Emergent: all podocarps.
+Dominant Canopy:
+Rare Canopy:
+Sub-canopy:
+Rare Sub-canopy: kawakawa, mahoe, rangiora, nikau, cabbage_tree, all tree ferns,
+Ground cover: kiokio,
+Rare ground cover: moss,
+Decorations: stumps,
+
+
+--tawa_forest
+Too cold for Kauri. Northern podocarp broadleaf forest. Wetter.
+Dominant Emergent:
+Rare Emergent: all podocarps.
+Dominant Canopy: tawa
+Rare Canopy: hinau, black maire, kamahi, kowhai,
+Sub-canopy:kawakawa, mahoe,
+Rare Sub-canopy:  rangiora, nikau, cabbage_tree, all tree ferns,
+Ground cover: kiokio,
+Rare ground cover: moss,
+Decorations: stumps,
+
+
+
+--maire_forest
+Too cold for Kauri. Northern podocarp broadleaf. Drier.
+Dominant Emergent:
+Rare Emergent: all podocarps.
+Dominant Canopy: black maire,
+Rare Canopy: hinau, tawa, kamahi, kowhai, black beech
+Sub-canopy:kawakawa, mahoe,
+Rare Sub-canopy:  rangiora, nikau, cabbage_tree, all tree ferns,
+Ground cover: kiokio,
+Rare ground cover: moss,
+Decorations: stumps,
+
+
+--southern_podocarp
+South. Pure podocarp forest. Restricted to lower areas where podos would dominate.
+Mainly for the sake of contrast. Rimu dominated.
+Dense but more open understory.
+Dominant Emergent: rimu
+Rare Emergent: all podocarps.
+Dominant Canopy:
+Rare Canopy:
+Sub-canopy:
+Rare Sub-canopy: mahoe, rangiora, nikau, cabbage_tree, all tree ferns,
+Ground cover: kiokio,
+Rare ground cover: moss,
+Decorations: stumps,
+
+
+
+--hinau (lowland, mid-cold,)
+Southern broadleaf podocarp forest. Wetter.
+Dominant Emergent:
+Rare Emergent: all podocarps.
+Dominant Canopy: hinau,
+Rare Canopy: black maire, kamahi, kowhai, black_beech
+Sub-canopy: mahoe,
+Rare Sub-canopy:  rangiora, nikau, cabbage_tree, all tree ferns,
+Ground cover: kiokio,
+Rare ground cover: moss,
+Decorations: stumps,
+(needs: a southern shrub)
+
+
+--beech forest
+Southern, drier forest. Beech dominated lowland.
+Beech forest typically doesn't mingle with conifer-broadleaf forest.
+But a little overlap can occur.
+Dominant Emergent:
+Rare Emergent: all podocarps (bar kahikatea).
+Dominant Canopy: black_beech
+Rare Canopy:  kamahi, kowhai, hinau
+Sub-canopy:
+Rare Sub-canopy:  silver_fern, wheki,mahoe,
+Ground cover: crown_fern
+Rare ground cover: moss,
+Decorations: stumps,
+(needs: red beech and/or hard beech, a southern shrub)
+Coprosma foetidissima?
+
+
+
+
+-------------------
+--Fiordland Forest
+Very cold and wet. Silver beech dominated. Too extreme for many of the species in other forests.
+Southern, drier forest. Beech dominated lowland.
+Dominant Emergent:
+Rare Emergent: all podocarps (bar miro).
+Dominant Canopy: silver beech
+Rare Canopy:  kamahi,
+Sub-canopy:
+Rare Sub-canopy: wheki,
+Ground cover: moss, crown_fern
+Rare ground cover:
+Decorations: stumps,
+
+
+
+--kamahi forest.
+"Goblin forest". Wet higher altitude. Dominated by kamahi.
+Dominant Emergent:
+Rare Emergent: rimu, miro
+Dominant Canopy: kamahi,
+Rare Canopy: silver_beech, mt_beech, hinau, maire
+Sub-canopy:
+Rare Sub-canopy: wheki, mahoe, rangiora
+Ground cover: moss,
+Rare ground cover: crown fern, kiokio,
+Decorations: dense stumps,
+
+Pseudopanax arboreus?
+
+
+
+------------------------------------
+--SHRUBLANDS
+
+--broadleaf_scrub
+Wetter Regenerating forest. Dominated by tree ferns, various broadleaf species.
+Height limited. Make it an extension of coastal scrub.
+Dominant Emergent:na
+Rare Emergent: na
+Dominant Canopy: ,
+Rare Canopy: kowhai
+Sub-canopy: mahoe, rangiora, dense wheki,
+Rare Sub-canopy:  cabbage_tree,silver_fern,mamaku,
+Ground cover: bracken
+Rare ground cover: kiokio, moss
+Decorations: dense stumps,
+(To add?: Aristotelia serrata, five finger, pigeonwood, Pittosporum tenuifolium, tree fuchsia, Schefflera digitata,Coprosma lucida,)
+
+
+--geothermal_scrub
+Rotorua style. Forest recovering from volcanoes, with various geothermal features.
+Similar to broadleaf/manuka scrub, make a bit sparser so can see geothermal stuff.
+Height limited. Geothermal stuff is best on flat lower areas.
+Dominant Emergent:na
+Rare Emergent: na
+Dominant Canopy: ,
+Rare Canopy: kowhai
+Sub-canopy:
+Rare Sub-canopy: mahoe, rangiora, manuka, mamaku, cabbage_tree, wheki,silver_fern,
+Ground cover: bracken
+Rare ground cover: kiokio, flax, moss
+Decorations: dense stumps, mudpools (low)
+
+
+--Manuka scrub
+Drier Regenerating forest. Manuka dominated.
+Dominant Emergent:na
+Rare Emergent: na
+Dominant Canopy: ,
+Rare Canopy:
+Sub-canopy: dense manuka,
+Rare Sub-canopy: wheki,silver_fern,
+Ground cover: bracken, crown fern
+Rare ground cover: kiokio,
+Decorations: dense stumps,
+(needs: kanuka)
+
+
+
+
+
+--Matagouri scrub
+South Island Tussock land. Cold and dry. Some matagouri here and there.
+
+Sub-canopy:
+Rare Sub-canopy: matagouri
+Ground cover: red tussock
+Rare ground cover:
+Decorations:
+(to add?:)
+
+
+
+--------------------------------
+--HIGHLAND
+
+
+--pahautea_forest
+Rare Emergent: na
+Dominant Canopy: pahautea,
+Rare Canopy: kamahi
+Sub-canopy:
+Rare Sub-canopy: tree daisy
+Ground cover: moss
+Rare ground cover: leatherwood
+Decorations: dense stumps,
+(needs: ground cover...it's something spikey. shrubs)
+
+
+
+--rangipo_desert
+Central plateau volcanic wasteland.
+Raised bottom alt a bit to allow montane forest at lower borders.
+Ground cover: bristle tussock
+Rare ground cover:
+(to add?:raoulia )
+
+
+
+--mountain beech
+Southern montane forest.
+Rare Emergent: na
+Dominant Canopy: mountain_beech
+Rare Canopy: silver_beech, kamahi
+Sub-canopy:
+Rare Sub-canopy:
+Ground cover: moss, crown_fern
+Rare ground cover: leatherwood
+Decorations: dense stumps,
+(needs:)
+
+
+
+--Mountain tussock
+Alpine tussock, and some shrubs. Extend a little into higher alt.
+Ground cover: red tussock, leatherwood
+Rare ground cover: bristle tussock, moss
+(to add: spaniards, vegetable sheep)
+
+
+
+--alpine peat bog
+Alpine version of peat bog.
+Ground cover: moss
+(to add: Donatia novae-zelandiae, cushion bog plants )
+
+
+--scree
+Unstable gravel slopes.
+Ground cover:
+(to add: rare scree plants)
+
+
+----------------
+--ALPINE
+--on the way from forest to icy death
+
+
+--fellfield
+Herbs and rocks. Too extreme for much else to grow.
+Some leatherwood at bottom range, to ease transition from forest.
+Ground cover: bristle_tussock
+Rare ground cover: moss,
+Decorations: boulders, gravel
+(to add?:edielwies Leucogenes grandiceps,vegetable sheep (Haastia pulvinaris))
+
+
+
+
+----------------
+--HIGH ALPINE.
+
+--alpine_snow
+Permanent snow and ice.
+
+--glacier
+Ice. Altitude extends down a bit
+
+--volcano
+Similar to rangipo, but colder. Extend down to meet rangipo.

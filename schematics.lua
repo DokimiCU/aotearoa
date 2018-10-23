@@ -132,3 +132,23 @@ data = {
     },
   yslice_prob = {},
 }
+
+-------------------------------
+--Raupo
+local r1 = { name = "aotearoa:raupo" }
+local r2 = { name = "aotearoa:raupo_flower" }
+aotearoa.raupo1 = {
+  size = {y = 4, x = 1, z = 1},
+  data = {
+    r1, r1, r1, r2
+    },
+  yslice_prob = {},
+}
+
+aotearoa.raupo2 = {
+  size = {y = 3, x = 1, z = 1},
+data = {
+      r1, r1, r2
+    },
+  yslice_prob = {},
+}

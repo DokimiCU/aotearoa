@@ -12,6 +12,8 @@ ambience.del_set("desert")
 ambience.del_set("night")
 ambience.del_set("day")
 
+--disable (and reorder) high up winds so it doesn't override alpine birds
+ambience.del_set("high_up")
 
 
 
@@ -34,7 +36,7 @@ ambience.add_set("mud_pool", {
 		local n = (def.totals["aotearoa:boiling_mud_source"] or 0) +
 			(def.totals["aotearoa:boiling_mud_flowing"] or 0)
 
-    if n > 1 then
+    if n >= 1 then
 			return "mud_pool"
 		end
 	end,
@@ -43,7 +45,7 @@ ambience.add_set("mud_pool", {
 ---------------------
 -- tussock day
 ambience.add_set("aotearoa_tussock_day", {
-	frequency = 40,
+	frequency = 25,
   nodes = {
       "aotearoa:matagouri_leaves",
       "aotearoa:red_tussock"},
@@ -59,9 +61,9 @@ ambience.add_set("aotearoa_tussock_day", {
      )
 
 		if (def.tod > 0.2 and def.tod < 0.8)
-    and n > 10
-    and def.pos.y > 100
-    and def.pos.y < 200
+    and n > 6
+    and def.pos.y > 40
+    and def.pos.y < 500
     then
 			return "aotearoa_tussock_day"
 		end
@@ -71,11 +73,10 @@ ambience.add_set("aotearoa_tussock_day", {
 ------------------------
 -- muttonbird day
 ambience.add_set("aotearoa_muttonbird_day", {
-	frequency = 40,
+	frequency = 30,
   nodes = {
       "aotearoa:common_tree_daisy_leaves",
 			"aotearoa:common_tree_daisy_tree",
-      "aotearoa:leatherwood",
     },
 	sounds = {
     {name = "shearwater", length = 25},
@@ -107,17 +108,20 @@ ambience.add_set("aotearoa_muttonbird_day", {
 
 --Night in the forest
 ambience.add_set("aotearoa_forest_night", {
-	frequency = 50,
+	frequency = 40,
   nodes = {
     "default:dirt_with_grass",
     "default:dirt_with_rainforest_litter",
     "aotearoa:forest_peat",
+		"aotearoa:gumland_soil",
     "aotearoa:restiad_peat",
     "aotearoa:dirt_with_dark_litter",
+    "aotearoa:dirt_with_dry_litter",
     "aotearoa:dirt_with_moss",
+    "aotearoa:dirt_with_beech_litter",
   },
 	sounds = {
-		{name = "morepork", length = 14},
+		{name = "morepork", length = 14, gain = 0.5},
 		{name = "morepork", length = 14},
 		{name = "male_kiwi", length = 19, gain = 0.5},
 		{name = "female_kiwi", length = 18, gain = 0.5},
@@ -131,6 +135,9 @@ ambience.add_set("aotearoa_forest_night", {
         + (def.totals["aotearoa:forest_peat"] or 0)
         + (def.totals["aotearoa:restiad_peat"] or 0)
         + (def.totals["aotearoa:dirt_with_dark_litter"] or 0)
+				+ (def.totals["aotearoa:dirt_with_dry_litter"] or 0)
+				+ (def.totals["aotearoa:gumland_soil"] or 0)
+				+ (def.totals["aotearoa:dirt_with_beech_litter"] or 0)
         + (def.totals["aotearoa:dirt_with_moss"] or 0)
      )
 
@@ -148,7 +155,7 @@ ambience.add_set("aotearoa_forest_night", {
 --Bird Trees.
 -- trees that attract fuit/nectar bird.
 ambience.add_set("aotearoa_birdtrees_day", {
-	frequency = 110,
+	frequency = 80,
   nodes = {
     "aotearoa:pohutukawa_leaves",
     "aotearoa:karaka_fruit",
@@ -163,6 +170,8 @@ ambience.add_set("aotearoa_birdtrees_day", {
     "aotearoa:flax",
     "aotearoa:cabbage_tree_crown",
     "aotearoa:nikau_palm_crown",
+    "aotearoa:black_maire_leaves",
+    "aotearoa:hinau_fruit",
   },
 	sounds = {
 		{name = "bellbirds", length = 181, gain = 1.1},
@@ -191,6 +200,8 @@ ambience.add_set("aotearoa_birdtrees_day", {
         + (def.totals["aotearoa:flax"] or 0)
         + (def.totals["aotearoa:cabbage_tree_crown"] or 0)
         + (def.totals["aotearoa:nikau_palm_crown"] or 0)
+				+ (def.totals["aotearoa:black_maire_leaves"] or 0)
+				+ (def.totals["aotearoa:hinau_fruit"] or 0)
      )
 
 		if (def.tod > 0.2 and def.tod < 0.8)
@@ -204,15 +215,18 @@ ambience.add_set("aotearoa_birdtrees_day", {
 -- Insect birds
 -- ground level birds. near soil,
 ambience.add_set("aotearoa_insect_birds_day", {
-	frequency = 100,
+	frequency = 70,
   nodes = {
     "default:dirt_with_grass",
     "default:dirt_with_dry_grass",
     "default:dirt_with_rainforest_litter",
     "aotearoa:forest_peat",
     "aotearoa:restiad_peat",
+		"aotearoa:gumland_soil",
     "aotearoa:dirt_with_dark_litter",
+    "aotearoa:dirt_with_dry_litter",
     "aotearoa:dirt_with_moss",
+    "aotearoa:dirt_with_beech_litter",
   },
 	sounds = {
     {name = "silvereye", length = 165},
@@ -232,6 +246,9 @@ ambience.add_set("aotearoa_insect_birds_day", {
         + (def.totals["aotearoa:forest_peat"] or 0)
         + (def.totals["aotearoa:restiad_peat"] or 0)
         + (def.totals["aotearoa:dirt_with_dark_litter"] or 0)
+				+ (def.totals["aotearoa:dirt_with_dry_litter"] or 0)
+				+ (def.totals["aotearoa:gumland_soil"] or 0)
+				+ (def.totals["aotearoa:dirt_with_beech_litter"] or 0)
         + (def.totals["aotearoa:dirt_with_moss"] or 0)
      )
 
@@ -245,4 +262,23 @@ ambience.add_set("aotearoa_insect_birds_day", {
 
 
 
+
 ---------------------------
+--Wind
+ambience.add_set("aotearoa_high_up", {
+	frequency = 40,
+	nodes = {"default:snowblock"},
+	sounds = {
+		{name = "desertwind", length = 8},
+		{name = "wind", length = 9},
+	},
+	sound_check = function(def)
+
+		local c = (def.totals["default:snowblock"] or 0)
+
+		if def.pos.y > 60
+		or c > 150 then
+			return "aotearoa_high_up"
+		end
+	end,
+})

@@ -1,705 +1,157 @@
-------------------------------
---Densities
---treeferns (and babies)
-local tfern_fill = 0.0003
-local bfern_fill = 0.0001
---ground fern fill (forest)
-local gfern_fill = 0.01
-
---------------------------
---NON-LIVING... because they had to go somewhere.
-
---Boulders for rocky volcanic_isle_shore
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:obsidian",
-							},
-	sidelen = 16,
-	noise_params = {
-		offset = 0,
-		scale = 0.1,
-		spread = {x = 32, y = 32, z = 32},
-		seed = 3129,
-		octaves = 3,
-		persist = 0.8
-	},
-	biomes = {
-						"subantarctic_shore",
-						"volcanic_isle_shore",
-						},
-	y_min = -10,
-	y_max = 31000,
-	decoration = "default:obsidian",
-})
+-------------------------------------------------------------------
+--SPAWN PLANTS.
+--Terrestrial non-schematic plants and decorations.
 
 
+---------------------------------------------------------------
+--DENSITIES.
 
---Boulders for  fellfield and sub coast
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:stone",
-							"default:dirt_with_grass",
-							},
-	sidelen = 16,
-	noise_params = {
-		offset = 0,
-		scale = 0.1,
-		spread = {x = 32, y = 32, z = 32},
-		seed = 3128,
-		octaves = 2,
-		persist = 0.9
-	},
-	biomes = {
-						"fellfield",
-						"subantarctic_shore",
-						},
-	y_min = -10,
-	y_max = 31000,
-	decoration = "default:stone",
-})
+--ground cover... scattered
+local gc_fill = 0.01
+local gc_fill_dense = gc_fill*10
+local gc_fill_x_dense = gc_fill_dense*9
+local gc_fill_rare = gc_fill/5
 
+--ground cover... clumping
+local gc_scale = 0.095
+local gc_sc_dense = gc_scale*10
+local gc_sc_rare = gc_scale/5
+local gc_off = 0
+local gc_spr = {x = 6, y = 6, z = 6}
+local gc_spr2 = {x = 16, y = 16, z = 16}
+local gc_oct = 2
+local gc_pers = 0.7
 
---Loose rock for rocky coast and fellfield
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:stone",
-							"default:gravel",
-							"default:obsidian",
-							"aotearoa:dirt_with_moss",
-							},
-	sidelen = 16,
-	fill_ratio = 0.005,
-	biomes = {
-						"subantarctic_shore",
-						"subantarctic_coast",
-						"volcanic_isle_shore",
-						"fellfield",
-						},
-	y_min = -10,
-	y_max = 31000,
-	decoration = "default:gravel",
-})
+-----------------------------------------------------------------
+--ALTITUDES
+--make sure matches mapgen file
 
+--basement
+local basement_max = -400
+local basement_min = -15000
 
-
-
--------------------------------
---COASTAL PLANTS
-
-----------------------------
---Pingao
---sand binder
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:sand",
-				"aotearoa:iron_sand"
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.3,
-			spread = {x = 20, y = 20, z = 20},
-			seed = 88774,
-			octaves = 1,
-			persist = 0.55
-		},
-		biomes = {
-							"sandy_beach",
-							"iron_sand_beach",
-							"sand_dunes",
-							"iron_sand_dunes",
-						},
-		y_min = 2,
-		y_max = 7,
-		decoration = "aotearoa:pingao"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
-
---Spinifex
---sand binder
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:sand",
-				"aotearoa:iron_sand"
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.3,
-			spread = {x = 20, y = 20, z = 20},
-			seed = 88774,
-			octaves = 1,
-			persist = 0.55
-		},
-		biomes = {
-							"sandy_beach",
-							"iron_sand_beach",
-							"sand_dunes",
-							"iron_sand_dunes",
-						},
-		y_min = 2,
-		y_max = 7,
-		decoration = "aotearoa:spinifex"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
-
---Raupo
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"aotearoa:mud_sinking",
-				"aotearoa:mud",
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.95,
-			spread = {x = 5, y = 5, z = 5},
-			seed = -16213,
-			octaves = 2,
-			persist = 0.99
-		},
-		biomes = {
-							"raupo_swamp",
-						},
-		y_min = 2,
-		y_max = 700,
-		decoration = "aotearoa:raupo"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
-
---Wiwi
---sand and swamp
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:dirt_with_grass",
-				"aotearoa:forest_peat",
-				"aotearoa:silt",
-				"default:dirt_with_dry_grass",
-				"default:dirt_with_rainforest_litter",
-				"default:sand",
-				"default:gravel",
-				"aotearoa:iron_sand",
-				"aotearoa:mud_sinking",
-				"aotearoa:mud",
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.1,
-			spread = {x = 250, y = 250, z = 250},
-			seed = 86663,
-			octaves = 2,
-			persist = 0.9
-		},
-		biomes = {
-							"northern_estuary",
-							"pohutukawa_dunes",
-							"sand_dunes",
-							"iron_sand_dunes",
-							"gravel_dunes",
-							"coastal_scrub",
-							"muttonbird_scrub",
-							"kahikatea_swamp",
-							"raupo_swamp",
-						},
-		y_min = 2,
-		y_max = 700,
-		decoration = "aotearoa:wiwi"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
+--ocean
+local ocean_max = -21
+local ocean_min = basement_max - 2
+------------
+--beaches
+local beach_max = 3
+local beach_min = ocean_max -2
+--dunes
+local dune_max = 5
+local dune_min = beach_max -2
+--coastal forest etc
+local coastf_max = 14
+local coastf_min = dune_max -2
+--lowland forest etc
+local lowf_max = 80
+local lowf_min = coastf_max -2
+--highland forest etc
+local highf_max = 120
+local highf_min = lowf_max -2
+--alpine
+local alp_max = 140
+local alp_min = highf_max -2
+--high alpine
+local high_alp_max = 31000
+local high_alp_min = alp_max -2
 
 
---Flax
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:dirt_with_grass",
-				"aotearoa:forest_peat",
-				"aotearoa:silt",
-				"default:dirt_with_dry_grass",
-				"default:dirt_with_rainforest_litter",
-				"default:sand",
-				"default:gravel",
-				"aotearoa:iron_sand",
-				"aotearoa:mud_sinking",
-				"aotearoa:mud",
-				},
-		sidelen = 16,
-		fill_ratio = 0.005,
-		biomes = {
-							"gravel_beach",
-							"northern_estuary",
-							"pohutukawa_dunes",
-							"sand_dunes",
-							"iron_sand_dunes",
-							"gravel_dunes",
-							"pohutukawa_forest",
-							"coastal_scrub",
-							"muttonbird_scrub",
-							"coastal_tussock",
-							"kahikatea_swamp",
-							"gumland",
-							"fernland",
-							"raupo_swamp",
-						},
-		y_min = 3,
-		y_max = 100,
-		decoration = "aotearoa:flax"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
+---------------------------------------------------------------
+--REGISTER
+--{offset = gc_off,	scale = gc_sc_dense, spread = gc_spr,	seed = 88774, octaves = gc_oct, persist = gc_pers}
 
---Pohuehue
---Back dune scrub, forms dense smothering tangles
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:dirt_with_dry_grass",
-				"default:sand",
-				"default:gravel",
-				"aotearoa:iron_sand",
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.75,
-			spread = {x = 50, y = 50, z = 50},
-			seed = 337121,
-			octaves = 2,
-			persist = 0.95
-		},
-		biomes = {
-							"pohutukawa_dunes",
-							"sand_dunes",
-							"iron_sand_dunes",
-							"gravel_dunes",
-						},
-		y_min = 4,
-		y_max = 30,
-		decoration = "aotearoa:pohuehue"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
+aotearoa.gc_deco_list = {
+  --scoria boulders for volcanic_field
+  {"aotearoa:scoria", {"aotearoa:scoria"}, nil, {"volcanic_field"},lowf_max/2,beach_min, {offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 2009, octaves = gc_oct, persist = gc_pers}},
+  --andesite boulders for subantarctic
+  {"aotearoa:andesite", {"aotearoa:andesite", "default:dirt_with_grass"}, nil, {"subantarctic_shore","subantarctic_coast",},coastf_max,beach_min, {offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 1109, octaves = gc_oct, persist = gc_pers}},
+  --schist boulders for fellfield
+  {"aotearoa:schist", {"aotearoa:schist",}, nil, {"fellfield",},alp_max,alp_min, {offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 81209, octaves = gc_oct, persist = gc_pers}},
+  --gravel for rocky places
+  {"default:gravel", {"aotearoa:schist","aotearoa:andesite"}, nil, {"fellfield","subantarctic_shore"},alp_max,beach_min, {offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 1100, octaves = gc_oct, persist = gc_pers}},
+
+  --crown fern
+  {"aotearoa:crown_fern", {"aotearoa:dirt_with_moss","default:dirt_with_rainforest_litter",}, gc_fill, {"manuka_scrub","mountain_beech_forest","kamahi_forest","muttonbird_scrub",},highf_max,coastf_min,},
+  --dense crown fern
+  {"aotearoa:crown_fern", {"aotearoa:dirt_with_beech_litter",}, gc_fill_dense, {"fiordland_forest","beech_forest",},lowf_max,lowf_min,},
+  --rare kiokio
+  {"aotearoa:kiokio", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"broadleaf_scrub","geothermal_scrub","manuka_scrub","kauri_forest",},lowf_max,lowf_min,},
+  -- kiokio
+  {"aotearoa:kiokio", {"aotearoa:dirt_with_moss","aotearoa:dirt_with_dry_litter","aotearoa:dirt_with_dark_litter",}, gc_fill, {"kamahi_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest",},lowf_max,lowf_min,},
+  --coastal
+  {"aotearoa:pohuehue", {"default:sand","aotearoa:iron_sand"}, nil, {"pohutukawa_dunes","sand_dunes", "iron_sand_dunes",},dune_max,beach_max, {offset = gc_off,	scale = gc_sc_dense, spread = gc_spr,	seed = 337121, octaves = gc_oct, persist = gc_pers}},
+  {"aotearoa:wiwi", {"default:dirt_with_rainforest_litter","default:dirt_with_grass","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill, {"muttonbird_scrub","coastal_scrub","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
+  {"aotearoa:flax", {"default:dirt_with_grass","default:dirt_with_rainforest_litter","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill, {"geothermal_scrub","coastal_scrub","pohutukawa_forest","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
+  {"aotearoa:pingao", {"default:sand", "aotearoa:iron_sand"}, gc_fill_dense, {"pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "sandy_beach","iron_sand_beach"},dune_max,beach_max -1,},
+  {"aotearoa:spinifex", {"default:sand", "aotearoa:iron_sand"}, gc_fill_x_dense, {"pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "sandy_beach","iron_sand_beach"},dune_max,beach_max-1,},
+  {"aotearoa:sea_rush", {"aotearoa:mud"}, gc_fill_x_dense, {"salt_marsh"},dune_max,dune_min,},
+  --sparse bracken
+  {"aotearoa:bracken", {"default:dirt_with_rainforest_litter"}, gc_fill_rare, {"pohutukawa_forest"},coastf_max,coastf_min +2,},
+  --clumped bracken
+  {"aotearoa:bracken", {"default:dirt_with_grass",}, nil, {"coastal_scrub",},lowf_max,coastf_min +2,{offset = gc_off,	scale = gc_scale, spread = gc_spr,	seed = 557864, octaves = gc_oct, persist = gc_pers}},
+  --dense bracken
+  {"aotearoa:bracken", {"default:dirt_with_rainforest_litter"}, gc_fill_dense, {"manuka_scrub","geothermal_scrub", "broadleaf_scrub"},lowf_max,lowf_min,},
+
+  --"babies" palms etc.
+  {"aotearoa:cabbage_tree_crown", {"aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","default:dirt_with_grass","default:dirt_with_rainforest_litter","default:sand","aotearoa:iron_sand", "default:gravel"}, gc_fill_rare, {"broadleaf_scrub","geothermal_scrub","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","coastal_scrub","pohutukawa_forest","pohutukawa_dunes","sand_dunes", "iron_sand_dunes", "gravel_dunes"},lowf_max,beach_max,},
+  {"aotearoa:nikau_palm_crown", {"aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","default:dirt_with_grass","default:dirt_with_rainforest_litter",}, gc_fill_rare, {"hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","coastal_scrub","pohutukawa_forest",},lowf_max,coastf_min +2},
+  {"aotearoa:wheki_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_moss","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"manuka_scrub","broadleaf_scrub","geothermal_scrub","kamahi_forest","fiordland_forest","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
+  {"aotearoa:mamaku_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"broadleaf_scrub","geothermal_scrub","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
+  {"aotearoa:silver_fern_crown", {"default:dirt_with_rainforest_litter","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter",}, gc_fill_rare, {"manuka_scrub","broadleaf_scrub","geothermal_scrub","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest",},lowf_max,lowf_min,},
+  --alpine
+  -- bristle_tussock
+  {"aotearoa:bristle_tussock", {"aotearoa:schist","default:dirt_with_dry_grass","aotearoa:volcanic_sand",}, gc_fill, {"fellfield","mountain_tussock","rangipo_desert",},alp_max-2,highf_min,},
+
+  --dense flax
+  {"aotearoa:flax", {"aotearoa:restiad_peat","aotearoa:forest_peat","default:dirt_with_dry_grass",}, gc_fill_dense, {"fen","kahikatea_swamp","coastal_tussock",},lowf_max,coastf_min,},
+  --dense kauri_grass
+  {"aotearoa:kauri_grass", {"aotearoa:dirt_with_dry_litter",}, gc_fill_dense, {"kauri_forest",},lowf_max,lowf_min,},
+
+  --dense red tussock
+  {"aotearoa:red_tussock", {"default:dirt_with_dry_grass",}, gc_fill_x_dense, {"mountain_tussock","matagouri_scrub","coastal_tussock",},alp_max + 5,coastf_min,},
+  --rotten stump
+  {"aotearoa:rotten_wood", {"aotearoa:dirt_with_moss","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","aotearoa:restiad_peat","aotearoa:gumland_soil","aotearoa:forest_peat","default:dirt_with_rainforest_litter",},gc_fill_rare,{"mountain_beech_forest","pahautea_forest","manuka_scrub","broadleaf_scrub","geothermal_scrub","kamahi_forest","fiordland_forest","beech_forest","hinau_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","fen","gumland","kahikatea_swamp",},highf_max,coastf_min+2,},
+  --stunted manuka
+  {"aotearoa:manuka_leaves", {"aotearoa:gumland_soil",},nil,{"gumland",},lowf_max,lowf_min, {offset = gc_off,	scale = gc_sc_dense, spread = gc_spr2,	seed = 8787761, octaves = gc_oct, persist = 0.1}},
+  --dense moss
+  {"aotearoa:moss", {"aotearoa:dirt_with_beech_litter","aotearoa:restiad_peat","aotearoa:forest_peat","default:dirt_with_rainforest_litter","aotearoa:andesite", "aotearoa:dirt_with_moss"}, gc_fill_x_dense, {"alpine_peat_bog","mountain_beech_forest","pahautea_forest","kamahi_forest","fiordland_forest","peat_bog","kahikatea_swamp","muttonbird_scrub","subantarctic_shore","subantarctic_coast",},highf_max,beach_max,},
+  --rare moss clumps
+  {"aotearoa:moss", {"default:dirt_with_rainforest_litter","aotearoa:schist","default:dirt_with_dry_grass","aotearoa:dirt_with_beech_litter","aotearoa:dirt_with_dark_litter","aotearoa:dirt_with_dry_litter","aotearoa:restiad_peat","aotearoa:gumland_soil",},nil, {"broadleaf_scrub", "geothermal_scrub","fellfield","mountain_tussock","beech_forest","hinau_forest","southern_podocarp_forest","maire_forest","tawa_forest","northern_podocarp_forest","kauri_forest","gumland","fen",},alp_max,lowf_min,{offset = gc_off, scale =gc_scale, spread = gc_spr2,	seed = 8755361, octaves = gc_oct, persist = 0.7}},
 
 
-	-------------------------------
-	--COASTAL FOREST/SCRUB PLANTS
-	-----------------------
+}
 
---Bracken
---open land
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:dirt_with_grass",
-				"default:dirt_with_rainforest_litter",
-				"default:dirt_with_dry_grass",
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.1,
-			spread = {x = 50, y = 50, z = 50},
-			seed = 347823,
-			octaves = 1,
-			persist = 0.85
-		},
-		biomes = {
-							"pohutukawa_forest",
-							"coastal_scrub",
-							"muttonbird_scrub",
-							"fernland",
-							"gumland",
-						},
-		y_min = 5,
-		y_max = 500,
-		decoration = "aotearoa:bracken"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
+for i in ipairs(aotearoa.gc_deco_list) do
+  local deco     = aotearoa.gc_deco_list[i][1]
+	local substrate = aotearoa.gc_deco_list[i][2]
+	local density = aotearoa.gc_deco_list[i][3]
+  local habitat = aotearoa.gc_deco_list[i][4]
+  local max_alt = aotearoa.gc_deco_list[i][5]
+  local min_alt = aotearoa.gc_deco_list[i][6]
+  local noise = aotearoa.gc_deco_list[i][7]
 
-
---Leatherwood
-minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-				"default:dirt_with_rainforest_litter",
-				"default:dirt_with_dry_grass",
-				},
-		sidelen = 16,
-		noise_params = {
-			offset = 0,
-			scale = 0.9,
-			spread = {x = 50, y = 50, z = 50},
-			seed = 364578,
-			octaves = 2,
-			persist = 0.95
-		},
-		biomes = {
-							"muttonbird_scrub",
-							"mountain_tussock",
-						},
-		y_min = 5,
-		y_max = 500,
-		decoration = "aotearoa:leatherwood"
-		--spawn_by = "default:water_source",
-		--num_spawn_by = 1,
-	})
-
---Kokomuka
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:dirt_with_dry_grass",
-						},
-	sidelen = 16,
-	fill_ratio = 0.01,
-	biomes = {
-		"coastal_tussock",
-	},
-	y_min = 5,
-	y_max = 30,
-	decoration = "aotearoa:kokomuka",
-})
-
---Red Tussock
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:dirt_with_dry_grass",
-						},
-	sidelen = 16,
-	fill_ratio = 0.9,
-	biomes = {
-		"coastal_tussock",
-		"matagouri_scrub",
-		"mountain_tussock",
-	},
-	y_min = 5,
-	y_max = 1000,
-	decoration = "aotearoa:red_tussock",
-})
-
-
-----------------------------------------------
---LOWLAND FOREST
-
---kauri_grass
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-		"aotearoa:dirt_with_dark_litter",
-						},
-	sidelen = 16,
-	fill_ratio = gfern_fill * 5,
-	biomes = {
-		"kauri_forest",
-	},
-	y_min = 7,
-	y_max = 100,
-	decoration = "aotearoa:kauri_grass",
-})
-
---Baby mamaku
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-		"aotearoa:dirt_with_dark_litter",
-		"default:dirt_with_rainforest_litter",
-		"default:dirt",
-		"aotearoa:forest_peat",
-		"aotearoa:dirt_with_moss",
-						},
-	sidelen = 16,
-	fill_ratio = bfern_fill,
-	biomes = {
-		"pohutukawa_forest",
-		"kahikatea_swamp",
-		"kauri_forest",
-		"northern_podocarp_forest",
-		"southern_podocarp_forest",
-		"fernland",
-		"kamahi_forest",
-	},
-	y_min = 7,
-	y_max = 100,
-	decoration = "aotearoa:mamaku_crown",
-})
-
---Baby silver_fern
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-		"default:dirt_with_grass",
-		"aotearoa:dirt_with_dark_litter",
-		"default:dirt_with_rainforest_litter",
-						},
-	sidelen = 16,
-	fill_ratio = bfern_fill,
-	biomes = {
-		"coastal_scrub",
-		"pohutukawa_forest",
-		"kauri_forest",
-		"northern_podocarp_forest",
-		"southern_podocarp_forest",
-		"fernland",
-	},
-	y_min = 5,
-	y_max = 100,
-	decoration = "aotearoa:silver_fern_crown",
-})
-
-
--- Baby wheki
-minetest.register_decoration({
-	deco_type = "simple",
-	sidelen = 16,
-	place_on = {
-		"aotearoa:dirt_with_dark_litter",
-		"default:dirt_with_rainforest_litter",
-		"default:dirt_with_grass",
-		"aotearoa:forest_peat",
-		"default:dirt_with_dry_grass",
-		"aotearoa:dirt_with_moss",
-	},
-	y_min = 5,
-	y_max = 100,
-	fill_ratio = bfern_fill,
-	biomes = {
-		"coastal_scrub",
-		"pohutukawa_forest",
-		"muttonbird_scrub",
-		"kahikatea_swamp",
-		"kauri_forest",
-		"northern_podocarp_forest",
-		"southern_podocarp_forest",
-		"fernland",
-		"gumland",
-		"kamahi_forest",
-	},
-	decoration = "aotearoa:wheki_crown",
-})
-
-
---kiokio
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-		"default:dirt_with_rainforest_litter",
-		"aotearoa:forest_peat",
-		"aotearoa:dirt_with_dark_litter",
-		"aotearoa:dirt_with_moss",
-						},
-	sidelen = 16,
-	fill_ratio = gfern_fill,
-	biomes = {
-		"muttonbird_scrub",
-		"kahikatea_swamp",
-		"kauri_forest",
-		"northern_podocarp_forest",
-		"southern_podocarp_forest",
-		"fernland",
-		"pahautea_forest",
-		"kamahi_forest",
-	},
-	y_min = 7,
-	y_max = 100,
-	decoration = "aotearoa:kiokio",
-})
-
-
------------------------------------------
---ALPINE
-
---bristle_tussock
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:dirt_with_dry_grass",
-							"aotearoa:volcanic_sand",
-							"default:stone",
-							"default:gravel",
-						},
-	sidelen = 16,
-	fill_ratio = 0.05,
-	biomes = {
-		"mountain_tussock",
-		"rangipo_desert",
-		"fellfield"
-	},
-	y_min = 5,
-	y_max = 31000,
-	decoration = "aotearoa:bristle_tussock",
-})
-
-
-
------------------------------------------------
---DEFAULT
-
---grass
-local function register_grass_decoration(offset, scale, length)
-	minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-								"default:dirt_with_rainforest_litter",
-								"aotearoa:dirt_with_dark_litter",
-								"default:dirt_with_grass",
-								"aotearoa:dirt_with_moss",
-								},
-		sidelen = 16,
-		noise_params = {
-			offset = offset,
-			scale = scale,
-			spread = {x = 200, y = 200, z = 200},
-			seed = 329,
-			octaves = 3,
-			persist = 0.6
-		},
-		biomes = {
-		 					"pohutukawa_forest",
-							"coastal_scrub",
-							"muttonbird_scrub",
-							"kauri_forest",
-							"northern_podocarp_forest",
-							"southern_podocarp_forest",
-							"fernland",
-							"pahautea_forest",
-							"subantarctic_coast",
-							"kamahi_forest",
-							},
-		y_min = 4,
-		y_max = 31000,
-		decoration = "default:grass_" .. length,
-	})
+  if density ~= nil then
+    minetest.register_decoration({
+    		deco_type = "simple",
+    		place_on = substrate,
+    		sidelen = 16,
+    		fill_ratio = density,
+    		biomes = habitat,
+    		y_min = min_alt,
+    		y_max = max_alt,
+    		decoration = deco
+    })
+  else
+    minetest.register_decoration({
+    		deco_type = "simple",
+    		place_on = substrate,
+    		sidelen = 16,
+    		noise_params = noise,
+        biomes = habitat,
+    		y_min = min_alt,
+    		y_max = max_alt,
+    		decoration = deco
+    })
+  end
 end
-
---dry grass
-local function register_dry_grass_decoration(offset, scale, length)
-	minetest.register_decoration({
-		deco_type = "simple",
-		place_on = {
-								"default:gravel",
-								"default:dirt_with_dry_grass",
-								"default:dirt_with_rainforest_litter",
-								"default:sand",
-								"aotearoa:iron_sand",
-								"default:dirt_with_grass",
-							},
-		sidelen = 16,
-		noise_params = {
-			offset = offset,
-			scale = scale,
-			spread = {x = 200, y = 200, z = 200},
-			seed = 329,
-			octaves = 3,
-			persist = 0.6
-		},
-		biomes = {
-							"gravel_beach",
-		 					"pohutukawa_dunes",
-							"sand_dunes",
-							"iron_sand_dunes",
-							"gravel_dunes",
-							"coastal_tussock",
-							"gumland",
-							"fernland",
-							"matagouri_scrub",
-							"mountain_tussock",
-							"subantarctic_coast",
-						},
-		y_min = 4,
-		y_max = 31000,
-		decoration = "default:dry_grass_" .. length,
-	})
-end
-
-
-
--- Grasses
-
-	register_grass_decoration(-0.03,  0.005,  5)
-	register_grass_decoration(-0.015, 0.004, 4)
-	register_grass_decoration(0,      0.003,  3)
-	register_grass_decoration(0.015,  0.002, 2)
-	register_grass_decoration(0.03,   0.001,  1)
-
-	-- Dry grasses
-
-	register_dry_grass_decoration(0.01, 0.003,  5)
-	register_dry_grass_decoration(0.03, 0.002,  4)
-	register_dry_grass_decoration(0.05, 0.001,  3)
-	register_dry_grass_decoration(0.07, -0.001, 2)
-	register_dry_grass_decoration(0.09, -0.003, 1)
-
-	-- Junglegrass
-
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:dirt_with_rainforest_litter",
-							"aotearoa:dirt_with_dark_litter",
-							"default:dirt",
-							"aotearoa:forest_peat",
-							"aotearoa:dirt_with_moss",
-						},
-	sidelen = 16,
-	fill_ratio = 0.001,
-	biomes = {
-		"kauri_forest",
-		"northern_podocarp_forest",
-		"southern_podocarp_forest",
-		"pohutukawa_forest",
-		"kahikatea_swamp",
-		"fernland",
-		"kamahi_forest",
-	},
-	y_min = 16,
-	y_max = 31000,
-	decoration = "default:junglegrass",
-})
-
-
-	-- Dry shrub
-
-minetest.register_decoration({
-	deco_type = "simple",
-	place_on = {
-							"default:gravel",
-							"aotearoa:iron_sand",
-							"default:sand",
-							"default:dirt_with_dry_grass",
-							"default:stone",
-								"default:dirt_with_grass",
-						},
-	sidelen = 16,
-	fill_ratio = 0.0005,
-	biomes = {
-						"gravel_beach",
-	 					"pohutukawa_dunes",
-						"iron_sand_beach",
-						"sandy_beach",
-						"sand_dunes",
-						"iron_sand_dunes",
-						"gravel_dunes",
-						"gumland",
-						"matagouri_scrub",
-						"rocky_coast",
-						"mountain_tussock",
-						"subantarctic_coast",
-					},
-	y_min = 2,
-	y_max = 31000,
-	decoration = "default:dry_shrub",
-})
